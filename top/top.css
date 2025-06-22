@@ -1,0 +1,284 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	background-color: #f7f7f9;
+}
+header img{
+	width: 	100%;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+nav{
+	display: flex;
+}
+.headerlogo{
+	width: 13vw;
+	margin-left: 3.5vw;
+	margin-top: 3vw;
+}
+.headerMenu{
+	width: 5vw;
+	margin-left: auto;
+	margin-top: 3.7vw;
+	margin-right: 4vw;
+}
+.logo{
+	
+}
+.headerMenu:hover{
+	
+}
+
+/*メインビジュアルとキャッチコピー*/
+.mainDiv{
+	background-image:url("img/backImgT_up.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.mainVisual{
+	text-align: center;
+}
+.mainVisual img{
+	text-align: center;
+}
+.topLogo{
+	width: 35vw;
+	margin: 18vw 0 8vw 0;
+	/*アニメーション*/
+	animation: logo ease-in-out 2s;
+}
+.logo{
+	width: 35vw;
+}
+
+@keyframes logo{
+	0%{transform: scale(0.7,0.7);opacity: 0}
+	100%{transform: scale(1,1);opacity: 1}
+	/*↑アニメーション↑*/
+}
+.scrollIcon{
+	margin-bottom: 25vw;
+	animation: logo ease-in-out 2s;
+}
+@keyframes logo{
+	0%{transform: scale(0.7,0.7);opacity: 0}
+	100%{transform: scale(1,1);opacity: 1}
+}
+.scroll{
+	width: 3.9vw;
+	margin-bottom: 2vw;
+	animation: arrow ease-in-out 2s infinite alternate;
+	
+}
+@keyframes arrow{
+	0%{transform: translate(0,0);}
+	100%{transform: translate(0,-10px);}
+}
+
+.wwt{
+	margin-bottom: -10px;
+}
+.textBox{
+	display: flex;
+	align-items: center;
+	background-color: #FFFFFF;
+}
+.mainLogo{
+	width: 28vw;
+	text-align: left;
+	margin: 0 4vw 0 18.5vw;
+}
+.mainCp{
+	width: 28vw;
+	margin: 0 18.5vw 0 4vw;
+}
+
+/*作品ページへのナビゲーション*/
+.selectDiv{
+	background-color: #FFFFFF;
+	
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.classSelect , .projectSelect{
+	text-align: center;
+}
+.selectClass{
+	width: 3.8vw;
+	padding: 20vw 0 4vw 0;
+	justify-content: center;
+}
+.selectBotao{
+	justify-content: center;
+}
+#selectBotaoU{
+	margin-bottom: 17.5vw;
+}
+.clBotao{
+	width: 18.7vw;
+	margin: 0 5vw;
+	transition-duration: .2s;
+}
+.clBotao:hover{/*アニメーション*/
+	transform: scale(1.1);
+}/*↑アニメーション↑*/
+
+.selectProject{
+	width: 15vw;
+	padding: 15vw 0 4vw;
+}
+.wwf{
+	margin-bottom: -10px;
+}
+
+/*この下からフッター*/
+footer{
+	background-color: #EEEDF0;
+	text-align: center;
+}
+footer div{
+	padding-bottom: 6vw;
+}
+.footerLogo{
+	width: 24.2vw;
+	margin: 0 34.6vw 0 0;
+}
+.footerATE{
+	text-align: right;
+	width: 20vw;
+}
+
+
+/*この下からbgItemsの調整*/
+.bg1{
+	position: absolute;
+	top: 12vw;
+	left: 10vw;
+	width: 5vw;
+	animation: bg1 ease-in-out 2s infinite alternate;
+}
+.bg2{
+	position: absolute;
+	top: 6vw;
+	left: 40vw;
+	width: 5vw;
+	animation: bg3 ease-in-out 2s infinite alternate;
+}
+.bg3{
+	position: absolute;
+	top: 15vw;
+	left: 80vw;
+	width: 7vw;
+	animation: bg1 ease-in-out 2s infinite alternate;
+}
+.bg4{
+	position: absolute;
+	top: 34vw;
+	left: 25vw;
+	width: 5vw;
+	animation: bg2 ease-in-out 2s infinite alternate;
+}
+.bg5{
+	position: absolute;
+	top: 38vw;
+	left: 68vw;
+	width: 7vw;
+	animation: bg3 ease-in-out 2s infinite alternate;
+}
+.bg6{
+	position: absolute;
+	top: 45vw;
+	left: 55vw;
+	width: 4vw;
+	animation: bg1 ease-in-out 2s infinite alternate;
+}
+.bg7{
+	position: absolute;
+	top: 60vw;
+	left: 10vw;
+	width: 7vw;
+	animation: bg2 ease-in-out 2s infinite alternate;}
+
+/*bg1のアニメーション*/
+@keyframes bg1{
+	0%{transform: scale(1.3,1.3)}
+	100%{transform: scale(1,1)}
+}
+/*bg2のアニメーション*/
+@keyframes bg2{
+	0%{transform: scale(1,1)}
+	100%{transform: scale(1.3,1.3)}
+}
+/*bg3のアニメーション*/
+@keyframes bg3{
+	0%{transform: scale(1,1)}
+	100%{transform: scale(1.3,1.3)}
+}
+
+
+/*座標指定ができないので諦めたオブジェクト
+.bg8{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg9{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg10{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg11{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg12{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg13{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg14{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg15{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+.bg16{
+	position: absolute;
+	top: 2vw;
+	left: 1vw;
+	width: 8vw;
+}
+*/
