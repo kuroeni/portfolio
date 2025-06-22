@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*-----------------------------------------------------------------*/
+body{
+		/*cursor: url("../img/Unknown-3.png"),auto;*/
+	font-family: 'Crimson Text', serif;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	/*font-family: 'Montserrat', sans-serif;*/
+	overflow-x: hidden;
+	
+  
+	}
+header{
+	
+}
+.push{
+	/*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	border: #555;/*囲み線はsolid、線幅指定はpx*/
+    min-width:100px;/*要素の幅の最小値を指定する*/
+	display: inline-block;
+	padding: 3px 0px 3px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+	background-color: #EFE42C;;
+    outline: none;/*入力中に箱が入力中ということを表す*/
+    transition: all .2s;/*ホバーした時の動き*/
+}
+
+.push:hover{
+	background:#333;
+    color:#fff;
+}
+nav ul{
+	margin-right: 0%;
+	display: flex;
+	justify-content: flex-end;
+}
+nav li{
+	list-style: none;
+	margin: 5%;
+}
+li a{
+	color: #474747;
+	text-decoration: none;
+}
+h1{
+	width:100px;
+}
+h1 img{
+	margin-left: 0%;
+	cursor: url("../img/sunglass.png"),auto;
+	width: 80%;
+	height: 100%;
+}
+.top{
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+}
+
+/*----------------------------メイン-------------------------------------*/
+main{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+.mask{
+    display: block;
+    overflow: hidden;/*はみ出る要素を隠す*/
+}
+
+footer{
+	margin-top: 20%;
+}
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+
+/*＝＝＝並び替えボタンのCSS*/
+.sort-btn{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding:50px 20px;
+}
+.sort-btn li{
+	display: inline-block;
+	margin: 01em .4em 0;
+	padding: 0.6em 1em 0.6em 1em;
+	line-height: 1;
+	text-decoration: none;
+	color: #E6C800;
+	background-color: #fff;
+	border: 1px solid #E6C800;
+	border-radius: 2em;
+}
+.sort-btn li:before {
+	content: "#";	
+}
+
+.sort-btn li:hover{
+	color:#686868;
+	border-color:#686868; 
+}
+
+/*横幅が480px以下になった際の指定*/
+@media only screen and (max-width: 480px) {
+.sort-btn{
+	justify-content: space-between;
+}
+	
+.sort-btn li{
+	width:48%;
+	margin:0 0 10px 0;
+	text-align:center;
+	}	
+}
+
+
+/*＝＝＝Muuriのレイアウトのための調整 */
+.grid {
+	/*cursor: url("../img/Unknown-3.png"),auto;*/
+	margin-left: 5%;
+	margin-right: 4%;
+	justify-content: center;
+  position: relative;/*並び替えの基準点を指定*/
+  box-sizing:inherit;
+  margin-bottom: 10%;
+} 
+.item  {
+  cursor: pointer;
+  max-width: 500px;
+  overflow: hidden;
+  width: 100%;
+}
+.item img {
+	/*cursor: url("../img/ -9.png"),auto;*/
+  height: auto;
+  transition: transform .6s ease; /* ゆっくり変化させる */
+}
+.item:hover img {
+	
+  transform: scale(1.1); /* 拡大 */
+}
+
+/*各画像の横幅などの設定*/
+.item {
+  display: block;
+  position: absolute;
+  width: 33%;/*横並びで3つ表示*/
+  z-index: 1;
+  list-style:none;
+  box-sizing:inherit;
+	
+}
+
+/*内側のボックスの高さが崩れないように維持*/
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hover-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+  text-align: center;
+	
+  
+}
+
+/* ホバー時に表示 */
+.item:hover .hover-mask {
+  opacity: 1;
+}
+
+/* テキストのスタイル */
+.hover-mask p {
+　font-family: 'Zen Kaku Gothic New', sans-serif;
+  color: #E1E1E1;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: 80%;
+}
+/*画像の横幅を100%にしてレスポンシブ化*/
+.grid img{
+	width:100%;
+	height:auto;
+	vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
+/*横幅が768px以下になった際の指定*/
+@media only screen and (max-width: 768px) {
+.item {
+  width: 49.5%;/*横並びで2つ表示*/
+}
+}
+/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
+.fancybox-thumbs {
+    background: transparent!important;
+}
+
+.fancybox-thumbs__list a:before {
+    border: 6px solid #FA999B;
+}
+#snsFoot {
+	z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    
+}
+#snsFoot li {
+	list-style: none;
+    line-height: 1;
+    padding: 0 8px;
+}
+#snsFoot li a {
+    display: block;
+    cursor: pointer;
+}
+#snsFoot li img {
+    width: 21px;
+    height: auto;
+    opacity: .9;
+}
