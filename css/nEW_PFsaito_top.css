@@ -29,6 +29,7 @@ h1{
 	width:100px;
 }
 h1 img{
+	margin-top: 70px;
 	margin-left: 30%;
 	width: 80%;
 	height: 100%;
@@ -425,13 +426,51 @@ header nav:not(.nav-overlay) {
 /*==========================================すまほ==========================================*/
 @media screen and (max-width: 1024px){
 	header{
+		display: flex;
 		height: auto; /* ← これで中身の高さに合わせる */
-		margin-bottom:50px;
+		margin-bottom:100px;
 	}
-	topimg h1{
-		align-items: center;
+	.top img{
+		 top: 38px;
 	}
 	
+	.topimg h1{
+		
+	}
+	main{
+		
+	}
+
+	.titletext{
+		margin-top: 60px;
+		align-items: center;
+		justify-content: center;
+		
+		width: 100%;
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.titleimg{
+		margin-top:auto;
+		
+		width: 100%;
+	}
+	main{
+	margin-bottom: 20%;
+}
+   main img{
+	border-radius: 25px;
+}
+	.fade-block1 {/*画像サイズ、位置*/
+	width: 45%;
+    height: auto;
+	position: fixed;
+    position: relative;
+    left: 0%;
+	top:150px;
+}
+	
+
   /* PC用ナビを非表示にする */
   nav:not(.menu-panel) {
     display: none !important;
@@ -453,8 +492,8 @@ header nav:not(.nav-overlay) {
 	/* ハンバーガーアイコン */
   .menu-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 38px;
+    right: 55px;
     z-index: 1001;
     width: 40px;
     height: 30px;
@@ -465,9 +504,9 @@ header nav:not(.nav-overlay) {
 
   .menu-btn span {
     display: block;
-    width: 100%;
+    width: 150%;
     height: 3px;
-    background: #000;
+    background:#949494;
     margin: 6px 0;
     transition: all 0.3s ease;
   }
@@ -533,6 +572,25 @@ header nav:not(.nav-overlay) {
   	transition: color 0.3s ease, background-color 0.3s ease; /* なめらかに変わる */
   	border-radius: 25px; /* ちょっと丸みもつけたいなら */
   	padding: 10px 15px; /* ホバー時にちょっと余裕も */
+}
+	
+#snsFoot {   
+ z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0;
+    justify-content: center;
+    align-items: center;
+
+    left: 150px;
+    bottom: 30px;
+}
+#snsFoot li a { 
+	align-items: center;
+}
+#snsFoot li img {
+    width: 40px;
+	
 }
  
 	
