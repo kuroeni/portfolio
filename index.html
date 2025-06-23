@@ -7,38 +7,66 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+	
 </head>
+	 
 <body>
+	
 <header>
+  <!-- 通常のヘッダー構造 -->
   <div class="top">
-	<div class="topimg"><h1><img src="img/sun.svg"/></h1>
-	</div>
-	  <div class="boxH1">
-		 <h1>  </h1>
-	  </div>
-	    <nav>
-		 <ul>
-		  <li><a href="works/works.html"class="push">works</a></li>
-		  <li><a href="about/about.html" class="push">about</a></li>
-		  <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+    <div class="topimg">
+      <h1><img src="img/sun.svg" alt=""></h1>
+    </div>
+	  
+	  
+	  
+	  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+      <li><a href="works/works.html">works</a></li>
+      <li><a href="about/about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+    <div class="boxH1">
+      <h1> </h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="works/works.html" class="push">works</a></li>
+        <li><a href="about/about.html" class="push">about</a></li>
+        <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
 		  <!--<li><a href="contact/cotact.html" class="push">contact</a></li>-->
-		 </ul>
-	    </nav>
+      </ul>
+    </nav>
   </div>
 </header>
-<main>
+<main> 
   <div class="titletext"><p>ENISHI'S<br>PORTFORIO</p></div>
-	<div class="titleimg"><img src="img/dore2.png"/></div>
+	<div class="titleimg"><img src="img/dore2.png" alt=""></div>
 	
 	
   <div class="blockText1">
-      <img src="img/gizagiza.png"/>
+      <img src="img/gizagiza.png" alt="">
   </div>
   <dl class="scroll-block fade-block1 blockIN">
 	  <dd class="img">
 		  <div class="work">
             <a href="ritu/ritu.html"> 
-				<img src="img/4pf.png"/>
+				<img src="img/4pf.png" alt="">
 			  		<div class="hover-mask">
 					  <p>#graphic design / illustration</p>
 			 		</div>
@@ -48,13 +76,13 @@
   </dl>
 	
   <div class="blockText2">
-      <img src="img/haneru.png"/>
+      <img src="img/haneru.png" alt="">
   </div>
 	 <dl class="scroll-block fade-block2 blockIN">
 	  <dd class="img">
 		  <div class="work">
             <a href="ritu/ritu.html"> 
-				<img src="img/DSC_0060.JPG">
+				<img src="img/DSC_0060.JPG" alt="">
 			  		<div class="hover-mask_2">
 						<p>#graphic design / illustration</p>
 			 		</div>
@@ -63,13 +91,13 @@
 		  </dd>
   		</dl>
 	<div class="blockText3">
-      <img src="img/guru.png"/>
+      <img src="img/guru.png" alt="">
 	</div>
   		<dl class="scroll-block fade-block3 blockIN">
 	  		<dd class="img">
 		 		 <div class="work">
            			 <a href="ritu/ritu.html"> 
-						<img src="img/DSC_8150.jpg"/>
+						<img src="img/DSC_8150.jpg" alt="">
 			  				<div class="hover-mask">
 								<p>#graphic design / illustration</p>
 			 				</div>
@@ -77,12 +105,50 @@
 		 		 </div>
 		  </dd>
   		</dl>
+		<!-- ページの一番下かボディの最後に置く -->
+		<a 	href="#" id="page-top" aria-label="ページトップへ">
+  			<span>page top</span>
+  				<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    			<path d="M12 4l-8 8h6v8h4v-8h6l-8-8z" fill="currentColor"/>
+  				</svg>
+		</a>
 </main>
 	<footer>
 &copy;ENISHI KURODA
 	<ul id="snsFoot" class="under">
-		<li><a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png"></a></li>
-		<li><a href=https://www.instagram.com/enishi_kuroda/ target="_blank"><img src="https://www.haze-official.jp/wp/wp-content/themes/haze_202203/images/sns_instagram_black.svg" alt="Instagram"></a></li>
+			<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a></li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="https://www.haze-official.jp/wp/wp-content/themes/haze_202203/images/sns_instagram_black.svg" alt="Instagram">
+			</a>
+		</li>
+		</ul>
 	</footer>
+		<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".menu-btn");
+    const panel = document.querySelector(".menu-panel");
+
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("active");
+      panel.classList.toggle("active");
+    });
+  });
+			
+	const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
+  }
+});
+
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
