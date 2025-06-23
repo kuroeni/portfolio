@@ -1,0 +1,277 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+	font-family: 'Crimson Text', serif;
+	font-family: 'Ubuntu', sans-serif;
+}
+header{
+	margin-top: 1.5%;
+	z-index:1;
+	position: fixed;
+    top: 0;
+    width: 100%;
+    height: 130px;
+    justify-content: center;
+}
+.push{
+	/*テキストの基点とするためrelativeを指定*/
+	position: relative;
+    /*ボタンの形状*/
+	border: #555;/*囲み線はsolid、線幅指定はpx*/
+    min-width:100px;/*要素の幅の最小値を指定する*/
+	display: inline-block;
+	padding: 3px 0px 3px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+	background-color: #EFE42C;;
+    outline: none;/*入力中に箱が入力中ということを表す*/
+    transition: all .2s;/*ホバーした時の動き*/
+}
+
+.push:hover{
+	background:#333;
+    color:#fff;
+}
+nav ul{
+	margin-right: 0%;
+	display: flex;
+	justify-content: flex-end;
+}
+nav li{
+	list-style: none;
+	margin: 5%;
+}
+li a{
+	color: #474747;
+	text-decoration: none;
+}
+h1{
+	width:100px;
+}
+h1 img{
+	margin-left: 10%;
+	cursor: url("../img/sunglass.png"),auto;
+	width: 80%;
+	height: 100%;
+}
+.top{
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+}
+.topimg{
+	position: fixed;
+	z-index: 10;
+	cursor: url("../img/sunglass.png")auto;
+}
+
+h2{
+  	font-size:1.0rem;
+  	text-align: center;
+  	margin:0 0 30px 0;
+	color:#B1B1B1;
+}
+h2,
+#container p,/*#container...コンテンツの横幅を調整することができる。*/
+small{/*small...一回り小さいサイズで表示*/
+  margin:0 0 30px 0;
+}
+
+small{
+  display: block;
+  text-align: center;
+}
+.textwork1{
+	margin-top: 40%;
+	height: 200px;
+}
+.blockwork1{
+	margin-left:70px;
+	margin-right: 70px;
+}
+.nameplate{
+	height: 150px;
+	line-height: 150px;
+}
+.nameplate h3{
+	font-family: "A P-OTF A1ゴシック Std M";
+	font-size:1.2rem;
+	text-align: center;
+	height: 65px;
+	line-height: 65px;
+}
+.nameplate p{
+	font-family: "A P-OTF A1ゴシック Std M";
+	font-size: 8px;
+	height: 0;
+	line-height: 0;
+	text-align: center;
+}
+.textwork2,.textwork3 dl{
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+	line-height: 200%;
+}
+.textwork2, dd{
+	margin-top: 30px;
+	font-size:0.9rem;
+	font-family: "A P-OTF A1ゴシック Std L";
+	 text-align: justify;
+	 font-feature-settings: "palt";
+	letter-spacing: 0.05em;
+}
+.textwork3{
+	margin-top: 70px;
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+}
+.textwork3 dd{
+	margin-top: 20px;
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+}
+.aicon{
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.aicon img{
+	width: 70%;
+	height: 70%;
+}
+small{
+  display: block;
+  text-align: center;
+}
+/*========= 左固定レイアウトのためのCSS ===============*/
+
+/*左と右を囲う全体のエリア*/
+#wrapper{/*#wrapper...要素を囲む*/
+　width: 100%;
+  height: 100%;
+  position: relative;/*position stickyの基点にするため relativeをかける*/
+  display: flex;
+　position: fixed;
+  flex-wrap: wrap;/*ボックスの折り返し可*/
+}
+
+/*左の画像エリア*/
+#left-area{/*#fixed...要素の位置を固定する*/
+  /*左固定記述*/
+  position: -webkit-sticky;  /*Safari用*/
+  position: sticky;  /*position: sticky...スクロールすると親要素の中で追従する(画像動かない)*/
+  top:0;
+  width: 50%;/*横半分50%　縦を100vhにする*/
+  height: 100vh;
+  /*装飾のためのCSS*/
+  background: url("../img/enishi.png");
+  background-size:cover;/*元画像の縦横比のまま要素内で限界まで大きくする*/
+}
+.img1{
+	margin-top: 17%;
+}
+.img2{
+	margin-top: 39%;
+	margin-left: 40%;
+	position: absolute;
+}
+.img3{
+	margin-left: 50%;
+}
+
+/*右エリア*/
+#right-area{
+  width:50%;/*横半分50%にする*/
+	background-color:#E7E7E7;
+}
+/*右各セクション 装飾のためのCSS*/
+section{
+  min-height: 100vh;
+  padding:30px;
+}
+.back{
+	text-align: center;
+	margin-bottom: 10%;
+}
+.back a{
+	color: #333;
+	text-decoration-line: none;
+}
+.pagenation pagenation-permalink{
+	text-align: center;
+	margin-bottom: 10%;
+	
+}
+.pagenation pagenation-permalink{
+	color: #333;
+	text-decoration-line: none;
+}
+.pagenation {
+	
+    margin: 3em 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9rem;
+    letter-spacing: .1em;
+}
+.pagenation a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 1em;
+    color: #36393d;
+}
+a, .post-content-anchor:hover, .nav li a:hover, .pagenation a:hover, .entry-footer a:hover {
+    color: #BABABA;
+}
+.arrow-right {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+  border-top: 2px solid  #36393d;
+  border-right:2px solid  #36393d;
+  transform: rotate(45deg);
+}
+.arrow-right:hover{
+	color: #BABABA;
+}
+/*＝＝＝＝＝＝＝＝＝＝＝768px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+@media screen and (max-width:768px){
+#wrapper{
+  display: block;/*display:flex;を解除*/
+}
+section{
+  min-height:auto;/*縦を100vh⇒解除*/
+}
+
+#left-area{
+  position:relative!important;/*position stickyを解除*/
+  width:100%;/*横幅を100%にして1列に見せる*/
+  height: 40vh;/*縦幅を100vh⇒40vh　※任意の高さに設定可能*/
+}
+
+#right-area{
+  width:100%;/*横幅を100%にして1列に見せる*/
+}
+	header{
+		position: -webkit-sticky;
+		position: sticky;
+		position: fixed;
+        top: 0;
+	}
+	header img{
+		width: 100%;
+		height: 90%;
+		margin: auto;
+	}
+	h1{
+		width: 50%;
+		height: 50%;
+	}
+}
