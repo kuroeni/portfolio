@@ -5,7 +5,17 @@
     padding: 0;
 }
 
+
 /*-----------------------------------------------------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+html{
+  overflow-x: hidden;
+}
+
+
 body{
 		/*cursor: url("../img/Unknown-3.png"),auto;*/
 	font-family: 'Crimson Text', serif;
@@ -20,14 +30,19 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;  /* ← headerの中ではなく、ここに付ける！ */
-  top: 0;
+  /*position: fixed;  /* ← headerの中ではなく、ここに付ける！ */
+  /* top: 0;
   left: 0;
   width: 100%;
   height: 130px;
   z-index: 999;  /* ハンバーガーメニューより1つ下 */
-  padding: 0 20px;
+  /*padding: 0 20px;*/
 
+}
+.topimg {
+  position: fixed;
+  z-index: 10;
+  cursor: url("../img/sunglass.png"), auto;
 }
 .sort-btn {
   margin-top: 150px; /* ← .top の高さに合わせて調整（130〜160pxぐらいで試して） */
@@ -35,10 +50,20 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   padding: 50px 20px;
+	position: relative; /* 必要ならfixedやabsoluteにしてもOK */
+  z-index: 1100; /* ヘッダーより大きい値に */
+  margin-top: 140px; /* ヘッダーの高さ+αの余白を作る */
 }
 
-header{
-	
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px; /* 必要に応じて調整 */
+  z-index: 999;
+
+ 
 }
 .push{
 	/*テキストの基点とするためrelativeを指定*/
@@ -47,7 +72,7 @@ header{
 	border: #555;/*囲み線はsolid、線幅指定はpx*/
     min-width:100px;/*要素の幅の最小値を指定する*/
 	display: inline-block;
-	padding: 3px 0px 3px 0px;
+	padding: 3px 0px;
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -74,19 +99,17 @@ li a{
 	text-decoration: none;
 }
 h1{
+	margin: 0;
+    padding: 0;
 	width:100px;
 }
 h1 img{
-	margin-left: 0%;
+	margin-left: 10%;
 	cursor: url("../img/sunglass.png"),auto;
 	width: 80%;
 	height: 100%;
 }
-.top{
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
+
 
 /*----------------------------メイン-------------------------------------*/
 main{
@@ -108,10 +131,14 @@ footer{
 
 /*＝＝＝並び替えボタンのCSS*/
 .sort-btn{
+	margin-top: 0;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	padding:50px 20px;
+	position: relative; /* 必要ならfixedやabsoluteにしてもOK */
+  z-index: 1100; /* ヘッダーより大きい値に */
+  margin-top: 140px; /* ヘッダーの高さ+αの余白を作る */
 }
 .sort-btn li{
 	display: inline-block;
@@ -353,16 +380,19 @@ footer{
   width: 49.5%;/*横並びで2つ表示*/
 }
 	h1 img {
-    margin-left: 30%;
     width: 80%;
     height: 10%;
+		
 		}
+	.sort-btn {
+  z-index: 900; /* header(999)より後ろ、メニューより下にする */
+}
 	/* ハンバーガー */
   .menu-btn {
     position: fixed;
     top: 38px;
     right: 55px;
-    z-index: 1001;
+    z-index: 1005;
     width: 40px;
     height: 30px;
     background: none;
@@ -416,6 +446,7 @@ footer{
     list-style: none;
     text-align: center;
     padding: 0;
+	 
 	flex-direction: column; 
 	justify-content: center; /* 縦方向中央揃え */
 	align-items: center; /* 横方向中央揃え */
@@ -496,5 +527,14 @@ footer {
 footer{
  margin-top: 20%;
 }
+}
+	
+/* PC表示でスマホメニューを消す：絶対最後 */
+@media screen and (min-width: 601px) {
+  .sp-menu,
+  .menu-btn,
+  .menu-panel {
+    display: none !important;
+  }
 }
 
