@@ -32,7 +32,7 @@ h1{
 	width:100px;
 }
 h1 img{
-	margin-top: 70px;
+	margin-top: 0px;
 	margin-left: 30%;
 	width: 80%;
 	height: 100%;
@@ -81,6 +81,7 @@ nav li{
 	margin: 5%;
 }
 li a{
+	font-family: 'Ubuntu', sans-serif;
 	color: #474747;
 	text-decoration: none;
 }
@@ -435,14 +436,10 @@ header nav:not(.nav-overlay) {
 		height: auto; /* ← これで中身の高さに合わせる */
 		margin-bottom:100px;
 	}
-	.top img{
-		 top: 38px;
-	}
-	
-	.topimg h1{
-		
-	}
 	main{
+	}
+	.topimg{
+		margin-top: 10%;
 		
 	}
 	/* enishis portfolio */
