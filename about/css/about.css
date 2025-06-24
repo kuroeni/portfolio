@@ -394,10 +394,11 @@ section{
 
   #left-area {
 	position: relative !important;
-    background-size: contain;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 60vh;
+	height: 50vh;
+	margin-top: 10%;
+	  margin-bottom: -10%;
 	background-position: center center;
 	background-image: url("../img/enishi.png");
   }
