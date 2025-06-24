@@ -392,17 +392,14 @@ section{
   min-height:auto;/*縦を100vh⇒解除*/
 }
 
-#left-area{
-  position:relative!important;/*position stickyを解除*/
-  width:100%;/*横幅を100%にして1列に見せる*/
-  height: 150vh;/*縦幅を100vh⇒40vh　※任意の高さに設定可能*/
-  position: -webkit-sticky;  /*Safari用*/
-  position: sticky;  /*position: sticky...スクロールすると親要素の中で追従する(画像動かない)*/
-   background-size:cover;/*元画像の縦横比のまま要素内で限界まで大きくする*/
-	 background-position: center center; /* 画像を真ん中に */
-    background-repeat: no-repeat;      /* 繰り返しなし */
-    background-size: contain;          /* 画像全体が入るように */
-}
+  #left-area {
+	position: relative !important;
+    background-size: contain;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 150vh;/* スマホはcontainに変える */
+	background-position: center center;
+  }
 	
 	
 	
