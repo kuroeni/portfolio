@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>hyperENISHI</title>
-	<link href="css/about.css"rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/about.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
@@ -14,11 +15,32 @@
 <main>
 	<header>
 	<div class="top">
-	<h1><a href="../index.html"><img src="img/sun.svg"/></a></h1>
-	  <nav>
+	<h1><a href="../index.html"><img src="img/sun.svg" alt=""></a></h1>
+		
+		
+	  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="../index.html">home</a></li>
+      <li><a href="../works/works.html">works</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+	  <nav class="pc-menu">
 		 <ul>
+			  <li><a href="../index.html" class="push">home</a></li>
 		  <li><a href="../works/works.html" class="push">works</a></li>
-		  <li><a href="../about/about.html" class="push">about</a></li>
+		  <li><a href="about.html" class="push">about</a></li>
 		  <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
 		  <!--<li><a href="../contact/cotact.html" class="push">contact</a></li>-->
 		 </ul>
@@ -43,22 +65,24 @@
 					</div>
 				</div>
 				<div class="textwork2">
-					<dl>
-        				<dt>大阪市立工芸高等学校　プロダクトデザイン科出身<span><dt>大阪市立デザイン教育研究所</dt></span></dt>
+					<dl>経歴
+        				<dt>2021年 &nbsp;大阪市立工芸高等学校　プロダクトデザイン科出身<span><br>
+						<dt>2024年&nbsp;大阪市立デザイン教育研究所
+							<br>2024年&nbsp;オルゴ株式会社 開発本部企画課 入社<br> &emsp;&emsp;&emsp;&nbsp;&nbsp; 自社商品のLP、POP、チラシ、<br>&emsp;&emsp;&emsp;&nbsp;&nbsp; 展示台、商品撮影などの販促を主に担当
+							<br>2025年&nbsp;オルゴ株式会社 開発本部企画課 退社</dt></span></dt>
       				</dl>
-					<dd>2003年8月15日大阪府枚方市に生まれる。絵やものづくり好きが高じてデザインや工芸を学べる工芸高校プロダクトデザイン科に入学。
-						平面構成から製品づくりを学び卒業する。デザイン教育研究所に入所しプロダクトを中心にグラフィックや企画デザイン、動画制作、ウェブ制作等幅広いデザインを勉強中。
+					<dd>出展経験<br>2025年　グループ展「日々と骨。」を開催
 					</dd>
 				</div>
 			  <div class="textwork3">
 					<dl>
         				<dt>使用できるソフト<span></span></dt>
       				</dl>
-					<div class="aicon"><img src="img/aaaaaaa.svg"/></div>
+					<div class="aicon"><img src="img/aaaaaaa.svg" alt=""></div>
 			  </div>
 				<div class="pagenation pagenation-permalink">
-      		  		<a href="" class="pager-next">Previous pagea
-					<div class="arrow-right"></div>
+					<a href="" class="pager-next">Previous pagea
+						<div class="arrow-right"></div></a>
         		</div>
 				
 				
@@ -67,6 +91,36 @@
 	</div>
 	
 </main>
-<!--<footer></footer>-->
+	
+	
+	
+	
+	<footer>
+&copy;ENISHI KURODA
+	<ul id="snsFoot" class="under">
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+	</footer>
+
+	<script>
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+</script>
+	
+
+
+
 </body>
 </html>
