@@ -424,7 +424,7 @@ header nav:not(.nav-overlay) {
 }
 
 /*==========================================すまほ==========================================*/
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 600px){
 	header{
 		display: flex;
 		height: auto; /* ← これで中身の高さに合わせる */
@@ -611,7 +611,7 @@ header nav:not(.nav-overlay) {
 	}
 }*/
 /* PC表示のときはハンバーガーメニューの中身を消す */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 600px) {
   .menu-panel {
     display: none !important;
   }
