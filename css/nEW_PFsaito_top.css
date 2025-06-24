@@ -442,9 +442,9 @@ header nav:not(.nav-overlay) {
 	main{
 		
 	}
-
+	/* enishis portfolio */
 	.titletext{
-	margin-top: 70px;
+	margin-top: 45px;
 	align-items: center;
 	justify-content: center;	
 	width: 100%;
@@ -457,7 +457,7 @@ header nav:not(.nav-overlay) {
 	.titleimg {
   	position: relative; /* 絶対配置解除 */
   	margin: 0 auto;     /* 中央寄せ */
-  	width: 70%;         
+  	width: 80%;         
   	display: flex;
   	justify-content: center; /* 画像自体を中央に */
 }
