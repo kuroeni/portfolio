@@ -88,9 +88,11 @@ main img{
 	border-radius: 25px;
 }
 .titletext{
-	font-family: "A P-OTF A1ゴシック Std R";
+	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
+	transform: rotate3d(1, 0, 0, 30deg);
+	font-weight: 400;
 	height: 65px;
-	line-height: 65px;
+	line-height: 70px;
 	font-size: 45px;
 	width: 	50%;
     margin-top: 10%;
@@ -442,33 +444,61 @@ header nav:not(.nav-overlay) {
 	}
 
 	.titletext{
-		margin-top: 60px;
-		align-items: center;
-		justify-content: center;
-		
-		width: 100%;
-		font-size: 20px;
-		line-height: 30px;
+	margin-top: 70px;
+	align-items: center;
+	justify-content: center;	
+	width: 100%;
+	font-size: 40px;
+	line-height: 60px;
+	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
+	transform: rotate3d(1, 0, 0, 30deg);
+	font-weight: 400;
 	}
-	.titleimg{
-		margin-top:auto;
-		
-		width: 100%;
-	}
+	.titleimg {
+  	position: relative; /* 絶対配置解除 */
+  	margin: 0 auto;     /* 中央寄せ */
+  	width: 70%;         
+  	display: flex;
+  	justify-content: center; /* 画像自体を中央に */
+}
 	main{
 	margin-bottom: 20%;
 }
    main img{
 	border-radius: 25px;
 }
-	.fade-block1 {/*画像サイズ、位置*/
-	width: 45%;
+	 /* gizagiza */
+   .blockText1{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+	margin-top: 60%;
+	left: 10%;
+	}
+	.blockText1 img{
+		width: 15%;
+	}
+	 /* 1枚目画像 */
+  .fade-block1 {
+    width: 80%;
     height: auto;
-	position: fixed;
+    margin: 0 auto 10% auto;
     position: relative;
-    left: 0%;
-	top:150px;
-}
+    left: 0; 
+  }
+	/* はねる */
+  .blockText2 img{
+	    margin-top: 10%;
+		width: 30%;
+	}
+	 /* 2枚目画像 */
+  .fade-block2 {
+    width: 50%;
+  }
+	/* ぐるぐる */
+  .blockText3 img{
+		width: 25%;
+	}
 	
 
   /* PC用ナビを非表示にする */
@@ -489,7 +519,7 @@ header nav:not(.nav-overlay) {
     display: none;
   }
   
-	/* ハンバーガーアイコン */
+	/* ハンバーガー */
   .menu-btn {
     position: fixed;
     top: 38px;
@@ -522,8 +552,9 @@ header nav:not(.nav-overlay) {
   .menu-btn.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
+	
 
-/* メニュー本体 */
+/* メニュー本体(展開ページ)*/
   .menu-panel {
     position: fixed;
     top: 0;
@@ -536,6 +567,7 @@ header nav:not(.nav-overlay) {
     justify-content: center;
     align-items: center;
 	transition: opacity 0.6s ease, visibility 0.6s ease; /* ←ここでスピード調整 */
+	  
   }
 
   .menu-panel.active {
@@ -574,17 +606,21 @@ header nav:not(.nav-overlay) {
   	padding: 10px 15px; /* ホバー時にちょっと余裕も */
 }
 	
-#snsFoot {   
- z-index: 1;
+#snsFoot {
+	margin-top: 10%;
+    position: static; /* または relative */
+    bottom: auto;
+    left: auto;
+    transform: none;
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto 0;
     justify-content: center;
     align-items: center;
-
-    left: 150px;
-    bottom: 30px;
+    z-index: 1; /* 必要なら残してOK */
 }
+#snsFoot li {
+    padding: 0 10px;
+  }
+
 #snsFoot li a { 
 	align-items: center;
 }
