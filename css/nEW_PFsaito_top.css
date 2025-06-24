@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+  overflow-x: hidden;
+}
 
 body{
 	text-align: center;
@@ -485,6 +488,10 @@ header nav:not(.nav-overlay) {
     margin: 0 auto 10% auto;
     position: relative;
     left: 0; 
+  }
+	 .blockText2 {
+    width: 100%; /* これでスマホサイズの横幅に収まる */
+    overflow-x: hidden; /* 念のため */
   }
 	/* はねる */
   .blockText2 img{
