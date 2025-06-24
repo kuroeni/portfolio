@@ -16,8 +16,27 @@
 <header>
   <div class="top">
 	<h1><a href="../index.html"><img src="img/sun.svg"></a></h1>
-	  <nav>
+	  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="../index.html">home</a></li>
+      <li><a href="works.html">works</a></li>
+      <li><a href="../about/about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
+	  
+	  <nav class="pc-menu">
 		 <ul>
+			  <li><a href="../index.html"class="push">home</a></li>
 		  <li><a href="../works/works.html" class="push">works</a></li>
 		  <li><a href="../about/about.html" class="push">about</a></li>
 		   <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
@@ -359,15 +378,27 @@
 			
 	</ul>
 <main>
+		<!-- ページトップ -->
+		<a 	href="#" id="page-top" aria-label="ページトップへ">
+  			<span>page top</span>
+  				<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    			<path d="M12 4l-8 8h6v8h4v-8h6l-8-8z" fill="currentColor"/>
+  				</svg>
+		</a>
 </main>
 <footer>
 &copy;ENISHI KURODA
 	<ul id="snsFoot" class="under">
-		<li><a href="https://twitter.com/funkykuroda" target="_blank"><img src="https://www.haze-official.jp/wp/wp-content/themes/haze_202203/images/sns_tw_black.svg" alt="Twitter"></a></li>
-		<li><a href="https://www.instagram.com/kuroeni/" target="_blank"><img src="https://www.haze-official.jp/wp/wp-content/themes/haze_202203/images/sns_instagram_black.svg" alt="Instagram"></a></li>
-		
-</footer>
-	
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+	</footer>
 	
 	
 	
@@ -421,6 +452,27 @@ $('[data-fancybox]').fancybox({
 	
 });</script>
 <script src="js/6-2-2.js"></script>
-	
+	<script>
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+		const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
+  }
+});
+
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
