@@ -399,14 +399,11 @@ section{
   position: -webkit-sticky;  /*Safari用*/
   position: sticky;  /*position: sticky...スクロールすると親要素の中で追従する(画像動かない)*/
    background-size:cover;/*元画像の縦横比のまま要素内で限界まで大きくする*/
+	 background-position: center center; /* 画像を真ん中に */
+    background-repeat: no-repeat;      /* 繰り返しなし */
+    background-size: contain;          /* 画像全体が入るように */
 }
-	img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  height: auto;
-}
+	
 	
 	
 #right-area{
