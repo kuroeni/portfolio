@@ -16,6 +16,27 @@ body{
 	
   
 	}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;  /* ← headerの中ではなく、ここに付ける！ */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  z-index: 999;  /* ハンバーガーメニューより1つ下 */
+  padding: 0 20px;
+
+}
+.sort-btn {
+  margin-top: 150px; /* ← .top の高さに合わせて調整（130〜160pxぐらいで試して） */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+}
+
 header{
 	
 }
@@ -111,6 +132,80 @@ footer{
 	color:#686868;
 	border-color:#686868; 
 }
+/* ページスクロール */
+#page-top p{
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 85px;
+  margin: 0;
+  letter-spacing: 5px;
+  text-align: right;
+  color: #000;
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+}
+.page-top p::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -5px;
+  width: 2px;
+  height: 20px;
+  background: #000;
+  transform: skewX(-150deg);
+}
+
+.page-top p::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 2px;
+  height: 85px;
+  background: #000;
+}
+
+.page-top.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+#page-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+}
+#page-top.visible {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+#page-top:hover {
+  opacity: 1;
+}
+
+#page-top svg {
+  fill: currentColor;
+  width: 18px;
+  height: 18px;
+}
+/*==========================================すまほ==========================================*/
 
 /*横幅が480px以下になった際の指定*/
 @media only screen and (max-width: 480px) {
@@ -211,22 +306,20 @@ footer{
 	height:auto;
 	vertical-align: bottom;/*画像の下にできる余白を削除*/
 }
-/*横幅が768px以下になった際の指定*/
-@media only screen and (max-width: 768px) {
-.item {
-  width: 49.5%;/*横並びで2つ表示*/
-}
-}
-/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
-.fancybox-thumbs {
-    background: transparent!important;
-}
 
-.fancybox-thumbs__list a:before {
-    border: 6px solid #FA999B;
+
+
+
+footer {
+    text-align: center;
+    color:#474747;
+    margin-bottom: 5%;
+}
+footer{
+ margin-top: 20%;
 }
 #snsFoot {
-	z-index: 1;
+ z-index: 1;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto 0;
@@ -238,7 +331,7 @@ footer{
     
 }
 #snsFoot li {
-	list-style: none;
+ list-style: none;
     line-height: 1;
     padding: 0 8px;
 }
@@ -251,3 +344,157 @@ footer{
     height: auto;
     opacity: .9;
 }
+
+
+/*==========================================すまほ==========================================*/
+/*横幅が768px以下になった際の指定*/
+@media only screen and (max-width: 768px) {
+.item {
+  width: 49.5%;/*横並びで2つ表示*/
+}
+	h1 img {
+    margin-left: 30%;
+    width: 80%;
+    height: 10%;
+		}
+	/* ハンバーガー */
+  .menu-btn {
+    position: fixed;
+    top: 38px;
+    right: 55px;
+    z-index: 1001;
+    width: 40px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 150%;
+    height: 3px;
+    background:#949494;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+  }
+
+  .menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+	
+
+/* メニュー本体(展開ページ)*/
+  .menu-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9); /* ← 0.0〜1.0で調整。0.9はほぼ白 */
+    z-index: 1000;
+    display: none; /* ← 最初は非表示にしておく */
+    justify-content: center;
+    align-items: center;
+	transition: opacity 0.6s ease, visibility 0.6s ease; /* ←ここでスピード調整 */
+	  
+  }
+
+  .menu-panel.active {
+    display: flex; /* ← ボタン押したら表示 */
+  }
+
+  .menu-panel ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+	flex-direction: column; 
+	justify-content: center; /* 縦方向中央揃え */
+	align-items: center; /* 横方向中央揃え */
+	height: 100%; /* メニュー全体の高さに合わせる */
+	margin-right: 0%;
+    
+
+  }
+
+  .menu-panel ul li {
+	width: 100%;
+    margin: 20px 0;
+  }
+ 
+
+  .menu-panel ul li a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+  }
+  .menu-panel ul li a:hover {
+  	color: #EFE42C; 
+  	background-color: #333; 
+  	transition: color 0.3s ease, background-color 0.3s ease; 
+  	border-radius: 25px; 
+  	padding: 10px 15px; 
+}
+	/*スマホ表示でPCナブを消す*/
+@media screen and (max-width: 600px) {
+  .pc-menu {
+    display: none !important;
+  }
+}
+
+/*PC表示でスマホメニューを消す*/
+@media screen and (min-width: 601px) {
+  .sp-menu,
+  .menu-btn,
+  .menu-panel {
+    display: none !important;
+  }
+}
+#snsFoot {
+	margin-top: 10%;
+    position: static; /* または relative */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+}
+#snsFoot li {
+    padding: 0 10px;
+  }
+
+#snsFoot li a { 
+	align-items: center;
+}
+#snsFoot li img {
+    width: 40px;
+}
+/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
+.fancybox-thumbs {
+    background: transparent!important;
+}
+
+.fancybox-thumbs__list a:before {
+    border: 6px solid #FA999B;
+}
+
+footer {
+    text-align: center;
+    color:#474747;
+    margin-bottom: 5%;
+}
+footer{
+ margin-top: 20%;
+}
+}
+
