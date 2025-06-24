@@ -1,465 +1,126 @@
-@charset "UTF-8";
-/* CSS Document */
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-	font-family: 'Crimson Text', serif;
-	font-family: 'Ubuntu', sans-serif;
-}
-header{
-	margin-top: 1.5%;
-	z-index:1;
-	position: fixed;
-    top: 0;
-    width: 100%;
-    height: 130px;
-    justify-content: center;
-}
-.push{
-	/*テキストの基点とするためrelativeを指定*/
-	position: relative;
-    /*ボタンの形状*/
-	border: #555;/*囲み線はsolid、線幅指定はpx*/
-    min-width:100px;/*要素の幅の最小値を指定する*/
-	display: inline-block;
-	padding: 3px 0px 3px 0px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-	background-color: #EFE42C;;
-    outline: none;/*入力中に箱が入力中ということを表す*/
-    transition: all .2s;/*ホバーした時の動き*/
-}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hyperENISHI</title>
+	<link rel="stylesheet" href="css/about.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
 
-.push:hover{
-	background:#333;
-    color:#fff;
-}
-nav ul{
-	margin-right: 0%;
-	display: flex;
-	justify-content: flex-end;
-}
-nav li{
-	list-style: none;
-	margin: 5%;
-}
-li a{
-	color: #474747;
-	text-decoration: none;
-}
-h1{
-	width:100px;
-}
-h1 img{
-	margin-left: 10%;
-	cursor: url("../img/sunglass.png"),auto;
-	width: 80%;
-	height: 100%;
-}
-.top{
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
-.topimg{
-	position: fixed;
-	z-index: 10;
-	cursor: url("../img/sunglass.png")auto;
-}
+<body>
+<!--<header>新規 header タグの内容がここに入ります</header>-->
+<main>
+	<header>
+	<div class="top">
+	<h1><a href="../index.html"><img src="img/sun.svg" alt=""></a></h1>
+		
+		
+	  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="../index.html">home</a></li>
+      <li><a href="../works/works.html">works</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
 
-h2{
-  	font-size:1.0rem;
-  	text-align: center;
-  	margin:0 0 30px 0;
-	color:#B1B1B1;
-}
-h2,
-#container p,/*#container...コンテンツの横幅を調整することができる。*/
-small{/*small...一回り小さいサイズで表示*/
-  margin:0 0 30px 0;
-}
-
-small{
-  display: block;
-  text-align: center;
-}
-.textwork1{
-	margin-top: 40%;
-	height: 200px;
-}
-.blockwork1{
-	margin-left:70px;
-	margin-right: 70px;
-}
-.nameplate{
-	height: 150px;
-	line-height: 150px;
-}
-.nameplate h3{
-	font-family: "A P-OTF A1ゴシック Std M";
-	font-size:1.2rem;
-	text-align: center;
-	height: 65px;
-	line-height: 65px;
-}
-.nameplate p{
-	font-family: "A P-OTF A1ゴシック Std M";
-	font-size: 8px;
-	height: 0;
-	line-height: 0;
-	text-align: center;
-}
-.textwork2,.textwork3 dl{
-	font-family: "A P-OTF A1ゴシック Std L";
-	font-size:0.9rem;
-	line-height: 200%;
-}
-.textwork2, dd{
-	margin-top: 30px;
-	font-size:0.9rem;
-	font-family: "A P-OTF A1ゴシック Std L";
-	 text-align: justify;
-	 font-feature-settings: "palt";
-	letter-spacing: 0.05em;
-}
-.textwork3{
-	margin-top: 70px;
-	font-family: "A P-OTF A1ゴシック Std L";
-	font-size:0.9rem;
-}
-.textwork3 dd{
-	margin-top: 20px;
-	font-family: "A P-OTF A1ゴシック Std L";
-	font-size:0.9rem;
-}
-.aicon{
-	margin-top: 20px;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-}
-.aicon img{
-	width: 70%;
-	height: 70%;
-}
-small{
-  display: block;
-  text-align: center;
-}
-/*========= 左固定レイアウトのためのCSS ===============*/
-
-/*左と右を囲う全体のエリア*/
-#wrapper{/*#wrapper...要素を囲む*/
-　width: 100%;
-  height: 100%;
-  position: relative;/*position stickyの基点にするため relativeをかける*/
-  display: flex;
-　position: fixed;
-  flex-wrap: wrap;/*ボックスの折り返し可*/
-}
-
-/*左の画像エリア*/
-#left-area {
-  background-image: url("../img/enishi.png");
-  background-size: cover; /* 画面いっぱいに表示 */
-  background-position: center center; /* 真ん中寄せ */
-  background-repeat: no-repeat;
-  width: 50vw; /* 画面の左半分 */
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-}
-.img1{
-	margin-top: 17%;
-}
-.img2{
-	margin-top: 39%;
-	margin-left: 40%;
-	position: absolute;
-}
-.img3{
-	margin-left: 50%;
-}
-
-/*右エリア*/
-#right-area{
-  width:50%;/*横半分50%にする*/
-	background-color:#E7E7E7;
-}
-/*右各セクション 装飾のためのCSS*/
-section{
-  min-height: 100vh;
-  padding:30px;
-}
-.back{
-	text-align: center;
-	margin-bottom: 10%;
-}
-.back a{
-	color: #333;
-	text-decoration-line: none;
-}
-.pagenation pagenation-permalink{
-	text-align: center;
-	margin-bottom: 10%;
+	  <nav class="pc-menu">
+		 <ul>
+			  <li><a href="../index.html" class="push">home</a></li>
+		  <li><a href="../works/works.html" class="push">works</a></li>
+		  <li><a href="about.html" class="push">about</a></li>
+		  <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+		  <!--<li><a href="../contact/cotact.html" class="push">contact</a></li>-->
+		 </ul>
+	</nav>
+  </div>
+	</header>
+	<div id="wrapper">
+		<div id="left-area">
+			<!--<div class="img1"><img src="../img/guru.png" width="200" height="179" alt=""/></div>-->
+			<!--<div class="img2"><img src="../img/mozi-8.png" width="263" height="61" alt=""/></div>-->
+			<!--<div class="img3"><img src="../img/S__95592456.png" width="300" height="450" alt=""/></div>-->
+			
+	  </div>
+		
+		<!--右--><div id="right-area">
+			<section class="blockwork1">
+				<div class="textwork1">
+					<h2>about</h2>
+					<div class="nameplate">
+        					<h3>黒 田　縁<br>
+       					    <span><p>kuroda enishi</p></span></h3>
+					</div>
+				</div>
+				<div class="textwork2">
+					<dl>経歴
+        				<dt>2021年 &nbsp;大阪市立工芸高等学校　プロダクトデザイン科出身<span><br>
+						<dt>2024年&nbsp;大阪市立デザイン教育研究所
+							<br>2024年&nbsp;オルゴ株式会社 開発本部企画課 入社<br> &emsp;&emsp;&emsp;&nbsp;&nbsp; 自社商品のLP、POP、チラシ、<br>&emsp;&emsp;&emsp;&nbsp;&nbsp; 展示台、商品撮影などの販促を主に担当
+							<br>2025年&nbsp;オルゴ株式会社 開発本部企画課 退社</dt></span></dt>
+      				</dl>
+					<dd>出展経験<br>2025年　グループ展「日々と骨。」を開催
+					</dd>
+				</div>
+			  <div class="textwork3">
+					<dl>
+        				<dt>使用できるソフト<span></span></dt>
+      				</dl>
+					<div class="aicon"><img src="img/aaaaaaa.svg" alt=""></div>
+			  </div>
+				<div class="pagenation pagenation-permalink">
+					<a href="" class="pager-next">Previous pagea
+						<div class="arrow-right"></div></a>
+        		</div>
+				
+				
+			</section>
+		</div>
+	</div>
 	
-}
-.pagenation pagenation-permalink{
-	color: #333;
-	text-decoration-line: none;
-}
-.pagenation {
-	
-    margin: 3em 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: .9rem;
-    letter-spacing: .1em;
-}
-.pagenation a {
-    display: inline-block;
-    text-decoration: none;
-    margin: 0 1em;
-    color: #36393d;
-}
-a, .post-content-anchor:hover, .nav li a:hover, .pagenation a:hover, .entry-footer a:hover {
-    color: #BABABA;
-}
-.arrow-right {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin: 0 10px;
-  border-top: 2px solid  #36393d;
-  border-right:2px solid  #36393d;
-  transform: rotate(45deg);
-}
-.arrow-right:hover{
-	color: #BABABA;
-}
-footer {
-    text-align: center;
-    color:#474747;
-    margin-bottom: 5%;
-}
-footer{
- margin-top: 20%;
-}
-#snsFoot {
- z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto 0;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-    
-}
-#snsFoot li {
- list-style: none;
-    line-height: 1;
-    padding: 0 8px;
-}
-#snsFoot li a {
-    display: block;
-    cursor: pointer;
-}
-#snsFoot li img {
-    width: 21px;
-    height: auto;
-    opacity: .9;
-}
-
-/*==========================================すまほ==========================================*/
-@media screen and (max-width:600px){
-	/* ハンバーガー */
-  .menu-btn {
-    position: fixed;
-    top: 38px;
-    right: 55px;
-    z-index: 1001;
-    width: 40px;
-    height: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .menu-btn span {
-    display: block;
-    width: 150%;
-    height: 3px;
-    background:#949494;
-    margin: 6px 0;
-    transition: all 0.3s ease;
-  }
-
-  .menu-btn.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-
-  .menu-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-btn.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
-	
-
-/* メニュー本体(展開ページ)*/
-  .menu-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.9); /* ← 0.0〜1.0で調整。0.9はほぼ白 */
-    z-index: 1000;
-    display: none; /* ← 最初は非表示にしておく */
-    justify-content: center;
-    align-items: center;
-	transition: opacity 0.6s ease, visibility 0.6s ease; /* ←ここでスピード調整 */
-	  
-  }
-
-  .menu-panel.active {
-    display: flex; /* ← ボタン押したら表示 */
-  }
-
-  .menu-panel ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-	flex-direction: column; 
-	justify-content: center; /* 縦方向中央揃え */
-	align-items: center; /* 横方向中央揃え */
-	height: 100%; /* メニュー全体の高さに合わせる */
-	margin-right: 0%;
-    
-
-  }
-
-  .menu-panel ul li {
-	width: 100%;
-    margin: 20px 0;
-  }
- 
-
-  .menu-panel ul li a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #333;
-  }
-  .menu-panel ul li a:hover {
-  	color: #EFE42C; 
-  	background-color: #333; 
-  	transition: color 0.3s ease, background-color 0.3s ease; 
-  	border-radius: 25px; 
-  	padding: 10px 15px; 
-}
-	/*スマホ表示でPCナブを消す*/
-@media screen and (max-width: 600px) {
-  .pc-menu {
-    display: none !important;
-  }
-}
-
-/*PC表示でスマホメニューを消す*/
-@media screen and (min-width: 601px) {
-  .sp-menu,
-  .menu-btn,
-  .menu-panel {
-    display: none !important;
-  }
-}
+</main>
 	
 	
-	.top img{
-		width: 80px;
-	}
-
-#wrapper{
-  display: block;/*display:flex;を解除*/
-}
-section{
-  min-height:auto;/*縦を100vh⇒解除*/
-}
-
-  #left-area {
-	position: relative !important;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 50vh;
-	height: 40dvh;   /* 新しいブラウザ向け（上書きされる） */
-	margin-top: 10%;
-	margin-bottom: -10%;
-	background-position: center center;
-	background-image: url("../img/enishi.png");
-  }
-	#left-area img {
-    display: block;  /* imgタグの下の空白を消す */
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 1px 1px 1px 1%;
-}
-
 	
 	
-#right-area{
-  width:100%;/*横幅を100%にして1列に見せる*/
-}
-	.textwork1{
-		margin-top: 0%;
-	}
-	header{
-		position: -webkit-sticky;
-		position: sticky;
-		position: fixed;
-        top: 20px;
-		 margin-bottom: 0;  /* ← 念のため */
-	}
-	header img{
-		width: 100%;
-		height: 90%;
-		margin: auto;
-	}
-	h1{
-		width: 50%;
-		height: 50%;
-	}
-	
-	h1 img {
-    margin-left: 10%;
-    width: 80%;
-    height: 100%;
-		}
-	#snsFoot {
-	margin-top: 10%;
-    position: static; /* または relative */
-    bottom: auto;
-    left: auto;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; 
-}
-#snsFoot li {
-    padding: 0 10px;
-  }
+	<footer>
+&copy;ENISHI KURODA
+	<ul id="snsFoot" class="under">
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+	</footer>
 
-#snsFoot li a { 
-	align-items: center;
-}
-#snsFoot li img {
-    width: 40px;
-}
-	}
+	<script>
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+</script>
+	
+
+
+
+</body>
+</html>
