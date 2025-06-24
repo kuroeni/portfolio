@@ -490,11 +490,12 @@ header nav:not(.nav-overlay) {
     left: 0; 
   }
 	 .blockText2 {
-    width: 100%; /* これでスマホサイズの横幅に収まる */
-    overflow-x: hidden; /* 念のため */
+    width: 100%; 
+    overflow-x: hidden; 
   }
 	/* はねる */
   .blockText2 img{
+	  margin-left: 50%;
 	    margin-top: 10%;
 		width: 30%;
 	}
