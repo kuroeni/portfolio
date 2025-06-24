@@ -1,53 +1,25 @@
 @charset "UTF-8";
 /* CSS Document */
-
 *{
     margin: 0;
     padding: 0;
+}
+body{
+	font-family: 'Crimson Text', serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 html{
   overflow-x: hidden;
 }
 
-body{
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	overflow-x: hidden;
-	}
 header{
-	margin-top: 5%;
-	height: 30vh;
-	
-	
-}
-.boxH1 h1{
-	text-align: center;
-	width: 100%;
-    padding: 1rem 2rem;
-    color: #333;
-    font-size: 20px;
-    letter-spacing: 10px;
-}
-h1{
-	width:100px;
-}
-h1 img{
-	margin-top: 0px;
-	margin-left: 30%;
-	width: 80%;
-	height: 100%;
-}
-.top{
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
-.topimg{
+	margin-top: 1.5%;
+	z-index:1;
 	position: fixed;
-	z-index: 10;
-}
-.boxH1{
-	margin-left: 20%;
+    top: 0;
+    width: 100%;
+    height: 130px;
+    justify-content: center;
 }
 .push{
 	/*テキストの基点とするためrelativeを指定*/
@@ -69,10 +41,8 @@ h1 img{
 	background:#333;
     color:#fff;
 }
-
-
 nav ul{
-	margin-right: 30%;
+	margin-right: 0%;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -81,307 +51,199 @@ nav li{
 	margin: 5%;
 }
 li a{
-	font-family: 'Ubuntu', sans-serif;
 	color: #474747;
 	text-decoration: none;
 }
-main{
-	margin-bottom: 20%;
+h1{
+	width:100px;
 }
-main img{
-	border-radius: 25px;
+h1 img{
+	margin-left: 10%;
+	cursor: url("../img/sunglass.png"),auto;
+	width: 80%;
+	height: 100%;
 }
-.titletext{
-	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
-	transform: rotate3d(1, 0, 0, 30deg);
-	font-weight: 400;
+.top{
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+}
+.topimg{
+	position: fixed;
+	z-index: 10;
+	cursor: url("../img/sunglass.png")auto;
+}
+
+h2{
+  	font-size:1.0rem;
+  	text-align: center;
+  	margin:0 0 30px 0;
+	color:#B1B1B1;
+}
+h2,
+#container p,/*#container...コンテンツの横幅を調整することができる。*/
+small{/*small...一回り小さいサイズで表示*/
+  margin:0 0 30px 0;
+}
+
+small{
+  display: block;
+  text-align: center;
+}
+.textwork1{
+	margin-top: 40%;
+	height: 200px;
+}
+.blockwork1{
+	margin-left:70px;
+	margin-right: 70px;
+}
+.nameplate{
+	height: 150px;
+	line-height: 150px;
+}
+.nameplate h3{
+	font-family: "A P-OTF A1ゴシック Std M";
+	font-size:1.2rem;
+	text-align: center;
 	height: 65px;
-	line-height: 70px;
-	font-size: 45px;
-	width: 	50%;
-    margin-top: 10%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
+	line-height: 65px;
 }
-.titleimg{
-	position: absolute;
-	margin-left: 5%;
-	margin-top: 3%;
+.nameplate p{
+	font-family: "A P-OTF A1ゴシック Std M";
+	font-size: 8px;
+	height: 0;
+	line-height: 0;
+	text-align: center;
 }
-.titleimg{
-	animation:fuwa ease-in-out 2s infinite alternate;/****名前　(緩やかに入って緩やかに終わる)　時間　（永遠）　行って帰ってする動き****/
+.textwork2,.textwork3 dl{
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+	line-height: 200%;
 }
-@keyframes fuwa{/****アニメーションをつける時に必要****/
-	0%{transform: translate(0%,0%)/*Ｘ軸とY軸*/;}
-	100%{transform: translate(0%,-20px)/*Ｘ軸とY軸*/;}
+.textwork2, dd{
+	margin-top: 30px;
+	font-size:0.9rem;
+	font-family: "A P-OTF A1ゴシック Std L";
+	 text-align: justify;
+	 font-feature-settings: "palt";
+	letter-spacing: 0.05em;
 }
-.titleimg img{
+.textwork3{
+	margin-top: 70px;
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+}
+.textwork3 dd{
+	margin-top: 20px;
+	font-family: "A P-OTF A1ゴシック Std L";
+	font-size:0.9rem;
+}
+.aicon{
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.aicon img{
 	width: 70%;
 	height: 70%;
 }
-/*==============================１段目アニメーション==============================*/
-.blockText1{
-	width: 	90%;
-    margin-top: 27%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-	
+small{
+  display: block;
+  text-align: center;
 }
-.blockText1{
-	animation: gear 5s infinite linear/*速度が一定*/;
-	
-}
-@keyframes gear{
-	0%{transform: rotateZ(0deg)}
-	100%{transform: rotateZ(360deg)}
-}
-/*==============================1枚目画像==============================*/
-.fade-block1 {/*画像サイズ、位置*/
-	width: 45%;
-    height: auto;
-    margin: 0 auto 6% 25%;
-    text-align: center;
-    position: relative;
-    left: 20%;
-}
-.hover-mask {
-  align-items: center; /* テキストの中央揃え */
-  background: rgba(0, 0, 0, .5); /* マスクの色(黒の50%) */
-  bottom: 0;
-  color: #fff; /* テキストの色 */
-  display: flex; /* テキストの中央揃え */
+/*========= 左固定レイアウトのためのCSS ===============*/
+
+/*左と右を囲う全体のエリア*/
+#wrapper{/*#wrapper...要素を囲む*/
+　width: 100%;
   height: 100%;
-  justify-content: center; /* テキストの中央揃え */
-  left: 0;
-  opacity: 0; /* 最初は透明(非表示) */
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .6s ease; /* ゆっくりopacityのみへ変化させる */
-  width: 100%;
-  border-radius: 25px;
-}
-
-.hover-mask:hover {
-  opacity: 1; /* hoverしたら透過しない(表示させる) */
-}
-.hover-mask p {
-  width: 80%; /* テキストを横幅いっぱいにならないようにする */
-}
-
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-}
-/*==============================2段目アニメーション==============================*/
-.blockText2{
-	width: 	135%;
-    margin-top: -1%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-}
-.blockText2{
-	animation:ball 0.6s infinite alternate;
-}
-@keyframes ball{
-	0%{transform: translate(0%,0%) rotateX(25deg);}
-	100%{transform: translate(0%,-10px);}
-}
-/*==============================2枚目画像==============================*/
-.fade-block2 {
-    width: 30%;
-    height: auto;
-    margin: 0 auto 5%;
-    text-align: center;
-    position: relative;
-    right: 20%;
-}
-
-.hover-mask_2 {
-  align-items: center; 
-  background: rgba(0, 0, 0, .5); 
-  color: #fff; 
-  display: flex; 
-  height: 100%;
-  justify-content: center;
-  opacity: 0; 
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  transition: opacity .6s ease; 
-  width: 100%;
-  border-radius: 25px;
-}
-
-.hover-mask_2:hover {
-  opacity: 1; /* 表示させる */
-}
-.hover-mask_2 p {
-  width: 80%;
-}
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-}
-.work {
-  position: relative;
-  display: inline-block;
-}
-/*==============================3段目アニメーション==============================*/
-.blockText3{
-	width: 	85%;
-    margin-top: 15%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-}
-.blockText3{
-	animation: gear 5s infinite linear/*速度が一定*/;
-}
-@keyframes gear{
-	0%{transform: rotateZ(0deg)}
-	100%{transform: rotateZ(360deg)}
-}
-
-/*==============================3枚目画像==============================*/
-.fade-block3 {
-    width: 40%;
-    height: auto;
-    margin: 0 auto -6%;
-    text-align: center;
-    position: relative;
-    left: 15%;
-}
-.hover-mask {
-  align-items: center; /* テキストの中央揃え */
-  background: rgba(0, 0, 0, .5); /* マスクの色(黒の50%) */
-  bottom: 0;
-  color: #fff; /* テキストの色 */
-  display: flex; /* テキストの中央揃え */
-  height: 100%;
-  justify-content: center; /* テキストの中央揃え */
-  left: 0;
-  opacity: 0; /* 最初は透明(非表示) */
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .6s ease; /* ゆっくりopacityのみへ変化させる */
-  width: 100%;
-  border-radius: 25px;
-}
-
-.hover-mask:hover {
-  opacity: 1; /* hoverしたら透過しない(表示させる) */
-}
-.hover-mask p {
-  width: 80%; /* テキストを横幅いっぱいにならないようにする */
-}
-
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-}
-
-
-.scroll-block img {
-    width: 100%;
-    height: auto;
-}
-/* ページスクロール */
-#page-top p{
-  writing-mode: vertical-rl;
-  text-decoration: none;
-  text-transform: uppercase;
-  height: 85px;
-  margin: 0;
-  letter-spacing: 5px;
-  text-align: right;
-  color: #000;
-  position: relative;
-  font-weight: bold;
-  font-size: 14px;
-}
-.page-top p::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  right: -5px;
-  width: 2px;
-  height: 20px;
-  background: #000;
-  transform: skewX(-150deg);
-}
-
-.page-top p::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  width: 2px;
-  height: 85px;
-  background: #000;
-}
-
-.page-top.is-active {
-  opacity: 1;
-  visibility: visible;
-}
-#page-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 25px;
+  position: relative;/*position stickyの基点にするため relativeをかける*/
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-  opacity: 0;
-  pointer-events: none;
-}
-#page-top.visible {
-  opacity: 0.7;
-  pointer-events: auto;
+　position: fixed;
+  flex-wrap: wrap;/*ボックスの折り返し可*/
 }
 
-#page-top:hover {
-  opacity: 1;
+/*左の画像エリア*/
+#left-area {
+  background-image: url("../img/enishi.png");
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center center; /* 真ん中寄せ */
+  background-repeat: no-repeat;
+  width: 50vw; /* 画面の左半分 */
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+.img1{
+	margin-top: 17%;
+}
+.img2{
+	margin-top: 39%;
+	margin-left: 40%;
+	position: absolute;
+}
+.img3{
+	margin-left: 50%;
 }
 
-#page-top svg {
-  fill: currentColor;
-  width: 18px;
-  height: 18px;
+/*右エリア*/
+#right-area{
+  width:50%;/*横半分50%にする*/
+	background-color:#E7E7E7;
+}
+/*右各セクション 装飾のためのCSS*/
+section{
+  min-height: 100vh;
+  padding:30px;
+}
+.back{
+	text-align: center;
+	margin-bottom: 10%;
+}
+.back a{
+	color: #333;
+	text-decoration-line: none;
+}
+.pagenation pagenation-permalink{
+	text-align: center;
+	margin-bottom: 10%;
+	
+}
+.pagenation pagenation-permalink{
+	color: #333;
+	text-decoration-line: none;
+}
+.pagenation {
+	
+    margin: 3em 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9rem;
+    letter-spacing: .1em;
+}
+.pagenation a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 1em;
+    color: #36393d;
+}
+a, .post-content-anchor:hover, .nav li a:hover, .pagenation a:hover, .entry-footer a:hover {
+    color: #BABABA;
+}
+.arrow-right {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px;
+  border-top: 2px solid  #36393d;
+  border-right:2px solid  #36393d;
+  transform: rotate(45deg);
+}
+.arrow-right:hover{
+	color: #BABABA;
 }
 footer {
     text-align: center;
@@ -418,112 +280,9 @@ footer{
     opacity: .9;
 }
 
-/* PCでは隠す */
-.hamburger-overlay,
-.nav-overlay {
-  display: none;
-}
-
-/* PC版のナビは表示 */
-header nav:not(.nav-overlay) {
-  display: block;
-}
-
 /*==========================================すまほ==========================================*/
-@media screen and (max-width: 600px){
-	header{
-		display: flex;
-		height: auto; /* ← これで中身の高さに合わせる */
-		margin-bottom:100px;
-	}
-	main{
-	}
-	.topimg{
-		margin-top: 10%;
-		
-	}
-	/* enishis portfolio */
-	.titletext{
-	margin-top: 45px;
-	align-items: center;
-	justify-content: center;	
-	width: 100%;
-	font-size: 40px;
-	line-height: 60px;
-	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
-	transform: rotate3d(1, 0, 0, 30deg);
-	font-weight: 400;
-	}
-	.titleimg {
-  	position: relative; /* 絶対配置解除 */
-  	margin: 0 auto;     /* 中央寄せ */
-  	width: 70%;         
-  	display: flex;
-  	justify-content: center; /* 画像自体を中央に */
-}
-	main{
-	margin-bottom: 20%;
-}
-   main img{
-	border-radius: 25px;
-}
-	 /* gizagiza */
-   .blockText1{
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-	margin-top: 60%;
-	left: 10%;
-	}
-	.blockText1 img{
-		width: 15%;
-	}
-	 /* 1枚目画像 */
-  .fade-block1 {
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10% auto;
-    position: relative;
-    left: 0; 
-  }
-	 .blockText2 {
-    width: 100%; 
-    overflow-x: hidden; 
-  }
-	/* はねる */
-  .blockText2 img{
-	  margin-left: 50%;
-	    margin-top: 10%;
-		width: 30%;
-	}
-	 /* 2枚目画像 */
-  .fade-block2 {
-    width: 50%;
-  }
-	/* ぐるぐる */
-  .blockText3 img{
-		width: 25%;
-	}
+@media screen and (max-width:600px){
 	
-
-  /* PC用ナビを非表示にする */
-  nav:not(.menu-panel) {
-    display: none !important;
-  }
-	  .mobile-only {
-    display: block;
-  }
-
-  /* 既存の PC 用 nav を非表示 */
-  header nav:not(.nav-overlay) {
-    display: none;
-  }
-
- /* PC版ナビは隠す */
-  header nav:not(.nav-overlay) {
-    display: none;
-  }
-  
 	/* ハンバーガー */
   .menu-btn {
     position: fixed;
@@ -566,12 +325,12 @@ header nav:not(.nav-overlay) {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.9); /* ← 0.0〜1.0で調整。0.9はほぼ白 */
     z-index: 1000;
     display: none; /* ← 最初は非表示にしておく */
     justify-content: center;
     align-items: center;
-	transition: opacity 0.6s ease, visibility 0.6s ease; 
+	transition: opacity 0.6s ease, visibility 0.6s ease; /* ←ここでスピード調整 */
 	  
   }
 
@@ -607,11 +366,86 @@ header nav:not(.nav-overlay) {
   	color: #EFE42C; 
   	background-color: #333; 
   	transition: color 0.3s ease, background-color 0.3s ease; 
-  	border-radius: 25px;
+  	border-radius: 25px; 
   	padding: 10px 15px; 
 }
+	/*スマホ表示でPCナブを消す*/
+@media screen and (max-width: 600px) {
+  .pc-menu {
+    display: none !important;
+  }
+}
+
+/*PC表示でスマホメニューを消す*/
+@media screen and (min-width: 601px) {
+  .sp-menu,
+  .menu-btn,
+  .menu-panel {
+    display: none !important;
+  }
+}
 	
-#snsFoot {
+	
+	.top img{
+		width: 80px;
+	}
+
+#wrapper{
+  display: block;/*display:flex;を解除*/
+}
+section{
+  min-height:auto;/*縦を100vh⇒解除*/
+}
+
+  #left-area {
+	position: relative !important;
+	background-repeat: no-repeat;
+	width: 100%;
+	height:50vh;
+	margin-top: 20%;
+	margin-bottom: 10%;
+	background-position: center center;
+	background-image: url("../img/enishi.png");
+  }
+	#left-area img {
+    display: block;  /* imgタグの下の空白を消す */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 1px 1px 1px 1%;
+}
+
+	
+	
+#right-area{
+  width:100%;/*横幅を100%にして1列に見せる*/
+}
+	.textwork1{
+		margin-top: 0%;
+	}
+	header{
+		position: -webkit-sticky;
+		position: sticky;
+		position: fixed;
+        top: 20px;
+		 margin-bottom: 0;  /* ← 念のため */
+	}
+	header img{
+		width: 100%;
+		height: 90%;
+		margin: auto;
+	}
+	h1{
+		width: 50%;
+		height: 50%;
+	}
+	
+	h1 img {
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;
+		}
+	#snsFoot {
 	margin-top: 10%;
     position: static; /* または relative */
     bottom: auto;
@@ -631,34 +465,13 @@ header nav:not(.nav-overlay) {
 }
 #snsFoot li img {
     width: 40px;
-	
 }
- 
-	
-}
-
-
-
-/*@media screen and (max-width:767px){
-	header{
-		margin-bottom: 30px;
 	}
-	/*.blockworks1{
-		flex-direction: column;
-	}*/
-	/*.worksimg{
-		margin-bottom: 30px;
-		
-	}
-}*/
-/* PC表示のときはハンバーガーメニューの中身を消す */
-@media screen and (min-width: 600px) {
+/* PC表示でスマホメニューを消す：絶対最後 */
+@media screen and (min-width: 601px) {
+  .sp-menu,
+  .menu-btn,
   .menu-panel {
     display: none !important;
   }
-
-  .menu-btn {
-    display: none !important;
-  }
-
 }
