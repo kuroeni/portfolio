@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>無題ドキュメント</title>
 <link rel="stylesheet" href= "css/ritu.css" >
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +14,26 @@
 <main>
 	<header>
 	<div class="top">
-	<h1><a href="../top/top.html"><img src="img/sun.svg" alt=""/></a></h1>
-	  <nav>
+	<h1><a href="../index.html"><img src="img/sun.svg" alt=""/></a></h1>
+		  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="../index.html">home</a></li>
+      <li><a href="../works/works.html">works</a></li>
+      <li><a href="../about/about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+	  <nav class="pc-menu">
 		 <ul>
 		  <li><a href="../works/works.html" class="push">works</a></li>
 		  <li><a href="../about/about.html" class="push">about</a></li>
@@ -46,10 +65,11 @@
 		      <img src="img/DSC_0059.jpg"/>
 		   </div>
 		 <h3>TAGGED</h3>
+		 <ul class="sort-btn">
 		 <div class="tags">
 			 <p>#product</p>
-		 <p>#design</p><p>#ritu</p><p>#Sewing</p>
 		 </div>
+			 </ul>
 		 
 		 	<div class="pagenation pagenation-permalink">
       		  <a href="../zam/ritu.html" class="pager-next">Previous page</a>
@@ -59,7 +79,29 @@
 	</div>
 		
 </div>
+	<footer>
+&copy;ENISHI KURODA
+	<ul id="snsFoot" class="under">
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="../about/img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="../about/img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+	</footer>
 <!--/wrapper-->
+	<script>
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+</script>
 </main>
 </body>
 </html>
