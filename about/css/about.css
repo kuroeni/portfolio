@@ -162,16 +162,16 @@ small{
 }
 
 /*左の画像エリア*/
-#left-area{/*#fixed...要素の位置を固定する*/
-  /*左固定記述*/
-  position: -webkit-sticky;  /*Safari用*/
-  position: sticky;  /*position: sticky...スクロールすると親要素の中で追従する(画像動かない)*/
-  top:0;
-  width: 50%;/*横半分50%　縦を100vhにする*/
+#left-area {
+  background-image: url("../img/enishi.png");
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center center; /* 真ん中寄せ */
+  background-repeat: no-repeat;
+  width: 50vw; /* 画面の左半分 */
   height: 100vh;
-  /*装飾のためのCSS*/
-  background: url("../img/S__95592458.jpg");
-  background-size:cover;/*元画像の縦横比のまま要素内で限界まで大きくする*/
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 }
 .img1{
 	margin-top: 17%;
@@ -397,10 +397,9 @@ section{
     background-size: contain;
 	background-repeat: no-repeat;
 	width: 100%;
-    height: 150vh;/* スマホはcontainに変える */
+	height: 60vh;
 	background-position: center center;
 	background-image: url("../img/enishi.png");
-	background-size: cover;
   }
 	#left-area img {
     display: block;  /* imgタグの下の空白を消す */
