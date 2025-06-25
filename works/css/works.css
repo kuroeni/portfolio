@@ -537,4 +537,20 @@ footer{
     display: none !important;
   }
 }
+.menu-panel li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* タップ or ホバー時 */
+.menu-panel li a:hover,
+.menu-panel li a:active {
+  background-color: #333;
+  color: #EFE42C;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
 
