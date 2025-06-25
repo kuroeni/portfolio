@@ -454,7 +454,7 @@ $('[data-fancybox]').fancybox({
 	
 });</script>
 <script src="js/6-2-2.js"></script>
-	<script>
+	<script>//＝＝＝ ページトップJava
   const btn = document.querySelector('.menu-btn');
   const panel = document.querySelector('.menu-panel');
 
@@ -476,19 +476,28 @@ pageTop.addEventListener('click', function(e) {
   window.scroll({ top: 0, behavior: 'smooth' });
 });
 </script>
-	<script>
+	<script>//＝＝＝ スマホ版、長押しでホバー効果、指離すまでリンク開かないよJava
 document.querySelectorAll('.item-content a').forEach(function(link){
+  let pressTimer;
+  let href = link.getAttribute('href');
+
   link.addEventListener('touchstart', function(e){
-    e.preventDefault(); // すぐに飛ばないようにする
+    pressTimer = setTimeout(() => {
+      link.classList.add('long-pressed'); // 長押し中のエフェクトなどに使える
+    }, 500); // 0.5秒押したら「準備OK」
+  });
 
-    const href = this.getAttribute('href');
+  link.addEventListener('touchend', function(e){
+    if (link.classList.contains('long-pressed')) {
+      window.location.href = href; // 指を離したタイミングで遷移
+    }
+    clearTimeout(pressTimer);
+    link.classList.remove('long-pressed'); // エフェクト終了
+  });
 
-    // 一瞬ホバー風に変化させる
-    this.classList.add('tapped');
-    
-    setTimeout(() => {
-      window.location.href = href;
-    }, 200); // 0.2秒後に遷移
+  link.addEventListener('touchmove', function(e){
+    clearTimeout(pressTimer); // スワイプしたらキャンセル
+    link.classList.remove('long-pressed');
   });
 });
 </script>
