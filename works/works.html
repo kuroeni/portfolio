@@ -476,5 +476,21 @@ pageTop.addEventListener('click', function(e) {
   window.scroll({ top: 0, behavior: 'smooth' });
 });
 </script>
+	<script>
+document.querySelectorAll('.item-content a').forEach(function(link){
+  link.addEventListener('touchstart', function(e){
+    e.preventDefault(); // すぐに飛ばないようにする
+
+    const href = this.getAttribute('href');
+
+    // 一瞬ホバー風に変化させる
+    this.classList.add('tapped');
+    
+    setTimeout(() => {
+      window.location.href = href;
+    }, 200); // 0.2秒後に遷移
+  });
+});
+</script>
 </body>
 </html>
