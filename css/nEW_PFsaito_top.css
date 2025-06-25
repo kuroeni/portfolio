@@ -290,8 +290,16 @@ main img{
 .hover-mask:hover {
   opacity: 1; /* hoverしたら透過しない(表示させる) */
 }
+
 .hover-mask p {
-  width: 80%; /* テキストを横幅いっぱいにならないようにする */
+　font-family: 'Zen Kaku Gothic New', sans-serif;
+  color: #E1E1E1;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: 80%;
 }
 
 .worksTitle{
