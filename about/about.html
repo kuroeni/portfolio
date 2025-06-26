@@ -11,12 +11,12 @@
   <meta property="og:description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
   <meta property="og:type" content="website">
     <meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png"><!--SNSシェア用-->
-  <meta property="og:url" content="https://kuroeni.github.io/portfolio/"> 
+  
 	<!--ツイッター-->
-	 <meta name="twitter:card" content="summary_large_image"> <!--ツイッターシェアのサムネ-->
-	<meta name="twitter:title" content="ENISHI | Portfolio"><!--ページタイトル-->
-	<meta name="twitter:description" content="ポートフォリオサイト |デザイン、アートの制作活動記録"><!--ページの説明-->
-	<meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
+	 <meta name="twitter:card" content="summary_large_image"> <!-- ←これが超重要！ -->
+	<meta name="twitter:title" content="ENISHI | Portfolio">
+	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
+	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
 <title>ENISHI | Portfolio</title>
 	<link rel="stylesheet" href="css/about.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,12 @@
 			</section>
 		</div>
 	</div>
-	
+	<!-- ページトップ -->
+			<!-- ページトップ -->
+<a href="#" id="page-top" aria-label="ページトップへ">
+  <span class="arrow"></span>
+  <span class="page-text">PAGE TOP</span>
+</a>
 </main>
 	
 	
@@ -132,6 +137,19 @@
     btn.classList.toggle("active");
     panel.classList.toggle("active");
   });
+		const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
+  }
+});
+
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
 </script>
 	
 
