@@ -122,7 +122,7 @@ main img{
 }
 /*スクロール**/
 .container_04 {
-
+position: fixed;
 }
 
 .scrollbar-text_04 {
