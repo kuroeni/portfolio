@@ -159,65 +159,22 @@ footer{
 	color:#686868;
 	border-color:#686868; 
 }
-/* ページスクロール */
-#page-top p{
-  writing-mode: vertical-rl;
-  text-decoration: none;
-  text-transform: uppercase;
-  height: 85px;
-  margin: 0;
-  letter-spacing: 5px;
-  text-align: right;
-  color: #000;
-  position: relative;
-  font-weight: bold;
-  font-size: 14px;
-}
-.page-top p::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  right: -5px;
-  width: 2px;
-  height: 20px;
-  background: #000;
-  transform: skewX(-150deg);
-}
-
-.page-top p::after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  width: 2px;
-  height: 85px;
-  background: #000;
-}
-
-.page-top.is-active {
-  opacity: 1;
-  visibility: visible;
-}
 #page-top {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 25px;
+  right: 0;
+  bottom: 0;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  font-size: 14px;
+  flex-direction: row;
+  margin-right: -3%;
+  gap: 0px;
   cursor: pointer;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  text-decoration-line: none;
 }
+
 #page-top.visible {
   opacity: 0.7;
   pointer-events: auto;
@@ -227,10 +184,42 @@ footer{
   opacity: 1;
 }
 
-#page-top svg {
-  fill: currentColor;
-  width: 18px;
-  height: 18px;
+#page-top .arrow {
+  position: relative;
+  width: 1px;
+  height: 80px;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  margin-right: 7px;
+}
+
+#page-top .arrow::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #000;
+}
+
+#page-top .page-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 7px;
+  letter-spacing: 3px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transform: rotate(90deg);
+  transform-origin: left center;
+  flex-shrink: 0;
+	margin-bottom: 50px;
 }
 /*==========================================すまほ==========================================*/
 
