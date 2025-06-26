@@ -253,6 +253,68 @@ footer{
     height: auto;
     opacity: .9;
 }
+#page-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  margin-right: -3%;
+  gap: 0px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  text-decoration-line: none;
+}
+
+#page-top.visible {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+#page-top:hover {
+  opacity: 1;
+}
+
+#page-top .arrow {
+  position: relative;
+  width: 1px;
+  height: 80px;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  margin-right: 7px;
+}
+
+#page-top .arrow::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #000;
+}
+
+#page-top .page-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 7px;
+  letter-spacing: 3px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transform: rotate(90deg);
+  transform-origin: left center;
+  flex-shrink: 0;
+	margin-bottom: 50px;
+}
 /*==========================================すまほ==========================================*/
 @media screen and (max-width: 600px) {
   #wrapper {
@@ -350,15 +412,28 @@ footer{
   .pc-menu {
     display: none !important;
   }
-  #snsFoot {
-    position: static;
+	
+#snsFoot {
+	margin-top: 10%;
+    position: static; /* または relative */
+    bottom: auto;
+    left: auto;
+    transform: none;
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    align-items: center;
+    z-index: 1; 
+}
+#snsFoot li {
+    padding: 0 10px;
   }
-  #snsFoot li img {
+
+#snsFoot li a { 
+	align-items: center;
+}
+#snsFoot li img {
     width: 40px;
-  }
+}
   body.menu-open {
     overflow: hidden;
   }
