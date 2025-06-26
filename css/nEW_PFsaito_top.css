@@ -123,9 +123,11 @@ main img{
 /*スクロール**/
 .container_04 {
   height: 400px;
+	
 }
 
 .scrollbar-text_04 {
+	margin-bottom: 35%;
   display: inline-block;
   position: absolute;
   bottom: 0;
@@ -142,6 +144,7 @@ main img{
 }
 
 .scrollbar_04 {
+	margin-bottom: 35%;
   position: absolute;
   left: 27px; /* ← テキストと同じ位置に */
   transform: none; /* ← 中央寄せの解除 */
