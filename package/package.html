@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no"><!--電話番号がリンクの青文字にならないようにする-->
+<meta name="description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
+<meta name="robots" content="max-image-preview:large">
+<!-- OGP（SNSシェア用） -->
+  <meta property="og:title" content="ENISHI | Portfolio">
+  <meta property="og:description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png"><!--SNSシェア用-->
+  <meta property="og:url" content="https://kuroeni.github.io/portfolio/"> 
+	<!--ツイッター-->
+  	<meta name="twitter:card" content="summary_large_image"> <!-- ←これが超重要！ -->
+	<meta name="twitter:title" content="ENISHI | Portfolio">
+	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
+	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
+<title>ENISHI | Portfolio</title>
+<link rel="stylesheet" href= "css/sottenlime.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+	<link rel="icon" href="https://kuroeni.github.io/portfolio/catch/favicon.ico" type="image/x-icon"><!--ファビコン-->
+</head>
+<body>
+
+<main>
+	<header>
+	<div class="top">
+	<h1><a href="index.html"><img src="img/sun.svg" alt=""/></a></h1>
+		  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="index.html">home</a></li>
+      <li><a href="works/works.html">works</a></li>
+      <li><a href="about/about.html">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+	  <nav class="pc-menu">
+		 <ul>
+			 <li><a href="index.html" class="push">home</a></li> 
+		  <li><a href="works/works.html" class="push">works</a></li>
+		  <li><a href="about/about.html" class="push">about</a></li>
+		   <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+		  <!--<li><a href="../contact/cotact.html" class="push">contact</a></li>-->
+		 </ul>
+	</nav>
+  </div>
+	</header>
+<div id="wrapper"><!--全体-->	
+	<div id="left_area"><!--左の画像エリア--></div>	
+	<div id="right_area"><!--右のエリア-->
+	 <section class="blockwork1">
+		        <h2>「cotten lime」</h2>
+				<div class="textwork1">
+					<p>照明から広がる風景</p>
+				</div>
+				<div class="textwork2">
+				  <p>石灰棚をモチーフにした照明です。石灰棚がつくり出す独特の空間や風景を、光の演出を通して感じられるようなデザインに仕上げました。</p>
+		</div>
+			  <div class="textwork3">
+					<p>授業課題　　　照明実習</p>
+				    <p>制作課題　　　9ヶ月</p>
+			  </div>
+		 	<div class="img1">
+		      <img src="img/DSC_8150.jpg"/>
+		    </div>
+		   
+		 <h3>TAGGED</h3>
+		 <ul class="sort-btn">
+		 <div class="tags">
+			 <p>#product</p>
+		 </div>
+			 </ul>
+		 
+		 	<div class="pagenation pagenation-permalink">
+      		  <a href="zam/ritu.html" class="pager-next">Previous page</a>
+			<div class="arrow-right"></div>
+        	</div>
+	</section>
+	</div>
+		
+</div>
+	<footer>
+&copy;ENISHI KURODA
+	<ul id="snsFoot" class="under">
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+	</footer>
+
+		<!-- ページトップ -->
+<a href="#" id="page-top" aria-label="ページトップへ">
+  <span class="arrow"></span>
+  <span class="page-text">PAGE TOP</span>
+</a>
+	<!--/wrapper-->
+	<script>
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+		const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
+  }
+});
+
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
+</script>
+</main>
+</body>
+</html>
