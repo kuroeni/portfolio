@@ -181,7 +181,15 @@ h3{
 	display: flex;
 	margin-bottom: 15%;
 	justify-content: space-between;
-	color: #8F8F8F;
+	
+}
+.tags a{
+	text-decoration: none;
+	color: #333;
+}
+.tags:hover a {
+  color: #BABABA;
+	transition: all .2s;/*ホバーした時の動き*/
 }
 
 .pagenation pagenation-permalink{
