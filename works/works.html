@@ -564,6 +564,54 @@ document.querySelectorAll('.item-content a').forEach(function(link){
       }
     });
   });
+		 // 該当タグページに戻る
+		window.addEventListener('load', () => {
+  const grid = new Muuri('.grid', {
+    showDuration: 600,
+    showEasing: 'ease',
+    hideDuration: 600,
+    hideEasing: 'ease',
+    layoutDuration: 700,
+    layoutEasing: 'ease',
+  });
+  grid.refreshItems().layout();
+
+  document.querySelectorAll('.sort-btn li').forEach(li => {
+    li.addEventListener('click', () => {
+      document.querySelectorAll('.sort-btn li').forEach(btn => btn.classList.remove('active'));
+      li.classList.add('active');
+
+      const sortClass = li.className.split(' ').find(c => c.startsWith('sort'));
+      if (sortClass === 'sort00') {
+        grid.show('');
+      } else {
+        grid.filter(`.${sortClass}`);
+      }
+    });
+  });
+
+  // URLの ?tag=product などを取得して対応するボタンをクリックする
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+  if (tag) {
+    const tagToClassMap = {
+      product: "sort01",
+      graphics: "sort02",
+      projects: "sort03",
+      planning: "sort04",
+      others: "sort05",
+      all: "sort00"
+    };
+    const className = tagToClassMap[tag.toLowerCase()];
+    if (className) {
+      const targetButton = document.querySelector(`.sort-btn li.${className}`);
+      if (targetButton) targetButton.click();
+    }
+  }
+});
+		
+		
+		
 </script>
 </body>
 </html>
