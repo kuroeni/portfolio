@@ -86,12 +86,10 @@
 		
 		 	
 		   
-		 <h3>TAGGED</h3>
-		 <ul class="sort-btn">
-		 <div class="tags">
-			 <p>#product</p>
-		 </div>
-			 </ul>
+		<h3>TAGGED</h3>
+<div class="tags">
+	<a href="../works/works.html?tag=product">#product</a>
+</div>
 		 
 		 	<div class="pagenation pagenation-permalink">
   <a href="../kamiwaza/kamiwaza.html" class="pager-prev">
@@ -149,6 +147,20 @@ pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
+		// タグを該当タグに飛ぶように
+		window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+
+  if (tag) {
+    // 例えば #product のボタンに .sort-btn li[data-filter="product"] みたいな属性がついてる場合
+    const targetButton = document.querySelector(`.sort-btn li[data-filter="${tag}"]`);
+    if (targetButton) {
+      targetButton.click(); // 対応するボタンを自動でクリック
+    }
+  }
+});
+		
 </script>
 </main>
 </body>
