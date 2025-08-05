@@ -519,6 +519,7 @@ document.querySelectorAll('.item-content a').forEach(function(link){
 </script>
 	<script>
   let grid;
+  let originalOrder = [];
 
   window.addEventListener('load', function () {
     grid = new Muuri('.grid', {
@@ -531,8 +532,12 @@ document.querySelectorAll('.item-content a').forEach(function(link){
     });
 
     grid.refreshItems().layout();
-    // grid.shuffle();  // ここをコメントアウトしてみて、代わりに
-    grid.sort(() => Math.random() - 0.5); // ランダムにソートしてみる
+
+    // 初期順序を保存
+    originalOrder = grid.getItems();
+
+    // ページロード時はシャッフル
+    grid.sort(() => Math.random() - 0.5);
   });
 
   $(function () {
@@ -545,11 +550,17 @@ document.querySelectorAll('.item-content a').forEach(function(link){
       $btn.addClass('active');
 
       if (sortClass === 'sort00') {
+        // ALLボタン：全部表示してシャッフル
         grid.show('');
-        // grid.shuffle(); // もし効かなかったらこれもコメントアウトして
-        grid.sort(() => Math.random() - 0.5); // ソートでシャッフル代わり
+        grid.sort(() => Math.random() - 0.5);
       } else {
+        // その他のカテゴリ：絞り込み
         grid.filter(`.${sortClass}`);
+
+        // 元の順序に戻すためにソートし直す
+        grid.sort((a, b) => {
+          return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+        });
       }
     });
   });
