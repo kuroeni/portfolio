@@ -19,6 +19,7 @@ body, a, button, input, textarea {
   z-index: 9999;        /* 最前面に表示 */
 }
 
+
 body{
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
@@ -500,6 +501,7 @@ body, a, button, input, textarea {
 /* カスタムカーソルを非表示 */
 #custom-cursor {
   display: none !important; /* 画像を完全に消す */
+	  background-image: none !important;
 }
 	.topimg{
 		margin-top: 10%;
