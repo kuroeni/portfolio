@@ -1,53 +1,45 @@
 @charset "UTF-8";
 /* CSS Document */
-
 *{
     margin: 0;
     padding: 0;
 }
-html{
-  overflow-x: hidden;
+/* 通常のカーソルを非表示 */
+body, a, button, input, textarea {
+  cursor: none !important;
+}
+
+/* カスタムカーソル */
+#custom-cursor {
+  position: fixed;      /* ページスクロールで追従 */
+  width: 32px;
+  height: 32px;
+  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
+  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
+  z-index: 9999;        /* 最前面に表示 */
 }
 
 body{
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
+	cursor: url("../img/cursor.svg"), auto;
+	
 	}
+html{
+  overflow-x: hidden;
+	
+}
+
 header{
-	margin-top: 5%;
-	height: 30vh;
-	
-	
-}
-.boxH1 h1{
-	text-align: center;
-	width: 100%;
-    padding: 1rem 2rem;
-    color: #333;
-    font-size: 20px;
-    letter-spacing: 10px;
-}
-h1{
-	width:100px;
-}
-h1 img{
-	margin-top: 0px;
-	margin-left: 30%;
-	width: 80%;
-	height: 100%;
-}
-.top{
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
-.topimg{
+	margin-top: 1.5%;
+	z-index:1;
 	position: fixed;
-	z-index: 10;
-}
-.boxH1{
-	margin-left: 20%;
+    top: 0;
+    width: 100%;
+    height: 130px;
+    justify-content: center;
+	
 }
 .push{
 	/*テキストの基点とするためrelativeを指定*/
@@ -63,30 +55,64 @@ h1 img{
 	background-color: #EFE42C;;
     outline: none;/*入力中に箱が入力中ということを表す*/
     transition: all .2s;/*ホバーした時の動き*/
+	cursor: url("../img/cursor.svg"), auto;
 }
 
 .push:hover{
 	background:#333;
     color:#fff;
 }
-
-
+.push.active {
+  background: #333;
+  color: #fff;
+}
 nav ul{
-	margin-right: 30%;
+	margin-right: 0%;
 	display: flex;
 	justify-content: flex-end;
+	
 }
 nav li{
 	list-style: none;
 	margin: 5%;
+	
 }
 li a{
 	font-family: 'Ubuntu', sans-serif;
 	color: #474747;
 	text-decoration: none;
+	
 }
+
+h1{
+	width:100px;
+}
+h1 img{
+	margin-left: 10%;
+	cursor: url("../img/cursor.svg"),auto;
+	width: 80%;
+	height: 100%;
+}
+.top{
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+}
+.topimg{
+	position: fixed;
+	z-index: 10;
+	cursor: url("../img/cursor.svg"),auto;
+}
+
+.boxH1{
+	margin-left: 20%;
+}
+
+
 main{
+	margin-top: 15%;
 	margin-bottom: 20%;
+	cursor: url("../img/cursor.svg"), auto;
 }
 main img{
 	border-radius: 25px;
@@ -97,17 +123,20 @@ main img{
 	font-weight: 400;
 	height: 65px;
 	line-height: 70px;
-	font-size: 45px;
+	font-size: 60px;
 	width: 	50%;
-    margin-top: 10%;
+    margin-top: 8%;
     position: absolute;
     text-align: center;
     z-index: 1;
 }
+.titletext p{
+	margin-left: 20%;
+}
 .titleimg{
 	position: absolute;
-	margin-left: 5%;
-	margin-top: 3%;
+	margin-left: 13%;
+	margin-top: 1%;
 }
 .titleimg{
 	animation:fuwa ease-in-out 2s infinite alternate;/****名前　(緩やかに入って緩やかに終わる)　時間　（永遠）　行って帰ってする動き****/
@@ -120,7 +149,6 @@ main img{
 	width: 70%;
 	height: 70%;
 }
-
 
 @keyframes circlemove {
   0% {
@@ -147,8 +175,8 @@ main img{
 }
 /*==============================１段目アニメーション==============================*/
 .blockText1{
-	width: 	90%;
-    margin-top: 27%;
+	width: 	100%;
+    margin-top: 20%;
     position: absolute;
     text-align: center;
     z-index: 1;
@@ -158,18 +186,23 @@ main img{
 	animation: gear 5s infinite linear/*速度が一定*/;
 	
 }
+
 @keyframes gear{
 	0%{transform: rotateZ(0deg)}
 	100%{transform: rotateZ(360deg)}
 }
 /*==============================1枚目画像==============================*/
 .fade-block1 {/*画像サイズ、位置*/
-	width: 45%;
+	width: 70%;
     height: auto;
-    margin: 0 auto 6% 25%;
+    margin: 0 auto 6% 15%;
     text-align: center;
     position: relative;
     left: 20%;
+}
+.scroll-block img {
+    width: 100%;
+    height: auto;
 }
 .hover-mask {
   align-items: center; /* テキストの中央揃え */
@@ -205,6 +238,7 @@ main img{
 }
 .work img{
 	display:block;
+
 }
 /*==============================2段目アニメーション==============================*/
 .blockText2{
@@ -236,7 +270,7 @@ main img{
   background: rgba(0, 0, 0, .5); 
   color: #fff; 
   display: flex; 
-  height: 100%;
+  height: 120%;
   justify-content: center;
   opacity: 0; 
   position: absolute;
@@ -245,7 +279,7 @@ main img{
   top: 0;
   bottom: 0;
   transition: opacity .6s ease; 
-  width: 100%;
+  width: 120%;
   border-radius: 25px;
 }
 
@@ -339,10 +373,7 @@ main img{
 }
 
 
-.scroll-block img {
-    width: 100%;
-    height: auto;
-}
+
 #page-top {
   position: fixed;
   right: 0;
@@ -477,7 +508,12 @@ header nav:not(.nav-overlay) {
 	transform: rotate3d(1, 0, 0, 30deg);
 	font-weight: 400;
 	}
+	.titletext p{
+		margin-left: 0%;
+		
+	}
 	.titleimg {
+		margin-top: 30%;
   	position: relative; /* 絶対配置解除 */
   	margin: 0 auto;     /* 中央寄せ */
   	width: 70%;         
@@ -485,6 +521,7 @@ header nav:not(.nav-overlay) {
   	justify-content: center; /* 画像自体を中央に */
 }
 	main{
+    margin-top: 30%;
 	margin-bottom: 20%;
 }
    main img{
