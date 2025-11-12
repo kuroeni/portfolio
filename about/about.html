@@ -179,7 +179,30 @@ pageTop.addEventListener('click', function(e) {
   }
 });
 
+	
+	
+  // ランダム背景用スクリプト
+  document.addEventListener("DOMContentLoaded", function() {
+    // 画像のパスを配列
+    const images = [
+      "../img/kuroeni.jpg",
+      "./img/kuroeni2.jpg",
+      "./img/kuroeni3.jpg",
+	  "./img/kuroeni4.jpg",
+    ];
+
+    // ランダムに1枚選択
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    // left-area に背景画像を適用
+    const leftArea = document.getElementById("left-area");
+    leftArea.style.backgroundImage = `url("${randomImage}")`;
+    leftArea.style.backgroundSize = "cover";
+    leftArea.style.backgroundPosition = "center center";
+    leftArea.style.backgroundRepeat = "no-repeat";
+  });
 </script>
+	
 	
 
 
