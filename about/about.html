@@ -63,12 +63,15 @@
   </div>
 	</header>
 	<div id="wrapper">
-		<div id="left-area">
+			
+		
+		<div id="left-area" >
 			<!--<div class="img1"><img src="../img/guru.png" width="200" height="179" alt=""/></div>-->
 			<!--<div class="img2"><img src="../img/mozi-8.png" width="263" height="61" alt=""/></div>-->
 			<!--<div class="img3"><img src="../img/S__95592456.png" width="300" height="450" alt=""/></div>-->
-			
+		
 	  </div>
+			
 		
 		<!--右--><div id="right-area">
 			<section class="blockwork1">
@@ -83,8 +86,8 @@
 					<dl>経歴
         				<dt>2021年 &nbsp;大阪市立工芸高等学校　プロダクトデザイン科出身<span><br>
 						<dt>2024年&nbsp;大阪市立デザイン教育研究所
-							<br>2024年&nbsp;オルゴ株式会社 開発本部企画課 入社<br> &emsp;&emsp;&emsp;&nbsp;&nbsp; 自社商品のLP、POP、チラシ、<br>&emsp;&emsp;&emsp;&nbsp;&nbsp; 展示台、商品撮影などの販促を主に担当
-							<br>2025年&nbsp;オルゴ株式会社 開発本部企画課 退社</dt></span></dt>
+							<br>2024年&nbsp;魔法瓶・理美容メーカー 開発本部企画課 入社<br> &emsp;&emsp;&emsp;&nbsp;&nbsp; 自社商品のLP、POP、チラシ、<br>&emsp;&emsp;&emsp;&nbsp;&nbsp; 展示台、商品撮影などの販促を主に担当
+							<br>2025年&nbsp;魔法瓶・理美容メーカー 開発本部企画課 退社</dt></span></dt>
       				</dl>
 					<dd>出展経験<br>2025年　グループ展「日日と骨。」を開催
 					</dd>
@@ -103,6 +106,9 @@
 				
 			</section>
 		</div>
+			
+		
+		
 	</div>
 	<!-- ページトップ -->
 			<!-- ページトップ -->
@@ -150,6 +156,29 @@ pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
+		
+		window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  const section3 = document.getElementById('section3');
+  const section3Top = section3.offsetTop;
+  const section3Height = section3.offsetHeight;
+
+  // 追加するセクションがあれば、それぞれに id を振っておく
+  // 例: #section4, #section5 など
+
+  const leftArea = document.getElementById('left-area');
+
+  // 条件に応じて背景画像切り替え
+  if (scrollY < section3Top) {
+    leftArea.className = 'bg1';
+  } else if (scrollY >= section3Top && scrollY < section3Top + section3Height) {
+    leftArea.className = 'bg2';
+  } else {
+    leftArea.className = 'bg3';
+  }
+});
+
 </script>
 	
 
