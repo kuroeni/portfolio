@@ -492,7 +492,15 @@ header nav:not(.nav-overlay) {
 	}
 	main{
 	}
-	
+	/* 通常のカーソルを表示（非表示指定を解除） */
+body, a, button, input, textarea {
+  cursor: auto !important; /* ← auto に戻すことで通常のカーソル表示 */
+}
+
+/* カスタムカーソルを非表示 */
+#custom-cursor {
+  display: none !important; /* 画像を完全に消す */
+}
 	.topimg{
 		margin-top: 10%;
 		
@@ -596,7 +604,7 @@ header nav:not(.nav-overlay) {
     background: none;
     border: none;
     cursor: pointer;
-  }
+	}
 
   .menu-btn span {
     display: block;
