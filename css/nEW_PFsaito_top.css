@@ -521,7 +521,7 @@ header nav:not(.nav-overlay) {
   	justify-content: center; /* 画像自体を中央に */
 }
 	main{
-    margin-top: 30%;
+    margin-top: 10%;
 	margin-bottom: 20%;
 }
    main img{
