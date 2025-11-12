@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
 	font-family: 'Crimson Text', serif;
 	font-family: 'Ubuntu', sans-serif;
@@ -167,16 +168,27 @@ small{
 
 /*左の画像エリア*/
 #left-area {
-  background-image: url("../img/kuroeni.jpg");
-  background-size: cover; /* 画面いっぱいに表示 */
-  background-position: center center; /* 真ん中寄せ */
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  width: 50vw; /* 画面の左半分 */
+  width: 50vw;
   height: 100vh;
   position: sticky;
   top: 0;
   overflow: hidden;
+  transition: background-image 0.6s ease; /* ←切り替え時に自然なフェード */
 }
+/*#left-area {
+  background-image: url("../img/kuroeni.jpg");
+  background-size: cover; /* 画面いっぱいに表示 */
+ /* background-position: center center; /* 真ん中寄せ */
+  /*background-repeat: no-repeat;
+  width: 50vw; /* 画面の左半分 */
+ /* height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}*/
 .img1{
 	margin-top: 17%;
 }
