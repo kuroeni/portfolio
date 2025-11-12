@@ -89,7 +89,7 @@ h1{
 }
 h1 img{
 	margin-left: 10%;
-	cursor: url("../img/cursor.svg"),auto;
+	
 	width: 80%;
 	height: 100%;
 }
@@ -101,7 +101,7 @@ h1 img{
 .topimg{
 	position: fixed;
 	z-index: 10;
-	cursor: url("../img/cursor.svg"),auto;
+	
 }
 
 .boxH1{
@@ -112,7 +112,7 @@ h1 img{
 main{
 	margin-top: 15%;
 	margin-bottom: 20%;
-	cursor: url("../img/cursor.svg"), auto;
+	
 }
 main img{
 	border-radius: 25px;
@@ -492,21 +492,7 @@ header nav:not(.nav-overlay) {
 	}
 	main{
 	}
-	/* 通常のカーソルを非表示 */
-body, a, button, input, textarea {
-  cursor: none !important;
-}
-
-/* カスタムカーソル */
-#custom-cursor {
-  position: fixed;      /* ページスクロールで追従 */
-  width: 32px;
-  height: 32px;
-  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
-  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
-  z-index: 9999;        /* 最前面に表示 */
-}
-
+	
 	.topimg{
 		margin-top: 10%;
 		
