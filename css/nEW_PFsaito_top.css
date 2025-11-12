@@ -492,6 +492,21 @@ header nav:not(.nav-overlay) {
 	}
 	main{
 	}
+	/* 通常のカーソルを非表示 */
+body, a, button, input, textarea {
+  cursor: none !important;
+}
+
+/* カスタムカーソル */
+#custom-cursor {
+  position: fixed;      /* ページスクロールで追従 */
+  width: 32px;
+  height: 32px;
+  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
+  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
+  z-index: 9999;        /* 最前面に表示 */
+}
+
 	.topimg{
 		margin-top: 10%;
 		
