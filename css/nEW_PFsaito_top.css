@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+	 font-family: system-ui, sans-serif;
 }
 /* 通常のカーソルを非表示 */
 body, a, button, input, textarea {
@@ -27,6 +28,7 @@ body{
 	cursor: url("../img/cursor.svg"), auto;
 	 /*background-color:rgba(50, 50, 10, 0.1); */
 	}
+
 html{
   overflow-x: hidden;
 	
@@ -727,25 +729,75 @@ body, a, button, input, textarea {
     position: relative;
     left: 0; 
   }
-	 .blockText2 {
-    width: 100%; 
-    overflow-x: hidden; 
+
+	 .about-wrapper {
+    display: flex;             /* block → flex に戻す */
+    flex-direction: column;    /* 縦並び */
+    align-items: center;       /* 横方向中央揃え */
+    justify-content: flex-start; /* 必要なら中央縦揃えに変更可能 */
+    gap: 10px;
+    margin-top: 5%;
+    position: relative;
   }
-	/* はねる */
-  .blockText2 img{
-	  margin-left: 50%;
-	    margin-top: 10%;
-		width: 30%;
-	}
-	 /* 2枚目画像 */
-  .fade-block2 {
-    width: 50%;
+
+  /* 画像サイズを縮小 */
+   .about-me-img,
+  .about-me-img2,
+  .about-me-img3,
+  .about-me-img4 {
+    position: absolute;   /* flex 配下でも絶対配置を維持 */
+    width: 20%;           /* 必要に応じて調整 */
+    top: 50px;            /* 初期位置 */
+    left: 20%;            /* 初期位置 */
+    margin: 0;            /* margin はリセット */
   }
-	/* ぐるぐる */
-  .blockText3 img{
-		width: 25%;
-	}
-	
+
+  .about-me-img2 { top: 120px; left: 50%; }
+  .about-me-img3 { top: 200px; left: 20%; }
+  .about-me-img4 { top: 300px; left: 50%; }
+
+  /* h3 のサイズと位置調整 */
+  .about-name {
+    font-size: 1.8rem; /* PC:30px → スマホで縮小 */
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* カードを中央に配置しサイズ縮小 */
+   .card {
+    width: 120px;
+    height: 200px;
+    margin: 0 auto;   /* 横中央 */
+    transform: rotate(12deg);
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.05); /* 傾きを削除 */
+  }
+
+  .cardface {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .cardface__front,
+  .cardface__back {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* タイトル画像のサイズ調整 */
+  .about-title {
+    width: 180px;
+  }
+
+  .about-title-wrapper {
+    padding: 0 10px;
+  }
+
+}
 
   /* PC用ナビを非表示にする */
   nav:not(.menu-panel) {
@@ -792,6 +844,7 @@ body, a, button, input, textarea {
  
 	
 }
+
 
 
 
