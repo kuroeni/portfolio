@@ -26,6 +26,7 @@
 </head>
 
 <body>
+	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
 <!--<header>新規 header タグの内容がここに入ります</header>-->
 <main>
 	<header>
@@ -42,12 +43,12 @@
   </button>
 		<!-- メニュー本体 -->
   <nav class="menu-panel">
-    <ul>
-		<li><a href="../index.html">home</a></li>
-      <li><a href="../works/works.html">works</a></li>
-      <li><a href="../about/about.html">about</a></li>
-      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
-    </ul>
+      <ul>
+    <li><a href="../index.html" class="push">home</a></li>
+    <li><a href="../works/works.html" class="push">works</a></li>
+    <li><a href="about.html" class="push active">about</a></li>
+    <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+  		</ul>
   </nav>
 </div>
 
@@ -129,7 +130,7 @@
 	
 	
 	<footer>
-&copy;ENISHI KURODA
+
 	<ul id="snsFoot" class="under">
 		<li>
 			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
@@ -140,6 +141,7 @@
 			</a>
 		</li>
 	</ul>
+		&copy;ENISHI KURODA
 	</footer>
 
 	<script>
@@ -208,11 +210,38 @@ pageTop.addEventListener('click', function(e) {
     leftArea.style.backgroundPosition = "center center";
     leftArea.style.backgroundRepeat = "no-repeat";
   });
+	// カーソル追従
+		const cursor = document.getElementById("custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
+		
+		
+		
 </script>
 	
+	<script>// 該当ページにいる時該当ボタンは黒色に
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPath = window.location.pathname;
+
+  // PCメニューとスマホメニュー両方を取得
+  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
+
+  menuLinks.forEach(link => {
+    // 絶対パス・相対パスどちらでも対応
+    const linkPath = new URL(link.href).pathname;
+    if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script>
+
 	
-
-
-
+	
 </body>
 </html>
