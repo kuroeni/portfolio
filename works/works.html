@@ -29,6 +29,9 @@
 </head>
 	
 <body>
+	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
+	
+	
 <header>
   <div class="top">
 	<h1><a href="../index.html"><img src="img/sun.svg" alt=""></a></h1>
@@ -42,10 +45,10 @@
 		<!-- メニュー本体 -->
   <nav class="menu-panel">
     <ul>
-		<li><a href="../index.html">home</a></li>
-      <li><a href="works.html">works</a></li>
-      <li><a href="../about/about.html">about</a></li>
-      <li><a href="mailto:kuroeni8815@gmail.com">contact</a></li>
+		<li><a href="../index.html" class="push">home</a></li>
+      <li><a href="works.html" class="push">works</a></li>
+      <li><a href="../about/about.html" class="push">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
     </ul>
   </nav>
 </div>
@@ -62,6 +65,8 @@
   </div>
 	
 </header>
+	
+	
 	<ul class="sort-btn">
 			<li class="sort00 active">all</li><!--はじめに「全て」ボタンに現在地表示をつけるためactive というクラス名を付与-->
 			<li class="sort01">prodacts</li>
@@ -152,15 +157,15 @@
 		</li>
 		<li class="item sort02">
   			<div class="item-content">
-   				 <a href="../ritu/ritu.html">
-      				<a href="../ritu/ritu.html"><img src="img/infogurafic.png" width="500" height="333" alt=""/></a>
+   				 <a href="../info/info.html">
+      				<img src="img/infogurafic.png" width="500" height="333" alt=""/>
      	    <div class="hover-mask">
        			 <p>#graphic<br><br>インフォグラフィック<br>「夏フェス動員人数ランキング　&nbsp;TOP10」</p>
       		</div>
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/seizu.png" width="500" height="333" alt=""/></a>
@@ -172,15 +177,15 @@
 		</li>
 		<li class="item sort02">
   			<div class="item-content">
-   				 <a href="../ritu/ritu.html">
-      				<a href="../ritu/ritu.html"><img src="img/apple-macbook-pro-6306818_960_720.png" width="500" height="333" alt=""/></a>
+   				 <a href="../kamiwazaweb/kamiwaza.html">
+      				<img src="img/apple-macbook-pro-6306818_960_720.png" width="500" height="333" alt=""/>
      	    <div class="hover-mask">
        			<p>#graphic<br><br>WEB実習<br>「紙技展のWEBページ」</p>
       		</div>
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/bock.png" width="500" height="333" alt=""/></a>
@@ -200,7 +205,7 @@
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/shop.png" width="500" height="333" alt=""/></a>
@@ -210,7 +215,7 @@
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/maru.png" width="500" height="333" alt=""/></a>
@@ -220,7 +225,7 @@
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/名称未設定のアートワーク.png" width="500" height="333" alt=""/></a>
@@ -240,7 +245,7 @@
    				 </a>
  			</div>
 		</li>
-		<li class="item sort02">
+		<li class="item sort03">
   			<div class="item-content">
    				 <a href="../ritu/ritu.html">
       				<a href="../ritu/ritu.html"><img src="img/meta.png" width="500" height="333" alt=""/></a>
@@ -345,18 +350,19 @@
 		</li>
 		<li class="item sort05">
   			<div class="item-content">
-   				 <a href="../ritu/ritu.html">
-      				<a href="../ritu/ritu.html"><img src="img/style.png" width="500" height="333" alt=""/></a>
+   				 <a href="../stylebook/stylebook.html">
+      				<img src="img/style.png" width="500" height="333" alt=""/>
      	    <div class="hover-mask">
        			 <p>#graphic design / illustration</p>
       		</div>
    				 </a>
  			</div>
 		</li>
+		
 		<li class="item sort05">
   			<div class="item-content">
-   				 <a href="../ritu/ritu.html">
-      				<a href="../ritu/ritu.html"><img src="img/masked.png" width="500" height="333" alt=""/></a>
+   				 <a href="../masked/masked.html">
+      				<img src="img/masked.png" width="500" height="333" alt=""/>
      	    <div class="hover-mask">
        			 <p>#graphic design / illustration</p>
       		</div>
@@ -393,7 +399,16 @@
    				 </a>
  			</div>
 		</li>
-		
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../pokkie/pokkie.html">
+      				<img src="../pokkie/img/pokkie_1_500×333.jpg" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
 			
 	</ul>
 <main>
@@ -405,7 +420,7 @@
 </a>
 </main>
 <footer>
-&copy;ENISHI KURODA
+
 	<ul id="snsFoot" class="under">
 		<li>
 			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
@@ -416,6 +431,7 @@
 			</a>
 		</li>
 	</ul>
+	&copy;ENISHI KURODA
 	</footer>
 	
 	
@@ -610,6 +626,14 @@ document.querySelectorAll('.item-content a').forEach(function(link){
   }
 });
 		
+		
+	// カーソル追従
+		const cursor = document.getElementById("custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
 		
 		
 </script>
