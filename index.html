@@ -1,748 +1,202 @@
-@charset "UTF-8";
-/* CSS Document */
-*{
-    margin: 0;
-    padding: 0;
-}
-/* 通常のカーソルを非表示 */
-body, a, button, input, textarea {
-  cursor: none !important;
-}
-
-/* カスタムカーソル */
-#custom-cursor {
-  position: fixed;      /* ページスクロールで追従 */
-  width: 32px;
-  height: 32px;
-  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
-  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
-  z-index: 9999;        /* 最前面に表示 */
-}
-
-
-body{
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	overflow-x: hidden;
-	cursor: url("../img/cursor.svg"), auto;
-	
-	}
-html{
-  overflow-x: hidden;
-	
-}
-
-header{
-	margin-top: 1.5%;
-	z-index:10000;
-	position: fixed;
-    top: 0;
-    width: 100%;
-    height: 130px;
-    justify-content: center;
-	
-}
-.push{
-	/*テキストの基点とするためrelativeを指定*/
-	position: relative;
-    /*ボタンの形状*/
-	border: #555;/*囲み線はsolid、線幅指定はpx*/
-    min-width:100px;/*要素の幅の最小値を指定する*/
-	display: inline-block;
-	padding: 3px 0px 3px 0px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-	background-color: #EFE42C;;
-    outline: none;/*入力中に箱が入力中ということを表す*/
-    transition: all .2s;/*ホバーした時の動き*/
-	cursor: url("../img/cursor.svg"), auto;
-}
-
-.push:hover{
-	background:#333;
-    color:#fff;
-}
-.push.active {
-  background: #333;
-  color:  #EFE42C;
-}
-nav ul{
-	margin-right: 0%;
-	display: flex;
-	justify-content: flex-end;
-	
-}
-nav li{
-	list-style: none;
-	margin: 5%;
-	
-}
-li a{
-	font-family: 'Ubuntu', sans-serif;
-	color: #474747;
-	text-decoration: none;
-	
-}
-
-h1{
-	width:100px;
-}
-h1 img{
-	margin-left: 10%;
-	
-	width: 80%;
-	height: 100%;
-}
-.top{
-	display: flex;
-	align-items: center;
-	justify-content:space-between;
-}
-.topimg{
-	position: fixed;
-	z-index: 10;
-	
-}
-
-.boxH1{
-	margin-left: 20%;
-}
-
-
-main{
-	margin-top: 15%;
-	margin-bottom: 20%;
-	
-}
-main img{
-	border-radius: 25px;
-}
-.titletext{
-	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
-	transform: rotate3d(1, 0, 0, 30deg);
-	font-weight: 400;
-	height: 65px;
-	line-height: 70px;
-	font-size: 60px;
-	width: 	50%;
-    margin-top: 8%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-}
-.titletext p{
-	margin-left: 20%;
-}
-.titleimg{
-	position: absolute;
-	margin-left: 13%;
-	margin-top: 1%;
-}
-.titleimg{
-	animation:fuwa ease-in-out 2s infinite alternate;/****名前　(緩やかに入って緩やかに終わる)　時間　（永遠）　行って帰ってする動き****/
-}
-@keyframes fuwa{/****アニメーションをつける時に必要****/
-	0%{transform: translate(0%,0%)/*Ｘ軸とY軸*/;}
-	100%{transform: translate(0%,-20px)/*Ｘ軸とY軸*/;}
-}
-.titleimg img{
-	width: 70%;
-	height: 70%;
-}
-
-@keyframes circlemove {
-  0% {
-    bottom: 95px;
-  }
-  100% {
-    bottom: 0px;
-  }
-}
-
-@keyframes cirlemovehide {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/*==============================１段目アニメーション==============================*/
-.blockText1{
-	width: 	100%;
-    margin-top: 20%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-	
-}
-.blockText1{
-	animation: gear 5s infinite linear/*速度が一定*/;
-	
-}
-
-@keyframes gear{
-	0%{transform: rotateZ(0deg)}
-	100%{transform: rotateZ(360deg)}
-}
-/*==============================1枚目画像==============================*/
-.fade-block1 {/*画像サイズ、位置*/
-	width: 70%;
-    height: auto;
-    margin: 0 auto 6% 15%;
-    text-align: center;
-    position: relative;
-    left: 20%;
-}
-.scroll-block img {
-    width: 100%;
-    height: auto;
-}
-.hover-mask {
-  align-items: center; /* テキストの中央揃え */
-  background: rgba(0, 0, 0, .5); /* マスクの色(黒の50%) */
-  bottom: 0;
-  color: #fff; /* テキストの色 */
-  display: flex; /* テキストの中央揃え */
-  height: 100%;
-  justify-content: center; /* テキストの中央揃え */
-  left: 0;
-  opacity: 0; /* 最初は透明(非表示) */
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .6s ease; /* ゆっくりopacityのみへ変化させる */
-  width: 100%;
-  border-radius: 25px;
-}
-
-.hover-mask:hover {
-  opacity: 1; /* hoverしたら透過しない(表示させる) */
-}
-.hover-mask p {
-  width: 80%; /* テキストを横幅いっぱいにならないようにする */
-}
-
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-
-}
-/*==============================2段目アニメーション==============================*/
-.blockText2{
-	width: 	135%;
-    margin-top: -1%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-}
-.blockText2{
-	animation:ball 0.6s infinite alternate;
-}
-@keyframes ball{
-	0%{transform: translate(0%,0%) rotateX(25deg);}
-	100%{transform: translate(0%,-10px);}
-}
-/*==============================2枚目画像==============================*/
-.fade-block2 {
-    width: 30%;
-    height: auto;
-    margin: 0 auto 5%;
-    text-align: center;
-    position: relative;
-    right: 20%;
-}
-
-.hover-mask_2 {
-  align-items: center; 
-  background: rgba(0, 0, 0, .5); 
-  color: #fff; 
-  display: flex; 
-  height: 120%;
-  justify-content: center;
-  opacity: 0; 
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  transition: opacity .6s ease; 
-  width: 120%;
-  border-radius: 25px;
-}
-
-.hover-mask_2:hover {
-  opacity: 1; /* 表示させる */
-}
-.hover-mask_2 p {
-  width: 80%;
-}
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-}
-.work {
-  position: relative;
-  display: inline-block;
-}
-/*==============================3段目アニメーション==============================*/
-.blockText3{
-	width: 	85%;
-    margin-top: 15%;
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-}
-.blockText3{
-	animation: gear 5s infinite linear/*速度が一定*/;
-}
-@keyframes gear{
-	0%{transform: rotateZ(0deg)}
-	100%{transform: rotateZ(360deg)}
-}
-
-/*==============================3枚目画像==============================*/
-.fade-block3 {
-    width: 40%;
-    height: auto;
-    margin: 0 auto -6%;
-    text-align: center;
-    position: relative;
-    left: 15%;
-}
-.hover-mask {
-  align-items: center; /* テキストの中央揃え */
-  background: rgba(0, 0, 0, .5); /* マスクの色(黒の50%) */
-  bottom: 0;
-  color: #fff; /* テキストの色 */
-  display: flex; /* テキストの中央揃え */
-  height: 100%;
-  justify-content: center; /* テキストの中央揃え */
-  left: 0;
-  opacity: 0; /* 最初は透明(非表示) */
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: opacity .6s ease; /* ゆっくりopacityのみへ変化させる */
-  width: 100%;
-  border-radius: 25px;
-}
-
-.hover-mask:hover {
-  opacity: 1; /* hoverしたら透過しない(表示させる) */
-}
-
-.hover-mask p {
-　font-family: 'Zen Kaku Gothic New', sans-serif;
-  color: #E1E1E1;
-  letter-spacing: 0.2rem;
-  text-align: left;
-  margin: 0;
-  padding: 10px;
-  font-size: 0.8rem;
-  width: 80%;
-}
-
-.worksTitle{
-	margin-bottom: 8px;
-}
-
-.worksText{
-	font-size: 1.3rem;
-}
-.work img{
-	display:block;
-}
-
-
-
-#page-top {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  margin-right: -1%;
-  gap: 0px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-  text-decoration-line: none;
-}
-
-#page-top.visible {
-  opacity: 0.7;
-  pointer-events: auto;
-}
-
-#page-top:hover {
-  opacity: 1;
-}
-
-#page-top .arrow {
-  position: relative;
-  width: 1px;
-  height: 80px;
-  background-color: #000;
-  margin: 0;
-  padding: 0;
-  flex-shrink: 0;
-  margin-right: 7px;
-}
-
-#page-top .arrow::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 8px;
-  height: 8px;
-  border-left: 1px solid #000;
-}
-
-#page-top .page-text {
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 7px;
-  letter-spacing: 3px;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  transform: rotate(90deg);
-  transform-origin: left center;
-  flex-shrink: 0;
-	margin-bottom: 50px;
-}
-
-footer {
-    text-align: center;
-    color:#474747;
-    margin-bottom: 5%;
-}
-footer{
- margin-top: 20%;
-}
-#snsFoot {
- z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto 0;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-    
-}
-#snsFoot li {
- list-style: none;
-    line-height: 1;
-    padding: 0 8px;
-}
-#snsFoot li a {
-    display: block;
-    cursor: pointer;
-}
-#snsFoot li img {
-    width: 21px;
-    height: auto;
-    opacity: .9;
-}
-
-/* PCでは隠す */
-.hamburger-overlay,
-.nav-overlay {
-  display: none;
-}
-
-/* PC版のナビは表示 */
-header nav:not(.nav-overlay) {
-  display: block;
-}
-
-/*==========================================すまほ==========================================*/
-@media screen and (max-width: 600px){
-	header{
-		display: flex;
-		height: auto; /* ← これで中身の高さに合わせる */
-		margin-bottom:100px;
-	}
-	main{
-	}
-	/* 通常のカーソルを表示（非表示指定を解除） */
-body, a, button, input, textarea {
-  cursor: auto !important; /* ← auto に戻すことで通常のカーソル表示 */
-}
-
-/* カスタムカーソルを非表示 */
-#custom-cursor {
-  display: none !important; /* 画像を完全に消す */
-	  background-image: none !important;
-}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no"><!--電話番号がリンクの青文字にならないようにする-->
+<meta name="description" content="ポートフォリオサイト |デザイン、アートの制作活動記録"><!--ページの説明-->
+<meta name="robots" content="max-image-preview:large">
+<!-- OGP（SNSシェア用） -->
+  <meta property="og:title" content="ENISHI | Portfolio">
+  <meta property="og:description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png"><!--SNSシェア用-->
+  <meta property="og:url" content="https://kuroeni.github.io/portfolio/"> 
+	<!--ツイッター-->
+  	<meta name="twitter:card" content="summary_large_image"> <!-- ←これが超重要！ -->
+	<meta name="twitter:title" content="ENISHI | Portfolio">
+	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
+	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
 	
 	
-	.topimg{
-		margin-top: 10%;
+<title>ENISHI | Portfolio</title>
+    <link rel="stylesheet" href="css/nEW_PFsaito_top.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+	<link rel="icon" href="catch/favicon.ico"  type="image/x-icon"><!--ファビコン-->
+	
+</head>
+	 
+<body>
+	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
+	
+<header>
+  <div class="top">
+    <h1><a href="index.html"><img src="img/sun.svg" alt=""></a></h1>
+
+    <!-- ハンバーガーメニュー -->
+    <div class="sp-menu">
+      <button class="menu-btn" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- メニュー本体 -->
+      <nav class="menu-panel">
+        <ul>
+          <li><a href="index.html" class="push">home</a></li>
+          <li><a href="works/works.html" class="push">works</a></li>
+          <li><a href="about/about.html" class="push">about</a></li>
+          <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- PCメニュー -->
+    <nav class="pc-menu">
+      <ul>
+        <li><a href="index.html" class="push">home</a></li>
+        <li><a href="works/works.html" class="push">works</a></li>
+        <li><a href="about/about.html" class="push">about</a></li>
+        <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+	
+	<div class="titletext"><p>KURODA ENISHI<br>PORTFORIO</p></div>
+  <div class="titleimg"><img src="img/dore2.png" alt=""></div>
+	
+	
+  <div class="blockText1">
+      <img src="img/gizagiza.png" alt="">
+  </div>
+  <dl class="scroll-block fade-block1 blockIN">
+	  <dd class="img">
+		  <div class="work">
+            <a href="ritu/ritu.html"> 
+				<img src="img/4pf.png" alt="">
+			  		<div class="hover-mask">
+					  <p>#product  <br><br>ユニバーサルデザイン<br>「率-ritu-」</p>
+			 		</div>
+			</a>
+		  </div>
+	  </dd>
+  </dl>
+	
+  <!--<div class="blockText2">
+      <img src="img/haneru.png" alt="">
+  </div>
+	 <dl class="scroll-block fade-block2 blockIN">
+	  <dd class="img">
+		  <div class="work">
+            <a href="ritu/ritu.html"> 
+				<img src="img/DSC_0060.JPG" alt="">
+			  		<div class="hover-mask_2">
+						<p>#product<br><br>照明実習<br>「cotten lime」</p>
+			 		</div>
+			</a>
+		  </div>
+		  </dd>
+  		</dl>
+	<div class="blockText3">
+      <img src="img/guru.png" alt="">
+	</div>
+  		<dl class="scroll-block fade-block3 blockIN">
+	  		<dd class="img">
+		 		 <div class="work">
+           			 <a href="ritu/ritu.html"> 
+						<img src="img/DSC_8150.jpg" alt="">
+			  				<div class="hover-mask">
+								<p>#product<br><br>照明実習<br>「cotten lime」</p>
+			 				</div>
+					</a	>
+		 		 </div>
+		  </dd>
+  		</dl>-->
 		
-	}
+		<!-- ページトップ -->
+<a href="#" id="page-top" aria-label="ページトップへ">
+  <span class="arrow"></span>
+  <span class="page-text">PAGE TOP</span>
+</a>
 	
-	/* ハンバーガー */
+</main>
+	<footer>
 
-  .menu-btn {
-    position: fixed;
-    top: 38px;
-    right: 55px;
-    z-index: 100000;  
-    width: 40px;
-    height: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-	   display: block;
-	}
+	<ul id="snsFoot" class="under">
+		<li>
+			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
+		</li>
+		<li>
+			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+				<img src="about/img/image2-1-350x350.png" alt="Instagram">
+			</a>
+		</li>
+	</ul>
+		&copy;ENISHI KURODA
+	</footer>
+		<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".menu-btn");
+    const panel = document.querySelector(".menu-panel");
 
-  .menu-btn span {
-    display: block;
-    width: 150%;
-    height: 3px;
-    background:#949494;
-    margin: 6px 0;
-    transition: all 0.3s ease;
-	  
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("active");
+      panel.classList.toggle("active");
+    });
+  });
+			
+	const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
   }
+});
 
-  .menu-btn.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
+			
+			// カーソル追従
+		const cursor = document.getElementById("custom-cursor");
 
-  .menu-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-btn.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
-	
-
-/* メニュー本体(展開ページ)*/
-  .menu-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.9); 
-    z-index: 99999;
-    display: none; /* ← 最初は非表示にしておく */
-    justify-content: center;
-    align-items: center;
-	transition: opacity 0.6s ease, visibility 0.6s ease; 
-	  
-  }
-	
-
-  .menu-panel.active {
-    display: flex; /* ← ボタン押したら表示 */
-  }
-
-  .menu-panel ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-	flex-direction: column; 
-	justify-content: center; /* 縦方向中央揃え */
-	align-items: center; /* 横方向中央揃え */
-	height: 100%; /* メニュー全体の高さに合わせる */
-	margin-right: 0%;
-    
-
-  }
-
-  .menu-panel ul li {
-	width: 100%;
-    margin: 20px 0;
-  }
- 
-
-  .menu-panel ul li a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #333;
-  }
-  .menu-panel ul li a:hover {
-  	color: #EFE42C; 
-  	background-color: #333; 
-  	transition: color 0.3s ease, background-color 0.3s ease; 
-  	border-radius: 25px;
-  	padding: 10px 15px; 
-}
-	
-	/* enishis portfolio */
-	.titletext{
-		z-index: 1; 
-	margin-top: 45px;
-	align-items: center;
-	justify-content: center;	
-	width: 100%;
-	font-size: 40px;
-	line-height: 60px;
-	font-family: 'Darker Grotesque', 'Noto Sans JP', sans-serif;
-	transform: rotate3d(1, 0, 0, 30deg);
-	font-weight: 400;
-		
-	}
-	.titletext p{
-		margin-left: 0%;
-		z-index: 0;
-		
-	}
-	.titleimg {
-		z-index: 0; 
-		margin-top: 30%;
-  	position: relative; /* 絶対配置解除 */
-  	margin: 0 auto;     /* 中央寄せ */
-  	width: 70%;         
-  	display: flex;
-  	justify-content: center; /* 画像自体を中央に */
-}
-	main{
-    margin-top: 20%;
-	margin-bottom: 20%;
-}
-   main img{
-	border-radius: 25px;
-}
-	 /* gizagiza */
-   .blockText1{
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-	margin-top: 45%;
-	left: -40%;
-	}
-	.blockText1 img{
-		width: 15%;
-	}
-	 /* 1枚目画像 */
-  .fade-block1 {
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10% auto;
-    position: relative;
-    left: 0; 
-  }
-	 .blockText2 {
-    width: 100%; 
-    overflow-x: hidden; 
-  }
-	/* はねる */
-  .blockText2 img{
-	  margin-left: 50%;
-	    margin-top: 10%;
-		width: 30%;
-	}
-	 /* 2枚目画像 */
-  .fade-block2 {
-    width: 50%;
-  }
-	/* ぐるぐる */
-  .blockText3 img{
-		width: 25%;
-	}
-	
-
-  /* PC用ナビを非表示にする */
-  nav:not(.menu-panel) {
-    display: none !important;
-  }
-	  .mobile-only {
-    display: block;
-  }
-
-  /* 既存の PC 用 nav を非表示 */
-  header nav:not(.nav-overlay) {
-    display: none;
-  }
-
- /* PC版ナビは隠す */
-  header nav:not(.nav-overlay) {
-    display: none;
-  }
-  
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
+			
+			
+			
+			
+			
+</script>
 	
 	
-#snsFoot {
-	margin-top: 10%;
-    position: static; /* または relative */
-    bottom: auto;
-    left: auto;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; 
-}
-#snsFoot li {
-    padding: 0 10px;
-  }
+	<script>// 該当ページにいる時該当ボタンは黒色に
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPath = window.location.pathname;
 
-#snsFoot li a { 
-	align-items: center;
-}
-#snsFoot li img {
-    width: 40px;
-	
-}
- 
-	
-}
+  // PCメニューとスマホメニュー両方を取得
+  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
 
+  menuLinks.forEach(link => {
+    // 絶対パス・相対パスどちらでも対応
+    const linkPath = new URL(link.href).pathname;
+    if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script>
 
-
-/*@media screen and (max-width:767px){
-	header{
-		margin-bottom: 30px;
-	}
-	/*.blockworks1{
-		flex-direction: column;
-	}*/
-	/*.worksimg{
-		margin-bottom: 30px;
-		
-	}
-}*/
-/* PC表示のときはハンバーガーメニューの中身を消す */
-@media screen and (min-width: 600px) {
-  .menu-panel {
-    display: none !important;
-  }
-
-  .menu-btn {
-    display: none !important;
-  }
-
-}
+</body>
+</html>
