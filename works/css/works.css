@@ -101,7 +101,7 @@ header {
 }
 .push.active {
   background: #333;
-  color: #fff;
+  color:  #EFE42C;
 }
 nav ul{
 	margin-right: 0%;
@@ -396,6 +396,7 @@ footer{
 	.sort-btn {
   z-index: 900; /* header(999)より後ろ、メニューより下にする */
 }
+	
 	/* ハンバーガー */
 	/* タイトルや装飾画像を背面に */
 
