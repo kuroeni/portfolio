@@ -87,37 +87,52 @@
 	  </dd>
   </dl>
 	
-  <!--<div class="blockText2">
-      <img src="img/haneru.png" alt="">
-  </div>
-	 <dl class="scroll-block fade-block2 blockIN">
-	  <dd class="img">
-		  <div class="work">
-            <a href="ritu/ritu.html"> 
-				<img src="img/DSC_0060.JPG" alt="">
-			  		<div class="hover-mask_2">
-						<p>#product<br><br>照明実習<br>「cotten lime」</p>
-			 		</div>
-			</a>
-		  </div>
-		  </dd>
-  		</dl>
-	<div class="blockText3">
-      <img src="img/guru.png" alt="">
+	
+	<div class="works-belt">
+		 <div class="title-wrapper">
+			<img src="img/title_works.png" alt="Works タイトル" class="works-title">
+			<a href="works/works.html">view more</a>
+		</div>
+  		<!-- スライドショー -->
+  			<div class="slider-wrapper">
+   				 <div class="slider-track">
+     			 	<img src="img/bock.png" alt="作品1">
+     			 	<img src="img/qanrui.png" alt="作品2">
+     			 	<img src="img/maga.png" alt="作品3">
+     			 	<img src="img/tottori.png" alt="作品4">
+					<img src="img/tottori.png" alt="作品5">
+					<img src="img/tottori.png" alt="作品6">
+      				<!-- 無限ループ一周コピー -->
+      				<img src="img/bock.png" alt="作品1">
+     			 	<img src="img/qanrui.png" alt="作品2">
+     			 	<img src="img/maga.png" alt="作品3">
+     			 	<img src="img/tottori.png" alt="作品4">
+					<img src="img/tottori.png" alt="作品5">
+					<img src="img/tottori.png" alt="作品6">
+    			</div>
+ 		 	</div>
 	</div>
-  		<dl class="scroll-block fade-block3 blockIN">
-	  		<dd class="img">
-		 		 <div class="work">
-           			 <a href="ritu/ritu.html"> 
-						<img src="img/DSC_8150.jpg" alt="">
-			  				<div class="hover-mask">
-								<p>#product<br><br>照明実習<br>「cotten lime」</p>
-			 				</div>
-					</a	>
-		 		 </div>
-		  </dd>
-  		</dl>-->
-		
+
+	
+	<div class="about-belt">
+		<div class="about-title-wrapper">
+		<img src="img/title_about.png" alt="Works タイトル" class="about-title">
+				<div class="about-wrapper">
+					<!-- ここからフリップカード -->
+      				<div class="card">
+        				<div class="cardface cardface__front"></div>
+     					<div class="cardface cardface__back"></div>
+      				</div>
+      				<!-- ここまでフリップカード -->
+						 <img src="img/enishi_illast.png" class="about-me-img" alt="" id="about-img">
+					 	 <img src="img/HD-wallpaper-n-d-middle-logo-green-day.png" class="about-me-img2" alt="" id="about-img2">
+						 <img src="img/bomber_mini.png" class="about-me-img3" alt="" id="about-img3">
+					     <img src="img/bombbomb.png" class="about-me-img4" alt="" id="about-img4">
+						<h3 class="about-name"><ruby>くろだ えにし<rt>enishi kuroda</rt></ruby></h3>
+				</div>
+		</div>
+	</div>
+  
 		<!-- ページトップ -->
 <a href="#" id="page-top" aria-label="ページトップへ">
   <span class="arrow"></span>
@@ -126,19 +141,26 @@
 	
 </main>
 	<footer>
+    <ul id="snsFoot" class="under">
+        <li>
+            <a href="https://www.facebook.com/p/...">
+                <img src="img/facebook-new.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+                <img src="about/img/image2-1-350x350.png" alt="Instagram">
+            </a>
+        </li>
+    </ul>
 
-	<ul id="snsFoot" class="under">
-		<li>
-			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="img/facebook-new.png" alt=""></a>
-		</li>
-		<li>
-			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
-				<img src="about/img/image2-1-350x350.png" alt="Instagram">
-			</a>
-		</li>
-	</ul>
-		&copy;ENISHI KURODA
-	</footer>
+    <div class="footer-sign">
+        <img src="img/fotter_sign.png" alt="サイン">
+    </div>
+
+    <!--&copy; ENISHI KURODA-->
+</footer>
+
 		<script>
   document.addEventListener("DOMContentLoaded", function () {
     const btn = document.querySelector(".menu-btn");
@@ -196,6 +218,48 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+		
+		// カードクリックで反転
+		const cards = document.querySelectorAll(".card");
+
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("is-flipped");
+  });
+});
+		// クリックアンドドラッグで要素を自由に動かす
+		// 画像を取得
+const img1 = document.getElementById('about-img');
+const img2 = document.getElementById('about-img2');
+const img3 = document.getElementById('about-img3');
+const img4 = document.getElementById('about-img4');
+
+// ドラッグ可能にする関数
+function makeDraggable(el){
+    el.onpointerdown = function(event){
+        this.setPointerCapture(event.pointerId); // つかむ
+    };
+
+    el.onpointermove = function(event){
+        if(event.buttons){ // マウス押しながら移動
+            this.style.position = 'absolute'; // 位置を絶対配置
+            this.style.left = this.offsetLeft + event.movementX + 'px';
+            this.style.top  = this.offsetTop  + event.movementY + 'px';
+            this.draggable = false; // デフォルトドラッグを無効化
+            this.setPointerCapture(event.pointerId);
+        }
+    };
+
+    el.onpointerup = function(event){
+        this.releasePointerCapture(event.pointerId); // 離す
+    };
+}
+
+// それぞれの画像に適用
+makeDraggable(img1);
+makeDraggable(img2);
+makeDraggable(img3);
+makeDraggable(img4);
 </script>
 
 </body>
