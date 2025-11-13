@@ -4,7 +4,20 @@
     margin: 0;
     padding: 0;
 }
+/* 通常のカーソルを非表示 */
+body, a, button, input, textarea {
+  cursor: none !important;
+}
 
+/* カスタムカーソル */
+#custom-cursor {
+  position: fixed;      /* ページスクロールで追従 */
+  width: 32px;
+  height: 32px;
+  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
+  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
+  z-index: 9999;        /* 最前面に表示 */
+}
 
 /*-----------------------------------------------------------------*/
 html, body {
@@ -23,7 +36,7 @@ body{
 	text-align: center;
 	/*font-family: 'Montserrat', sans-serif;*/
 	overflow-x: hidden;
-	
+	cursor: url("../img/cursor.png"), auto;
   
 	}
 .top {
@@ -42,7 +55,7 @@ body{
 .topimg {
   position: fixed;
   z-index: 10;
-  cursor: url("../img/sunglass.png"), auto;
+ cursor: url("../img/cursor.png"), auto;
 }
 .sort-btn {
   margin-top: 150px; /* ← .top の高さに合わせて調整（130〜160pxぐらいで試して） */
@@ -72,18 +85,23 @@ header {
 	border: #555;/*囲み線はsolid、線幅指定はpx*/
     min-width:100px;/*要素の幅の最小値を指定する*/
 	display: inline-block;
-	padding: 3px 0px;
+	padding: 3px 0px 3px 0px;
     text-align: center;
     text-decoration: none;
     color: #333;
 	background-color: #EFE42C;;
     outline: none;/*入力中に箱が入力中ということを表す*/
     transition: all .2s;/*ホバーした時の動き*/
+	cursor: url("../img/cursor.svg"), auto;
 }
 
 .push:hover{
 	background:#333;
     color:#fff;
+}
+.push.active {
+  background: #333;
+  color: #fff;
 }
 nav ul{
 	margin-right: 0%;
@@ -105,7 +123,7 @@ h1{
 }
 h1 img{
 	margin-left: 10%;
-	cursor: url("../img/sunglass.png"),auto;
+	
 	width: 80%;
 	height: 100%;
 }
@@ -116,6 +134,7 @@ main{
 	display: flex;
 	align-content: center;
 	justify-content: center;
+	cursor: url("../img/cursor.png"), auto;
 }
 .mask{
     display: block;
@@ -165,7 +184,7 @@ footer{
   bottom: 0;
   display: flex;
   flex-direction: row;
-  margin-right: -1%;
+  margin-right: -3%;
   gap: 0px;
   cursor: pointer;
   opacity: 0;
@@ -363,8 +382,9 @@ footer{
 
 
 /*==========================================すまほ==========================================*/
-/*横幅が768px以下になった際の指定*/
-@media only screen and (max-width: 768px) {
+
+@media screen and (max-width: 600px) {
+	
 .item {
   width: 49.5%;/*横並びで2つ表示*/
 }
@@ -377,17 +397,26 @@ footer{
   z-index: 900; /* header(999)より後ろ、メニューより下にする */
 }
 	/* ハンバーガー */
+	/* タイトルや装飾画像を背面に */
+
+.titletext,
+.titleimg,
+.blockText1,
+.blockText2,
+.blockText3 {
+    z-index: 0; 
+}
   .menu-btn {
     position: fixed;
     top: 38px;
     right: 55px;
-    z-index: 1005;
+    z-index: 10001;
     width: 40px;
     height: 30px;
     background: none;
     border: none;
     cursor: pointer;
-  }
+	}
 
   .menu-btn span {
     display: block;
@@ -396,6 +425,7 @@ footer{
     background:#949494;
     margin: 6px 0;
     transition: all 0.3s ease;
+	  
   }
 
   .menu-btn.active span:nth-child(1) {
@@ -418,12 +448,12 @@ footer{
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.9); /* ← 0.0〜1.0で調整。0.9はほぼ白 */
-    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9); 
+       z-index: 10000;
     display: none; /* ← 最初は非表示にしておく */
     justify-content: center;
     align-items: center;
-	transition: opacity 0.6s ease, visibility 0.6s ease; /* ←ここでスピード調整 */
+	transition: opacity 0.6s ease, visibility 0.6s ease; 
 	  
   }
 
@@ -435,7 +465,6 @@ footer{
     list-style: none;
     text-align: center;
     padding: 0;
-	 
 	flex-direction: column; 
 	justify-content: center; /* 縦方向中央揃え */
 	align-items: center; /* 横方向中央揃え */
@@ -460,9 +489,12 @@ footer{
   	color: #EFE42C; 
   	background-color: #333; 
   	transition: color 0.3s ease, background-color 0.3s ease; 
-  	border-radius: 25px; 
+  	border-radius: 25px;
   	padding: 10px 15px; 
 }
+	
+	
+	
 	/*スマホ表示でPCナブを消す*/
 @media screen and (max-width: 600px) {
   .pc-menu {
@@ -470,15 +502,7 @@ footer{
   }
 }
 
-/*PC表示でスマホメニューを消す*/
-@media screen and (min-width: 601px) {
-  .sp-menu,
-  .menu-btn,
-  .menu-panel {
-    display: none !important;
-  }
-}
-	
+
 /* テキストのスタイル */
 .hover-mask p {
 　font-family: 'Zen Kaku Gothic New', sans-serif;
