@@ -741,20 +741,16 @@ body, a, button, input, textarea {
   }
 
   /* 画像サイズを縮小 */
-   .about-me-img,
-  .about-me-img2,
-  .about-me-img3,
-  .about-me-img4 {
+   .about-me-img,.about-me-img2,.about-me-img3,.about-me-img4 {
     position: absolute;   /* flex 配下でも絶対配置を維持 */
     width: 20%;           /* 必要に応じて調整 */
-    top: 50px;            /* 初期位置 */
-    left: 20%;            /* 初期位置 */
     margin: 0;            /* margin はリセット */
   }
 
-  .about-me-img2 { top: 120px; left: 50%; }
-  .about-me-img3 { top: 200px; left: 20%; }
-  .about-me-img4 { top: 300px; left: 50%; }
+  .about-me-img  { top: -20px; left: 10%; }
+  .about-me-img2 { top: 120px; left: 70%; }
+  .about-me-img3 { top: 200px; left: 15%; }
+  .about-me-img4 { top: -10px; left: 70%; }
 
   /* h3 のサイズと位置調整 */
   .about-name {
@@ -813,7 +809,12 @@ body, a, button, input, textarea {
     display: none;
   }
   
-	
+footer .footer-sign img {
+    width: 200px;      
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 上下の余白 */
+}	
 	
 #snsFoot {
 	margin-top: 10%;
@@ -839,8 +840,6 @@ body, a, button, input, textarea {
 }
  
 	
-}
-
 
 
 
