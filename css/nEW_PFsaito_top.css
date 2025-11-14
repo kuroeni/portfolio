@@ -257,6 +257,7 @@ main img{
     align-items: center;            /* 縦方向は中央揃え */
     margin-bottom: 20px;            /* スライドショーとの間隔 */
     padding: 0 20px;                /* 左右の余白 */
+    justify-content: flex-start;
 }
 .works-title {
     width: 250px;
@@ -271,6 +272,7 @@ main img{
     font-family: "A P-OTF A1ゴシック Std M";
     color: #333;
     font-size: 1rem;
+    
 }
 .title-wrapper a:hover{
 	 color: #BABABA;
