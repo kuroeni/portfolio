@@ -365,6 +365,12 @@ footer {
 footer{
  margin-top: 20%;
 }
+footer .footer-sign img {
+    width: 300px;       /* お好みのサイズ */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 上下の余白 */
+}
 #snsFoot {
  z-index: 1;
     display: flex;
