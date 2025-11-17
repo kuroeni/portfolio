@@ -492,28 +492,7 @@ $('[data-fancybox]').fancybox({
 	
 });</script>
 <script src="js/6-2-2.js"></script>
-	<script>//＝＝＝ ページトップJava
-  const btn = document.querySelector('.menu-btn');
-  const panel = document.querySelector('.menu-panel');
-
-  btn.addEventListener("click", function () {
-    btn.classList.toggle("active");
-    panel.classList.toggle("active");
-  });
-		const pageTop = document.getElementById('page-top');
-			window.addEventListener('scroll', () => {
-  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
-    pageTop.classList.add('visible');
-  } else {
-    pageTop.classList.remove('visible');
-  }
-});
-
-pageTop.addEventListener('click', function(e) {
-  e.preventDefault();
-  window.scroll({ top: 0, behavior: 'smooth' });
-});
-</script>
+	
 	<script>//＝＝＝ スマホ版、長押しでホバー効果、指離すまでリンク開かないよJava
 document.querySelectorAll('.item-content a').forEach(function(link){
   let pressTimer;
@@ -544,15 +523,6 @@ window.addEventListener('load', function () {
         dragEnabled: false
     });
 });
-	
-		
-		var originalRefresh = grid.refreshItems;
-grid.refreshItems = function () {
-  // スクロール中はリフレッシュさせない
-  if (window.innerWidth < 768) return this;
-  return originalRefresh.call(this);
-};
-		
 		
 		
 		
