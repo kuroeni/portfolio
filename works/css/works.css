@@ -352,9 +352,6 @@ footer .footer-sign img {
 	vertical-align: bottom;/*画像の下にできる余白を削除*/
 }
 
-
-
-
 footer {
     text-align: center;
     color:#474747;
@@ -513,7 +510,12 @@ footer{
   }
 }
 
-
+/*画像の横幅を100%にしてレスポンシブ化*/
+.grid img{
+	width:100%;
+	height:auto;
+	vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
 /* テキストのスタイル */
 .hover-mask p {
 　font-family: 'Zen Kaku Gothic New', sans-serif;
