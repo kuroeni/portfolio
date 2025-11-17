@@ -2,146 +2,424 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no"><!--電話番号がリンクの青文字にならないようにする-->
-<meta name="description" content="ポートフォリオサイト |デザイン、アートの制作活動記録"><!--ページの説明-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no"><!--電話番号がリンクの青文字にならないようにする-->
+<meta name="description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
 <meta name="robots" content="max-image-preview:large">
 <!-- OGP（SNSシェア用） -->
   <meta property="og:title" content="ENISHI | Portfolio">
   <meta property="og:description" content="ポートフォリオサイト |デザイン、アートの制作活動記録">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png"><!--SNSシェア用-->
-  <meta property="og:url" content="https://kuroeni.github.io/portfolio/"> 
+  <meta property="og:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
+  <meta property="og:url" content="https://kuroeni.github.io/portfolio/works/works.html"> 
 	<!--ツイッター-->
-  	<meta name="twitter:card" content="summary_large_image"> <!-- ←これが超重要！ -->
+   <meta name="twitter:card" content="summary_large_image"> <!-- ←これが超重要！ -->
 	<meta name="twitter:title" content="ENISHI | Portfolio">
 	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
 	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
-	
-	
 <title>ENISHI | Portfolio</title>
-    <link rel="stylesheet" href="css/nEW_PFsaito_top.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="icon" href="catch/favicon.ico"  type="image/x-icon"><!--ファビコン-->
-	
+ <link rel="stylesheet" href="css/works.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="css/6-2-2.css">
+<link rel="icon" href="https://kuroeni.github.io/portfolio/catch/favicon.ico" type="image/x-icon"><!--ファビコン-->
+ 	
 </head>
-	 
+	
 <body>
 	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
 	
+	
 <header>
   <div class="top">
-    <h1><a href="index.html"><img src="img/sun.svg" alt=""></a></h1>
-
-    <!-- ハンバーガーメニュー -->
-    <div class="sp-menu">
-      <button class="menu-btn" aria-label="メニュー">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- メニュー本体 -->
-      <nav class="menu-panel">
-        <ul>
-          <li><a href="index.html" class="push">home</a></li>
-          <li><a href="works/works.html" class="push">works</a></li>
-          <li><a href="about/about.html" class="push">about</a></li>
-          <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- PCメニュー -->
-    <nav class="pc-menu">
-      <ul>
-        <li><a href="index.html" class="push">home</a></li>
-        <li><a href="works/works.html" class="push">works</a></li>
-        <li><a href="about/about.html" class="push">about</a></li>
-        <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
-      </ul>
-    </nav>
+	<h1><a href="../index.html"><img src="img/sun.svg" alt=""></a></h1>
+	  <!-- ハンバーガーボタン -->
+<div class="sp-menu">
+  <button class="menu-btn" aria-label="メニュー">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+		<!-- メニュー本体 -->
+  <nav class="menu-panel">
+    <ul>
+		<li><a href="../index.html" class="push">home</a></li>
+      <li><a href="works.html" class="push">works</a></li>
+      <li><a href="../about/about.html" class="push">about</a></li>
+      <li><a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+    </ul>
+  </nav>
+</div>
+	  
+	  <nav class="pc-menu">
+		 <ul>
+			 <li><a href="../index.html" class="push">home</a></li>
+		  <li><a href="../works/works.html" class="push">works</a></li>
+		  <li><a href="../about/about.html" class="push">about</a></li>
+		   <li> <a href="mailto:kuroeni8815@gmail.com" class="push">contact</a></li>
+		  <!--<li><a href="../contact/cotact.html" class="push">contact</a></li>-->
+		 </ul>
+	</nav>
   </div>
+	
 </header>
-<main>
-	
-	<div class="titletext"><p>KURODA ENISHI<br>PORTFORIO</p></div>
-  <div class="titleimg"><img src="img/dore2.png" alt=""></div>
 	
 	
-  <div class="blockText1">
-      <img src="img/gizagiza.png" alt="">
-  </div>
-  <dl class="scroll-block fade-block1 blockIN">
-	  <dd class="img">
-		  <div class="work">
-            <a href="ritu/ritu.html"> 
-				<img src="img/4pf.png" alt="">
-			  		<div class="hover-mask">
-					  <p>#product  <br><br>ユニバーサルデザイン<br>「率-ritu-」</p>
-			 		</div>
-			</a>
-		  </div>
-	  </dd>
-  </dl>
-	
-	
-	<div class="works-belt">
-		 <div class="title-wrapper">
-			<img src="img/title_works.png" alt="Works タイトル" class="works-title">
-			<a href="works/works.html"><img src="img/title_viewmore.png" alt="" class="view_more"></a>
-		</div>
-  		<!-- スライドショー -->
-  			<div class="slider-wrapper">
-   				 <div class="slider-track">
-     			 	<img src="img/bock200×200.jpg" alt="作品1">
-     			 	<img src="img/qanrui.png" alt="作品2">
-     			 	<img src="img/maga200×200.jpg" alt="作品3">
-     			 	<img src="img/tottori200×200.jpg" alt="作品4">
-					<img src="img/zam200×200.jpg" alt="作品5">
-					<img src="img/dish200×200.jpg" alt="作品6">
-      				<!-- 無限ループ一周コピー -->
-      				<img src="img/bock200×200.jpg" alt="作品1">
-     			 	<img src="img/qanrui.png" alt="作品2">
-     			 	<img src="img/maga200×200.jpg" alt="作品3">
-     			 	<img src="img/tottori200×200.jpg" alt="作品4">
-					<img src="img/zam200×200.jpg" alt="作品5">
-					<img src="img/dish200×200.jpg" alt="作品6">
-    			</div>
- 		 	</div>
-	</div>
+	<ul class="sort-btn">
+			<li class="sort00 active">all</li><!--はじめに「全て」ボタンに現在地表示をつけるためactive というクラス名を付与-->
+			<li class="sort01">prodacts</li>
+			<li class="sort02">graphics</li>
+			<li class="sort03">projects</li>
+			<li class="sort04">planning</li>
+			<li class="sort05">others</li>
+	</ul>
 
-	
-	<div class="about-belt">
-		<div class="about-title-wrapper">
-		<img src="img/title_about.png" alt="Works タイトル" class="about-title">
-				<div class="about-wrapper">
-					<!-- ここからフリップカード -->
-      				<div class="card">
-        				<div class="cardface cardface__front"></div>
-     					<div class="cardface cardface__back"></div>
-      				</div>
-      				<!-- ここまでフリップカード -->
-						 <img src="img/enishi_illast.png" class="about-me-img" alt="" id="about-img">
-					 	 <img src="img/HD-wallpaper-n-d-middle-logo-green-day.png" class="about-me-img2" alt="" id="about-img2">
-						 <img src="img/bomber_mini.png" class="about-me-img3" alt="" id="about-img3">
-					     <img src="img/bombbomb.png" class="about-me-img4" alt="" id="about-img4">
-						<h3 class="about-name"><ruby>くろだ えにし<rt>enishi kuroda</rt></ruby></h3>
+	<ul class="grid"><!--1番外側のタグにgrid というクラス名を付与。-->
+			<!--<li class="item sort01"><!--li には、item というクラス名と並び替え基準となるクラス名（ボタンのクラス名と同じ名前）を付与。
+				<div class="item-content"><!--内側のdivには高さを維持するためにitem-contentというクラス名をつける。
+					<a href="../ritu/ritu.html"><img src="img/4pf.png" width="500" height="333" alt=""/></a>
+					<!--複数画像をグループ化してサムネ
+					イル表示させたい場合は、datafancybox="半角英数字で同一のグループ名"、キャプションを入れたい場合はdata-caption="キャプションタイトル"を設定する。
 				</div>
-		</div>
-	</div>
-  
+			</li>-->	
+	   
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<img src="img/4pf.png" alt="">
+     	    <div class="hover-mask">
+       			 <p>#product  <br><br>ユニバーサルデザイン<br>「率-ritu-」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../cottenlime/cottenlime.html">
+      				<img src="img/DSC_0060.JPG" alt="">
+     	    <div class="hover-mask">
+       			 <p>#product<br><br>照明実習<br>「cotten lime」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../package/package.html">
+      				<img src="img/DSC_8150.jpg" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#product <br><br>パッケージデザイン<br>「飛び出すティーパック」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../sara/sara.html">
+      			 	<img src="img/dish.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#product<br><br>陶芸実習<br>「切り株の皿」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../kamiwaza/kamiwaza.html">
+      				<img src="img/kamiwaza.png" alt="">
+     	    <div class="hover-mask">
+       			 <p>#product<br><br>紙技展<br>「変動」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../sutendoglas/sutendoglas.html">
+      				<img src="img/glas.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#product<br><br>ステンドグラス実習<br>「海藻の水面」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort01">
+  			<div class="item-content">
+   				 <a href="../stamp/stamp.html">
+      				<img src="img/IMG_3050 ３.jpg" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#product<br><br>3D、切削機<br>オリジナルスタンプ</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../info/info.html">
+      				<img src="img/infogurafic.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#graphic<br><br>インフォグラフィック<br>「夏フェス動員人数ランキング　&nbsp;TOP10」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/seizu.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 	<p>#planning<br><br>VMD<br>「架空ワークショップの<br>&nbsp;VMDデザイン」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../kamiwazaweb/kamiwaza.html">
+      				<img src="img/apple-macbook-pro-6306818_960_720.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			<p>#graphic<br><br>WEB実習<br>「紙技展のWEBページ」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/bock.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			<p>#planning<br><br>天満中学校プロジェクト<br>「いじめについて考える日」<br>&nbsp;企画実行</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/tottori.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			<p>#graphic<br><br>鳥取実習<br>湯梨浜町観光の<br>「3つ折りリーフレット」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/shop.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#planning<br><br>ショッププロデュース<br>「sotow」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/maru.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#planning<br><br>ショッププロデュース<br>「maru」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/名称未設定のアートワーク.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			  <p>#planning<br><br>VMD<br>タワーレコードの<br>&nbsp;ショウウィンドウデザイン</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/matidukuri.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic<br><br>まちづくり<br>「ちょうどなタイム<br>&nbsp;ナイスなタイム」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/meta.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			<p>#planning<br><br>メタバース<br>「人間のてっぺんを目指せ」<br>&nbsp;ショウウィンドウデザイン</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/maga.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic<br><br>イラレ実習<br>架空雑誌「TABIRO」</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/rinpa.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic<br><br>ブランディング<br>架空の展示会<br>ポスター制作</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/oden.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic<br><br>WEB<br>架空の飲食店のWEBサイト制作<br></p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort04">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/imazato.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#planning<br><br>今里ハロウィン<br>VMDデザイン</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort04">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/hirapa.png" alt=""></a>
+     	    <div class="hover-mask">
+       			<p>#planning<br><br>子どもとお母さんのための<br>憩いの場所</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		
+		
+		
+		<li class="item sort02">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/music.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/irai.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/drive2.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/zam.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../stylebook/stylebook.html">
+      				<img src="img/style.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../masked/masked.html">
+      				<img src="img/masked.png" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/ito.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort04">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/com.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort03">
+  			<div class="item-content">
+   				 <a href="../ritu/ritu.html">
+      				<a href="../ritu/ritu.html"><img src="img/kids.png" width="500" height="333" alt=""/></a>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+		<li class="item sort05">
+  			<div class="item-content">
+   				 <a href="../pokkie/pokkie.html">
+      				<img src="../pokkie/img/pokkie_1_500×333.jpg" width="500" height="333" alt=""/>
+     	    <div class="hover-mask">
+       			 <p>#graphic design / illustration</p>
+      		</div>
+   				 </a>
+ 			</div>
+		</li>
+			
+	</ul>
+<main>
 		<!-- ページトップ -->
+			<!-- ページトップ -->
 <a href="#" id="page-top" aria-label="ページトップへ">
   <span class="arrow"></span>
   <span class="page-text">PAGE TOP</span>
 </a>
-	
 </main>
-	<footer>
+<footer>
     <ul id="snsFoot" class="under">
         <li>
             <a href="https://www.facebook.com/p/...">
@@ -150,7 +428,7 @@
         </li>
         <li>
             <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
-                <img src="about/img/image2-1-350x350.png" alt="Instagram">
+                <img src="img/image2-1-350x350.png" alt="Instagram">
             </a>
         </li>
     </ul>
@@ -161,19 +439,68 @@
 
     <!--&copy; ENISHI KURODA-->
 </footer>
+	
+	
+	
+<!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->	
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+<script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--自作のJS-->
+<script>$(window).on('load',function(){	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
 
-		<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.querySelector(".menu-btn");
-    const panel = document.querySelector(".menu-panel");
+//＝＝＝Muuriギャラリープラグイン設定
+var grid = new Muuri('.grid', {
 
-    btn.addEventListener("click", function () {
-      btn.classList.toggle("active");
-      panel.classList.toggle("active");
-    });
+//アイテムの表示速度※オプション。
+showDuration: 600,
+showEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+hideDuration: 600,
+hideEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+	
+// アイテムの表示/非表示状態のスタイル※オプション。
+ visibleStyles: {
+ opacity: '1',
+ transform: 'scale(1)'
+  },
+  hiddenStyles: {
+  opacity: '0',
+  transform: 'scale(0.5)'
+  }    
+});
+
+//＝＝＝並び替えボタン設定
+$('.sort-btn li').on('click',function(){			//並び替えボタンをクリックしたら
+	$(".sort-btn .active").removeClass("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
+	var className = $(this).attr("class");			//クラス名を取得
+	className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
+	$("."+className[0]).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
+	if(className[0] == "sort00"){						//クラス名がsort00（全て）のボタンの場合は、
+		 grid.show('');								//全ての要素を出す
+	}else{											//それ以外の場合は
+		grid.filter("."+className[0]); 				//フィルターを実行
+	}
+});
+
+//＝＝＝ Fancyboxの設定
+$('[data-fancybox]').fancybox({
+ thumbs: {
+    autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
+  },	
+});
+	
+});</script>
+<script src="js/6-2-2.js"></script>
+	<script>//＝＝＝ ページトップJava
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
   });
-			
-	const pageTop = document.getElementById('page-top');
+		const pageTop = document.getElementById('page-top');
 			window.addEventListener('scroll', () => {
   	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
     pageTop.classList.add('visible');
@@ -186,18 +513,140 @@ pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
-			
-			// カーソル追従
+</script>
+	<script>//＝＝＝ スマホ版、長押しでホバー効果、指離すまでリンク開かないよJava
+document.querySelectorAll('.item-content a').forEach(function(link){
+  let pressTimer;
+  let href = link.getAttribute('href');
+
+  link.addEventListener('touchstart', function(e){
+    pressTimer = setTimeout(() => {
+      link.classList.add('long-pressed'); // 長押し中のエフェクトなどに使える
+    }, 500); // 0.5秒押したら「準備OK」
+  });
+
+  link.addEventListener('touchend', function(e){
+    if (link.classList.contains('long-pressed')) {
+      window.location.href = href; // 指を離したタイミングで遷移
+    }
+    clearTimeout(pressTimer);
+    link.classList.remove('long-pressed'); // エフェクト終了
+  });
+
+  link.addEventListener('touchmove', function(e){
+    clearTimeout(pressTimer); // スワイプしたらキャンセル
+    link.classList.remove('long-pressed');
+  });
+});
+	
+		
+		
+</script>
+	
+	<script>
+  let grid;
+  let originalOrder = [];
+
+  window.addEventListener('load', function () {
+    grid = new Muuri('.grid', {
+      showDuration: 600,
+      showEasing: 'ease',
+      hideDuration: 600,
+      hideEasing: 'ease',
+      layoutDuration: 700,
+      layoutEasing: 'ease',
+    });
+
+    grid.refreshItems().layout();
+
+    // 初期順序を保存
+    originalOrder = grid.getItems();
+
+    // ページロード時はシャッフル
+    grid.sort(() => Math.random() - 0.5);
+  });
+
+  $(function () {
+    $('.sort-btn li').on('click', function () {
+      const $btn = $(this);
+      const classList = $btn.attr('class').split(/\s+/);
+      const sortClass = classList.find(cls => cls.startsWith('sort'));
+
+      $('.sort-btn li').removeClass('active');
+      $btn.addClass('active');
+
+      if (sortClass === 'sort00') {
+        // ALLボタン：全部表示してシャッフル
+        grid.show('');
+        grid.sort(() => Math.random() - 0.5);
+      } else {
+        // その他のカテゴリ：絞り込み
+        grid.filter(`.${sortClass}`);
+
+        // 元の順序に戻すためにソートし直す
+        grid.sort((a, b) => {
+          return originalOrder.indexOf(a) - originalOrder.indexOf(b);
+        });
+      }
+    });
+  });
+		 // 該当タグページに戻る
+		window.addEventListener('load', () => {
+  const grid = new Muuri('.grid', {
+    showDuration: 600,
+    showEasing: 'ease',
+    hideDuration: 600,
+    hideEasing: 'ease',
+    layoutDuration: 700,
+    layoutEasing: 'ease',
+  });
+  grid.refreshItems().layout();
+
+  document.querySelectorAll('.sort-btn li').forEach(li => {
+    li.addEventListener('click', () => {
+      document.querySelectorAll('.sort-btn li').forEach(btn => btn.classList.remove('active'));
+      li.classList.add('active');
+
+      const sortClass = li.className.split(' ').find(c => c.startsWith('sort'));
+      if (sortClass === 'sort00') {
+        grid.show('');
+      } else {
+        grid.filter(`.${sortClass}`);
+      }
+    });
+  });
+
+  // URLの ?tag=product などを取得して対応するボタンをクリックする
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+  if (tag) {
+    const tagToClassMap = {
+      product: "sort01",
+      graphics: "sort02",
+      projects: "sort03",
+      planning: "sort04",
+      others: "sort05",
+      all: "sort00"
+    };
+    const className = tagToClassMap[tag.toLowerCase()];
+    if (className) {
+      const targetButton = document.querySelector(`.sort-btn li.${className}`);
+      if (targetButton) targetButton.click();
+    }
+  }
+});
+		
+		
+	// カーソル追従
 		const cursor = document.getElementById("custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
 });	
-			
-	
+		
+		
 </script>
-	
 	
 	<script>// 該当ページにいる時該当ボタンは黒色に
 document.addEventListener("DOMContentLoaded", function() {
@@ -217,47 +666,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 		
-		// カードクリックで反転
-		const cards = document.querySelectorAll(".card");
 
-cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("is-flipped");
-  });
-});
-		// クリックアンドドラッグで要素を自由に動かす
-		// 画像を取得
-const img1 = document.getElementById('about-img');
-const img2 = document.getElementById('about-img2');
-const img3 = document.getElementById('about-img3');
-const img4 = document.getElementById('about-img4');
-
-// ドラッグ可能にする関数
-function makeDraggable(el){
-    el.onpointerdown = function(event){
-        this.setPointerCapture(event.pointerId); // つかむ
-    };
-
-    el.onpointermove = function(event){
-        if(event.buttons){ // マウス押しながら移動
-            this.style.position = 'absolute'; // 位置を絶対配置
-            this.style.left = this.offsetLeft + event.movementX + 'px';
-            this.style.top  = this.offsetTop  + event.movementY + 'px';
-            this.draggable = false; // デフォルトドラッグを無効化
-            this.setPointerCapture(event.pointerId);
-        }
-    };
-
-    el.onpointerup = function(event){
-        this.releasePointerCapture(event.pointerId); // 離す
-    };
-}
-
-// それぞれの画像に適用
-makeDraggable(img1);
-makeDraggable(img2);
-makeDraggable(img3);
-makeDraggable(img4);
 		
 </script>
 
