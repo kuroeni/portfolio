@@ -538,13 +538,7 @@ document.querySelectorAll('.item-content a').forEach(function(link){
     link.classList.remove('long-pressed');
   });
 });
-		// 画像が全部読み込まれてから実行
-window.addEventListener('load', function () {
-    var grid = new Muuri('.grid', {
-        dragEnabled: false
-    });
-});
-		
+	
 		
 		
 </script>
@@ -672,39 +666,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 		
-	
-		document.addEventListener("DOMContentLoaded", function() {
-  var gridElem = document.querySelector('.grid');
 
-  // 画像の読み込み完了を待つ
-  imagesLoaded(gridElem, function() {
-    // 全画像が読み込まれたら Muuri を初期化
-    var grid = new Muuri('.grid', {
-      layout: {
-        fillGaps: true,
-        horizontal: false,
-        alignRight: false,
-        alignBottom: false,
-        rounding: true
-      }
-    });
-
-    // もし並べ替えボタンがある場合
-    var sortButtons = document.querySelectorAll('.sort-btn li');
-    sortButtons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        // ここでソート条件に応じた処理
-        var sortBy = this.getAttribute('data-sort');
-        grid.sort(sortBy, { ascending: true });
-      });
-    });
-  });
-});
-
-		
-		
+		if (window.innerWidth >= 768) {
+    // PC向けの再配置処理は有効
+    gridInstance.layout(); // MasonryやIsotopeの再配置メソッド
+} else {
+    // スマホでは再配置しない
+}
 </script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 </body>
 </html>
