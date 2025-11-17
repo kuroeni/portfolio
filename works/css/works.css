@@ -573,6 +573,17 @@ footer .footer-sign img {
     margin: 0 auto 10px; /* 上下の余白 */
 }	
 	
+@media (max-width: 601px) {
+    .grid.no-isotope {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .grid-item {
+        position: static !important; /* ライブラリが付与した絶対配置を無効化 */
+    }
+}
+
 /* PC表示でスマホメニューを消す：絶対最後 */
 @media screen and (min-width: 601px) {
   .sp-menu,
