@@ -667,16 +667,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 		
 
-		if (window.innerWidth >= 768) {
-    // PC向けの再配置処理は有効
-    gridInstance.layout(); // MasonryやIsotopeの再配置メソッド
-} else {
-    // スマホでは再配置しない
-}
-		if (window.innerWidth >= 768) {
-    imagesLoaded(gridElement, function() {
-        gridInstance.layout();
+		var $grid = $('.grid');
+if (window.innerWidth >= 768) {
+    $grid.isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'masonry',
+        // PC用オプション
     });
+} else {
+    // スマホは初期化だけして並び順はそのまま
+    $grid.addClass('no-isotope'); // CSSでグリッドを整列させるだけ
 }
 </script>
 
