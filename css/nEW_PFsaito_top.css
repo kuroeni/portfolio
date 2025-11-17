@@ -257,7 +257,14 @@ main img{
     align-items: center;            /* 縦方向は中央揃え */
     margin-bottom: 20px;            /* スライドショーとの間隔 */
     padding: 0 20px;                /* 左右の余白 */
-    justify-content: flex-start;
+}
+.view_more{
+	width: 30%;
+	margin-left: 50%;
+}
+.view_more:hover{
+	 transform: rotate(-10deg) translateY(-10px) scale(1.05);
+	
 }
 .works-title {
     width: 250px;
@@ -265,15 +272,6 @@ main img{
 	display: block;
 }
 
-.title-wrapper a {
-  font-family: system-ui, sans-serif;
-	margin-right: 10%;
-    text-decoration: none;
-    font-family: "A P-OTF A1ゴシック Std M";
-    color: #333;
-    font-size: 1rem;
-    
-}
 .title-wrapper a:hover{
 	 color: #BABABA;
 }
@@ -281,13 +279,15 @@ main img{
 .slider-wrapper {
   width: 100%;
   overflow: hidden; /* はみ出した画像を隠す */
-  padding: 10px 0;
+  padding: 50px 0;
   box-sizing: border-box;
 }
 
 /* 画像の横並び */
 .slider-track {
   display: flex;
+  position: relative;
+  overflow: hidden;
   width: max-content; /* 子要素の合計幅に合わせる */
   animation: slide 20s linear infinite;
 }
@@ -295,9 +295,9 @@ main img{
 /* スライド画像 */
 .slider-track img {
   width: 200px; /* 画像サイズ */
-  height: auto;
+  height: 200px;
   margin-right: 10px; /* 画像間の隙間 */
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* 横スライドアニメーション */
@@ -677,6 +677,10 @@ body, a, button, input, textarea {
   	border-radius: 25px;
   	padding: 10px 15px; 
 }
+	.view_more{
+	width: 70%;
+	margin-left: 20%;
+}
 	
 	/* enishis portfolio */
 	.titletext{
@@ -733,13 +737,18 @@ body, a, button, input, textarea {
     left: 0; 
   }
 
+	.works-title{
+	width: 180px;
+    height: auto;
+	display: block;
+	}
 	 .about-wrapper {
     display: flex;             /* block → flex に戻す */
     flex-direction: column;    /* 縦並び */
     align-items: center;       /* 横方向中央揃え */
     justify-content: flex-start; /* 必要なら中央縦揃えに変更可能 */
     gap: 10px;
-    margin-top: 5%;
+    margin-top: 20%;
     position: relative;
   }
 
