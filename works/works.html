@@ -492,7 +492,28 @@ $('[data-fancybox]').fancybox({
 	
 });</script>
 <script src="js/6-2-2.js"></script>
-	
+	<script>//＝＝＝ ページトップJava
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+		const pageTop = document.getElementById('page-top');
+			window.addEventListener('scroll', () => {
+  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+    pageTop.classList.add('visible');
+  } else {
+    pageTop.classList.remove('visible');
+  }
+});
+
+pageTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scroll({ top: 0, behavior: 'smooth' });
+});
+</script>
 	<script>//＝＝＝ スマホ版、長押しでホバー効果、指離すまでリンク開かないよJava
 document.querySelectorAll('.item-content a').forEach(function(link){
   let pressTimer;
@@ -648,6 +669,63 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       link.classList.remove('active');
     }
+  });
+});
+</script>
+	<script>
+/* 単一の Muuri 初期化：画像が全部読み込まれてから起動。
+   スマホ（width < 768）ではスクロール中にレイアウトを更新しない。 */
+let grid = null;
+
+window.addEventListener('load', function () {
+  const gridEl = document.querySelector('.grid');
+  if (!gridEl) return;
+
+  // 全画像の読み込みを待つ（エラーでも解決する）
+  const imgs = Array.from(gridEl.querySelectorAll('img'));
+  const imgPromises = imgs.map(img => new Promise(res => {
+    if (img.complete) return res();
+    img.addEventListener('load', res, { once: true });
+    img.addEventListener('error', res, { once: true });
+  }));
+
+  Promise.all(imgPromises).then(() => {
+    // 既に grid が初期化されていれば破棄してから再作成（安全策）
+    try { if (grid && typeof grid.destroy === 'function') grid.destroy(); } catch(e){}
+
+    grid = new Muuri('.grid', {
+      showDuration: 600,
+      showEasing: 'ease',
+      hideDuration: 600,
+      hideEasing: 'ease',
+      layoutDuration: 700,
+      layoutEasing: 'ease',
+      dragEnabled: false
+    });
+
+    grid.refreshItems().layout();
+
+    // スマホではスクロールでの即時リフレッシュを無効化（安定化）
+    let rafScheduled = false;
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth < 768) return; // モバイル時は無視
+      if (!rafScheduled) {
+        rafScheduled = true;
+        requestAnimationFrame(() => {
+          if (grid) grid.refreshItems().layout();
+          rafScheduled = false;
+        });
+      }
+    }, { passive: true });
+
+    // ウィンドウリサイズは軽くデバウンスして実行
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (grid) grid.refreshItems().layout();
+      }, 200);
+    });
   });
 });
 </script>
