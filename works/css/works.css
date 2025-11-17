@@ -574,15 +574,17 @@ footer .footer-sign img {
 }	
 	
 
-@media (max-width: 601px) {
-    .grid.no-isotope {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    .grid-item {
-        position: static !important; /* ライブラリが付与した絶対配置を無効化 */
-    }
+@media (max-width: 768px) {
+  .image-grid {
+    display: flex;        /* Flexboxに切り替え */
+    flex-wrap: wrap;      /* 折り返し */
+    justify-content: center; 
+  }
+  .image-grid img {
+    width: 48%;           /* 2列表示のイメージ */
+    margin: 1%;           /* 隙間調整 */
+    /* JSで初回のみ order をランダム化する想定 */
+  }
 }
 /* PC表示でスマホメニューを消す：絶対最後 */
 @media screen and (min-width: 601px) {
