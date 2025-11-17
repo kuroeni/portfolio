@@ -58,7 +58,6 @@ body{
  cursor: url("../img/cursor.png"), auto;
 }
 .sort-btn {
-  margin-top: 150px; /* ← .top の高さに合わせて調整（130〜160pxぐらいで試して） */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -161,7 +160,6 @@ footer .footer-sign img {
 
 /*＝＝＝並び替えボタンのCSS*/
 .sort-btn{
-	margin-top: 0;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -364,12 +362,6 @@ footer {
 }
 footer{
  margin-top: 20%;
-}
-footer .footer-sign img {
-    width: 300px;       /* お好みのサイズ */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px; /* 上下の余白 */
 }
 #snsFoot {
  z-index: 1;
