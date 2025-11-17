@@ -544,6 +544,18 @@ window.addEventListener('load', function () {
         dragEnabled: false
     });
 });
+	
+		
+		var originalRefresh = grid.refreshItems;
+grid.refreshItems = function () {
+  // スクロール中はリフレッシュさせない
+  if (window.innerWidth < 768) return this;
+  return originalRefresh.call(this);
+};
+		
+		
+		
+		
 </script>
 	
 	<script>
