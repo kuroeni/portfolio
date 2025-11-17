@@ -671,63 +671,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-</script>
-	<script>
-/* 単一の Muuri 初期化：画像が全部読み込まれてから起動。
-   スマホ（width < 768）ではスクロール中にレイアウトを更新しない。 */
-let grid = null;
+		
+	
+		document.addEventListener("DOMContentLoaded", function() {
+  var gridElem = document.querySelector('.grid');
 
-window.addEventListener('load', function () {
-  const gridEl = document.querySelector('.grid');
-  if (!gridEl) return;
-
-  // 全画像の読み込みを待つ（エラーでも解決する）
-  const imgs = Array.from(gridEl.querySelectorAll('img'));
-  const imgPromises = imgs.map(img => new Promise(res => {
-    if (img.complete) return res();
-    img.addEventListener('load', res, { once: true });
-    img.addEventListener('error', res, { once: true });
-  }));
-
-  Promise.all(imgPromises).then(() => {
-    // 既に grid が初期化されていれば破棄してから再作成（安全策）
-    try { if (grid && typeof grid.destroy === 'function') grid.destroy(); } catch(e){}
-
-    grid = new Muuri('.grid', {
-      showDuration: 600,
-      showEasing: 'ease',
-      hideDuration: 600,
-      hideEasing: 'ease',
-      layoutDuration: 700,
-      layoutEasing: 'ease',
-      dragEnabled: false
+  // 画像の読み込み完了を待つ
+  imagesLoaded(gridElem, function() {
+    // 全画像が読み込まれたら Muuri を初期化
+    var grid = new Muuri('.grid', {
+      layout: {
+        fillGaps: true,
+        horizontal: false,
+        alignRight: false,
+        alignBottom: false,
+        rounding: true
+      }
     });
 
-    grid.refreshItems().layout();
-
-    // スマホではスクロールでの即時リフレッシュを無効化（安定化）
-    let rafScheduled = false;
-    window.addEventListener('scroll', () => {
-      if (window.innerWidth < 768) return; // モバイル時は無視
-      if (!rafScheduled) {
-        rafScheduled = true;
-        requestAnimationFrame(() => {
-          if (grid) grid.refreshItems().layout();
-          rafScheduled = false;
-        });
-      }
-    }, { passive: true });
-
-    // ウィンドウリサイズは軽くデバウンスして実行
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (grid) grid.refreshItems().layout();
-      }, 200);
+    // もし並べ替えボタンがある場合
+    var sortButtons = document.querySelectorAll('.sort-btn li');
+    sortButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // ここでソート条件に応じた処理
+        var sortBy = this.getAttribute('data-sort');
+        grid.sort(sortBy, { ascending: true });
+      });
     });
   });
 });
+
+		
+		
 </script>
+	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
 </body>
 </html>
