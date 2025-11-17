@@ -667,7 +667,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 		
 
-		
+		if (window.innerWidth >= 768) {
+    // PC向けの再配置処理は有効
+    gridInstance.layout(); // MasonryやIsotopeの再配置メソッド
+} else {
+    // スマホでは再配置しない
+}
 </script>
 
 </body>
