@@ -419,11 +419,11 @@
   <span class="page-text">PAGE TOP</span>
 </a>
 </main>
-	<footer>
+<footer>
     <ul id="snsFoot" class="under">
         <li>
             <a href="https://www.facebook.com/p/...">
-                <img src="../img/facebook-new.png" alt="">
+                <img src="img/facebook-new.png" alt="">
             </a>
         </li>
         <li>
@@ -439,6 +439,8 @@
 
     <!--&copy; ENISHI KURODA-->
 </footer>
+	
+	
 	
 <!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->	
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -536,7 +538,14 @@ document.querySelectorAll('.item-content a').forEach(function(link){
     link.classList.remove('long-pressed');
   });
 });
+		// 画像が全部読み込まれてから実行
+window.addEventListener('load', function () {
+    var grid = new Muuri('.grid', {
+        dragEnabled: false
+    });
+});
 </script>
+	
 	<script>
   let grid;
   let originalOrder = [];
