@@ -195,9 +195,9 @@ main img{
 }
 /*==============================1枚目画像==============================*/
 .fade-block1 {/*画像サイズ、位置*/
-	width: 30%;
+	width: 40%;
     height: auto;
-    margin: 0 auto 6% 15%;
+    margin: 0 auto 6% 30%;
     text-align: center;
     position: relative;
     left: 20%;
