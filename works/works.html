@@ -681,18 +681,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 		
 		
-		
-		const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-if (!isSafari) {
-  window.addEventListener('scroll', () => {
-    $grid.isotope('layout'); // Safari以外のみ
-  });
+if (!/iP(hone|od|ad)|Safari/.test(navigator.userAgent) || window.innerWidth >= 768) {
+    $grid.isotope({ /* 普通の初期化 */ });
 }
-imagesLoaded('.grid-container', () => {
-  $grid.isotope({ /* 初期化 */ });
-});
-
 
 		
 </script>
