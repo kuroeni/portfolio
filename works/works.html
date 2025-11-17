@@ -679,10 +679,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 		
 		
-		
-		
-if (!/iP(hone|od|ad)|Safari/.test(navigator.userAgent) || window.innerWidth >= 768) {
-    $grid.isotope({ /* 普通の初期化 */ });
+		var $grid = $('.grid');
+if (window.innerWidth >= 768) {
+    $grid.isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'masonry',
+        // PC用オプション
+    });
+} else {
+    // スマホは初期化だけして並び順はそのまま
+    $grid.addClass('no-isotope'); // CSSでグリッドを整列させるだけ
 }
 
 		
