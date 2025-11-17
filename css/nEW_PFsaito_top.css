@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-	 font-family: system-ui, sans-serif;
+	font-family: system-ui, sans-serif;
 }
 /* 通常のカーソルを非表示 */
 body, a, button, input, textarea {
@@ -553,12 +553,10 @@ footer .footer-sign img {
 .nav-overlay {
   display: none;
 }
-
-/* PC版のナビは表示 */
-header nav:not(.nav-overlay) {
-  display: block;
+/* PC版ナビは常に表示 */
+header nav.pc-menu {
+  display: flex; /* 必要に応じて block でもOK */
 }
-
 /*==========================================すまほ==========================================*/
 @media screen and (max-width: 600px){
 	header{
@@ -566,6 +564,7 @@ header nav:not(.nav-overlay) {
 		height: auto; /* ← これで中身の高さに合わせる */
 		margin-bottom:100px;
 	}
+	
 	main{
 	}
 	/* 通常のカーソルを表示（非表示指定を解除） */
@@ -849,7 +848,11 @@ footer .footer-sign img {
 	
 }
  
-	
+	@media screen and (min-width: 601px) {
+  header nav.pc-menu {
+    display: flex !important; /* 他の display: none !important を上書き */
+  }
+}
 
 
 
