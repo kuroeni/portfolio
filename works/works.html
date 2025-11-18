@@ -522,42 +522,37 @@ document.addEventListener("mousemove", (e) => {
 });	
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function () {
 
-  // ==== Muuri 初期化（絶対に1回だけ） ====
-  window.grid = new Muuri('.grid', {
-    layoutOnResize: false,
-    layoutOnInit: true,
-    layoutOnImageLoad: false,
-    showDuration: 600,
-    showEasing: 'ease',
-    hideDuration: 600,
-    hideEasing: 'ease',
-    layoutDuration: 700,
-    layoutEasing: 'ease'
+  // 画面幅で分岐（スマホ判定）
+  var isMobile = window.innerWidth <= 768;
+
+  // Muuri 初期化
+  var grid = new Muuri('.grid', {
+    dragEnabled: false
   });
 
-  grid.refreshItems().layout();
-
-  // ==== スマホだけ：初回ランダム ====
-  if (window.matchMedia("(max-width: 768px)").matches) {
-
-    var items = grid.getItems();
-
-    var shuffled = items.slice().sort(function() {
+  if (isMobile) {
+    // --- スマホだけ初回でランダムソート ---
+    grid.sort(function () {
       return Math.random() - 0.5;
     });
 
-    grid.sort(shuffled);
+    // --- スクロール・リサイズによる再配置を無効化 ---
+    window.addEventListener('resize', function (e) {
+      e.stopImmediatePropagation();
+    }, true);
 
-    // ==== 二度と勝手に並び変えさせない ====
-    grid._settings.layoutOnResize = false;
-    grid._settings.layoutOnImageLoad = false;
+    window.addEventListener('scroll', function (e) {
+      e.stopImmediatePropagation();
+    }, true);
+
+  } else {
+    // PC は今まで通り
   }
 
 });
 </script>
-
 
 </body>
 </html>
