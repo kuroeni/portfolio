@@ -679,17 +679,68 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 		
 		
-		var $grid = $('.grid');
-if (window.innerWidth >= 768) {
-    $grid.isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry',
-        // PC用オプション
+		document.addEventListener('DOMContentLoaded', function() {
+
+  var grid = new Muuri('.grid', {
+    layoutOnResize: false,   // ★スマホで並び替わる原因を止める
+    layoutOnInit: true,
+    layoutOnImageLoad: false
+  });
+
+  // ---- スマホの時だけ実行 ----
+  if (window.matchMedia("(max-width: 768px)").matches) {
+
+    // 子要素を取得
+    var items = grid.getItems();
+
+    // ★ランダムに並び替える（初回のみ）
+    var shuffled = items.slice().sort(function() {
+      return Math.random() - 0.5;
     });
-} else {
-    // スマホは初期化だけして並び順はそのまま
-    $grid.addClass('no-isotope'); // CSSでグリッドを整列させるだけ
-}
+
+    // Muuri側で順番反映
+    grid.sort(shuffled);
+
+    // ★二度と勝手に配置変更しないよう封印
+    grid._settings.layoutOnResize = false;
+    grid._settings.layoutOnImageLoad = false;
+  }
+
+});
+		
+		
+		
+		
+		
+		document.addEventListener('DOMContentLoaded', function() {
+
+  var grid = new Muuri('.grid', {
+    layoutOnResize: false,   // ★スマホで並び替わる原因を止める
+    layoutOnInit: true,
+    layoutOnImageLoad: false
+  });
+
+  // ---- スマホの時だけ実行 ----
+  if (window.matchMedia("(max-width: 768px)").matches) {
+
+    // 子要素を取得
+    var items = grid.getItems();
+
+    // ★ランダムに並び替える（初回のみ）
+    var shuffled = items.slice().sort(function() {
+      return Math.random() - 0.5;
+    });
+
+    // Muuri側で順番反映
+    grid.sort(shuffled);
+
+    // ★二度と勝手に配置変更しないよう封印
+    grid._settings.layoutOnResize = false;
+    grid._settings.layoutOnImageLoad = false;
+  }
+
+});
+
 
 		
 </script>
