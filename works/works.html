@@ -442,91 +442,21 @@
 	
 	
 	
-<!--自作スクリプト--------------------------------------------------------------------------------------------------------------------><!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->	
+<!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->
+<!-- ライブラリ -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
+<!-- メインスクリプト -->
 <script>
-//＝＝＝並び替えボタン設定（これだけ残す）
-$('.sort-btn li').on('click',function(){
-	$(".sort-btn .active").removeClass("active");
-	var className = $(this).attr("class");
-	className = className.split(' ');
-	$("."+className[0]).addClass("active");
+$(document).ready(function(){
 
-	if(className[0] == "sort00"){
-		grid.show('');
-	}else{
-		grid.filter("."+className[0]);
-	}
-});
-
-// Fancybox
-$('[data-fancybox]').fancybox({
- thumbs: { autoStart: true },
-});
-
-// ページトップ
-const btn = document.querySelector('.menu-btn');
-const panel = document.querySelector('.menu-panel');
-btn.addEventListener("click", function () {
-  btn.classList.toggle("active");
-  panel.classList.toggle("active");
-});
-
-const pageTop = document.getElementById('page-top');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    pageTop.classList.add('visible');
-  } else {
-    pageTop.classList.remove('visible');
-  }
-});
-pageTop.addEventListener('click', function(e) {
-  e.preventDefault();
-  window.scroll({ top: 0, behavior: 'smooth' });
-});
-
-// スマホ長押し
-document.querySelectorAll('.item-content a').forEach(function(link){
-  let pressTimer;
-  let href = link.getAttribute('href');
-
-  link.addEventListener('touchstart', function(e){
-    pressTimer = setTimeout(() => {
-      link.classList.add('long-pressed');
-    }, 500);
-  });
-
-  link.addEventListener('touchend', function(e){
-    if (link.classList.contains('long-pressed')) {
-      window.location.href = href;
-    }
-    clearTimeout(pressTimer);
-    link.classList.remove('long-pressed');
-  });
-
-  link.addEventListener('touchmove', function(e){
-    clearTimeout(pressTimer);
-    link.classList.remove('long-pressed');
-  });
-});
-
-// カーソル追従
-const cursor = document.getElementById("custom-cursor");
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});	
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // ==== Muuri 初期化（絶対に1回だけ） ====
-  window.grid = new Muuri('.grid', {
-    layoutOnResize: false,
+  // ===== Muuri 初期化（すべての画面サイズで同じ） =====
+  var grid = new Muuri('.grid', {
+    dragEnabled: false,
+    layoutOnResize: false,   // 自動再計算禁止
     layoutOnInit: true,
     layoutOnImageLoad: false,
     showDuration: 600,
@@ -537,58 +467,85 @@ document.addEventListener('DOMContentLoaded', function() {
     layoutEasing: 'ease'
   });
 
-  grid.refreshItems().layout();
+  // 初回読み込み時だけランダムソート
+  grid.sort(() => Math.random() - 0.5);
 
-  // ==== スマホだけ：初回ランダム ====
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  // ===== 並び替えボタン =====
+  $('.sort-btn li').on('click', function(){
+    $(".sort-btn .active").removeClass("active");
+    var className = $(this).attr("class").split(' ');
+    $("."+className[0]).addClass("active");
 
-    var items = grid.getItems();
-
-    var shuffled = items.slice().sort(function() {
-      return Math.random() - 0.5;
-    });
-
-    grid.sort(shuffled);
-
-    // ==== 二度と勝手に並び変えさせない ====
-    grid._settings.layoutOnResize = false;
-    grid._settings.layoutOnImageLoad = false;
-  }
-
-});
-</script>
-<script>
-window.addEventListener('load', function () {
-
-  // 画面幅で分岐（スマホ判定）
-  var isMobile = window.innerWidth <= 768;
-
-  // Muuri 初期化
-  var grid = new Muuri('.grid', {
-    dragEnabled: false
+    if(className[0] == "sort00"){
+      grid.show('');
+    } else {
+      grid.filter("."+className[0]);
+    }
   });
 
-  if (isMobile) {
-    // --- スマホだけ初回でランダムソート ---
-    grid.sort(function () {
-      return Math.random() - 0.5;
+  // ===== Fancybox =====
+  $('[data-fancybox]').fancybox({
+    thumbs: { autoStart: true },
+  });
+
+  // ===== ページトップ =====
+  const btn = document.querySelector('.menu-btn');
+  const panel = document.querySelector('.menu-panel');
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("active");
+    panel.classList.toggle("active");
+  });
+
+  const pageTop = document.getElementById('page-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      pageTop.classList.add('visible');
+    } else {
+      pageTop.classList.remove('visible');
+    }
+  });
+  pageTop.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scroll({ top: 0, behavior: 'smooth' });
+  });
+
+  // ===== スマホ長押し（リンク遷移） =====
+  document.querySelectorAll('.item-content a').forEach(function(link){
+    let pressTimer;
+    let href = link.getAttribute('href');
+
+    link.addEventListener('touchstart', function(e){
+      pressTimer = setTimeout(() => {
+        link.classList.add('long-pressed');
+      }, 500);
     });
 
-    // --- スクロール・リサイズによる再配置を無効化 ---
-    window.addEventListener('resize', function (e) {
-      e.stopImmediatePropagation();
-    }, true);
+    link.addEventListener('touchend', function(e){
+      if (link.classList.contains('long-pressed')) {
+        window.location.href = href;
+      }
+      clearTimeout(pressTimer);
+      link.classList.remove('long-pressed');
+    });
 
-    window.addEventListener('scroll', function (e) {
-      e.stopImmediatePropagation();
-    }, true);
+    link.addEventListener('touchmove', function(e){
+      clearTimeout(pressTimer);
+      link.classList.remove('long-pressed');
+    });
+  });
 
-  } else {
-    // PC は今まで通り
+  // ===== カーソル追従 =====
+  const cursor = document.getElementById("custom-cursor");
+  if(cursor){
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
   }
 
 });
 </script>
+
 	
 
 		
