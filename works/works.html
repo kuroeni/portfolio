@@ -447,303 +447,117 @@
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<!--自作のJS-->
-<script>$(window).on('load',function(){	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
 
-//＝＝＝Muuriギャラリープラグイン設定
-var grid = new Muuri('.grid', {
+<script>
+//＝＝＝並び替えボタン設定（これだけ残す）
+$('.sort-btn li').on('click',function(){
+	$(".sort-btn .active").removeClass("active");
+	var className = $(this).attr("class");
+	className = className.split(' ');
+	$("."+className[0]).addClass("active");
 
-//アイテムの表示速度※オプション。
-showDuration: 600,
-showEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-hideDuration: 600,
-hideEasing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-	
-// アイテムの表示/非表示状態のスタイル※オプション。
- visibleStyles: {
- opacity: '1',
- transform: 'scale(1)'
-  },
-  hiddenStyles: {
-  opacity: '0',
-  transform: 'scale(0.5)'
-  }    
-});
-
-//＝＝＝並び替えボタン設定
-$('.sort-btn li').on('click',function(){			//並び替えボタンをクリックしたら
-	$(".sort-btn .active").removeClass("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
-	var className = $(this).attr("class");			//クラス名を取得
-	className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
-	$("."+className[0]).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
-	if(className[0] == "sort00"){						//クラス名がsort00（全て）のボタンの場合は、
-		 grid.show('');								//全ての要素を出す
-	}else{											//それ以外の場合は
-		grid.filter("."+className[0]); 				//フィルターを実行
+	if(className[0] == "sort00"){
+		grid.show('');
+	}else{
+		grid.filter("."+className[0]);
 	}
 });
 
-//＝＝＝ Fancyboxの設定
+// Fancybox
 $('[data-fancybox]').fancybox({
- thumbs: {
-    autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
-  },	
+ thumbs: { autoStart: true },
 });
-	
-});</script>
-<script src="js/6-2-2.js"></script>
-	<script>//＝＝＝ ページトップJava
-  const btn = document.querySelector('.menu-btn');
-  const panel = document.querySelector('.menu-panel');
 
-  btn.addEventListener("click", function () {
-    btn.classList.toggle("active");
-    panel.classList.toggle("active");
-  });
-		const pageTop = document.getElementById('page-top');
-			window.addEventListener('scroll', () => {
-  	if (window.scrollY > 300) {  // 300pxスクロールしたら表示
+// ページトップ
+const btn = document.querySelector('.menu-btn');
+const panel = document.querySelector('.menu-panel');
+btn.addEventListener("click", function () {
+  btn.classList.toggle("active");
+  panel.classList.toggle("active");
+});
+
+const pageTop = document.getElementById('page-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
     pageTop.classList.add('visible');
   } else {
     pageTop.classList.remove('visible');
   }
 });
-
 pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
-</script>
-	<script>//＝＝＝ スマホ版、長押しでホバー効果、指離すまでリンク開かないよJava
+
+// スマホ長押し
 document.querySelectorAll('.item-content a').forEach(function(link){
   let pressTimer;
   let href = link.getAttribute('href');
 
   link.addEventListener('touchstart', function(e){
     pressTimer = setTimeout(() => {
-      link.classList.add('long-pressed'); // 長押し中のエフェクトなどに使える
-    }, 500); // 0.5秒押したら「準備OK」
+      link.classList.add('long-pressed');
+    }, 500);
   });
 
   link.addEventListener('touchend', function(e){
     if (link.classList.contains('long-pressed')) {
-      window.location.href = href; // 指を離したタイミングで遷移
+      window.location.href = href;
     }
     clearTimeout(pressTimer);
-    link.classList.remove('long-pressed'); // エフェクト終了
+    link.classList.remove('long-pressed');
   });
 
   link.addEventListener('touchmove', function(e){
-    clearTimeout(pressTimer); // スワイプしたらキャンセル
+    clearTimeout(pressTimer);
     link.classList.remove('long-pressed');
   });
 });
-		// 画像が全部読み込まれてから実行
-window.addEventListener('load', function () {
-    var grid = new Muuri('.grid', {
-        dragEnabled: false
-    });
-});
-		
-		
-		
-		
-		if (!/iP(hone|od|ad)|Safari/.test(navigator.userAgent) || window.innerWidth >= 768) {
-    $grid.isotope({ /* 普通の初期化 */ });
-}
-		
-		
+
+// カーソル追従
+const cursor = document.getElementById("custom-cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
 </script>
-	
-	<script>
-  let grid;
-  let originalOrder = [];
+<script>
+document.addEventListener('DOMContentLoaded', function() {
 
-  window.addEventListener('load', function () {
-    grid = new Muuri('.grid', {
-      showDuration: 600,
-      showEasing: 'ease',
-      hideDuration: 600,
-      hideEasing: 'ease',
-      layoutDuration: 700,
-      layoutEasing: 'ease',
-    });
-
-    grid.refreshItems().layout();
-
-    // 初期順序を保存
-    originalOrder = grid.getItems();
-
-    // ページロード時はシャッフル
-    grid.sort(() => Math.random() - 0.5);
-  });
-
-  $(function () {
-    $('.sort-btn li').on('click', function () {
-      const $btn = $(this);
-      const classList = $btn.attr('class').split(/\s+/);
-      const sortClass = classList.find(cls => cls.startsWith('sort'));
-
-      $('.sort-btn li').removeClass('active');
-      $btn.addClass('active');
-
-      if (sortClass === 'sort00') {
-        // ALLボタン：全部表示してシャッフル
-        grid.show('');
-        grid.sort(() => Math.random() - 0.5);
-      } else {
-        // その他のカテゴリ：絞り込み
-        grid.filter(`.${sortClass}`);
-
-        // 元の順序に戻すためにソートし直す
-        grid.sort((a, b) => {
-          return originalOrder.indexOf(a) - originalOrder.indexOf(b);
-        });
-      }
-    });
-  });
-		 // 該当タグページに戻る
-		window.addEventListener('load', () => {
-  const grid = new Muuri('.grid', {
+  // ==== Muuri 初期化（絶対に1回だけ） ====
+  window.grid = new Muuri('.grid', {
+    layoutOnResize: false,
+    layoutOnInit: true,
+    layoutOnImageLoad: false,
     showDuration: 600,
     showEasing: 'ease',
     hideDuration: 600,
     hideEasing: 'ease',
     layoutDuration: 700,
-    layoutEasing: 'ease',
+    layoutEasing: 'ease'
   });
+
   grid.refreshItems().layout();
 
-  document.querySelectorAll('.sort-btn li').forEach(li => {
-    li.addEventListener('click', () => {
-      document.querySelectorAll('.sort-btn li').forEach(btn => btn.classList.remove('active'));
-      li.classList.add('active');
-
-      const sortClass = li.className.split(' ').find(c => c.startsWith('sort'));
-      if (sortClass === 'sort00') {
-        grid.show('');
-      } else {
-        grid.filter(`.${sortClass}`);
-      }
-    });
-  });
-
-  // URLの ?tag=product などを取得して対応するボタンをクリックする
-  const params = new URLSearchParams(window.location.search);
-  const tag = params.get('tag');
-  if (tag) {
-    const tagToClassMap = {
-      product: "sort01",
-      graphics: "sort02",
-      projects: "sort03",
-      planning: "sort04",
-      others: "sort05",
-      all: "sort00"
-    };
-    const className = tagToClassMap[tag.toLowerCase()];
-    if (className) {
-      const targetButton = document.querySelector(`.sort-btn li.${className}`);
-      if (targetButton) targetButton.click();
-    }
-  }
-});
-		
-		
-	// カーソル追従
-		const cursor = document.getElementById("custom-cursor");
-
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});	
-		
-		
-</script>
-	
-	<script>// 該当ページにいる時該当ボタンは黒色に
-document.addEventListener("DOMContentLoaded", function() {
-  const currentPath = window.location.pathname;
-
-  // PCメニューとスマホメニュー両方を取得
-  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
-
-  menuLinks.forEach(link => {
-    // 絶対パス・相対パスどちらでも対応
-    const linkPath = new URL(link.href).pathname;
-    if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-});
-		
-		
-		document.addEventListener('DOMContentLoaded', function() {
-
-  var grid = new Muuri('.grid', {
-    layoutOnResize: false,   // ★スマホで並び替わる原因を止める
-    layoutOnInit: true,
-    layoutOnImageLoad: false
-  });
-
-  // ---- スマホの時だけ実行 ----
+  // ==== スマホだけ：初回ランダム ====
   if (window.matchMedia("(max-width: 768px)").matches) {
 
-    // 子要素を取得
     var items = grid.getItems();
 
-    // ★ランダムに並び替える（初回のみ）
     var shuffled = items.slice().sort(function() {
       return Math.random() - 0.5;
     });
 
-    // Muuri側で順番反映
     grid.sort(shuffled);
 
-    // ★二度と勝手に配置変更しないよう封印
+    // ==== 二度と勝手に並び変えさせない ====
     grid._settings.layoutOnResize = false;
     grid._settings.layoutOnImageLoad = false;
   }
 
 });
-		
-		
-		
-		
-		
-		document.addEventListener('DOMContentLoaded', function() {
-
-  var grid = new Muuri('.grid', {
-    layoutOnResize: false,   // ★スマホで並び替わる原因を止める
-    layoutOnInit: true,
-    layoutOnImageLoad: false
-  });
-
-  // ---- スマホの時だけ実行 ----
-  if (window.matchMedia("(max-width: 768px)").matches) {
-
-    // 子要素を取得
-    var items = grid.getItems();
-
-    // ★ランダムに並び替える（初回のみ）
-    var shuffled = items.slice().sort(function() {
-      return Math.random() - 0.5;
-    });
-
-    // Muuri側で順番反映
-    grid.sort(shuffled);
-
-    // ★二度と勝手に配置変更しないよう封印
-    grid._settings.layoutOnResize = false;
-    grid._settings.layoutOnImageLoad = false;
-  }
-
-});
-
-
-		
 </script>
+
 
 </body>
 </html>
