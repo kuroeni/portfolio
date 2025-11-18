@@ -442,7 +442,7 @@
 	
 	
 	
-<!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->	
+<!--自作スクリプト--------------------------------------------------------------------------------------------------------------------><!--自作スクリプト-------------------------------------------------------------------------------------------------------------------->	
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
@@ -522,6 +522,42 @@ document.addEventListener("mousemove", (e) => {
 });	
 </script>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ==== Muuri 初期化（絶対に1回だけ） ====
+  window.grid = new Muuri('.grid', {
+    layoutOnResize: false,
+    layoutOnInit: true,
+    layoutOnImageLoad: false,
+    showDuration: 600,
+    showEasing: 'ease',
+    hideDuration: 600,
+    hideEasing: 'ease',
+    layoutDuration: 700,
+    layoutEasing: 'ease'
+  });
+
+  grid.refreshItems().layout();
+
+  // ==== スマホだけ：初回ランダム ====
+  if (window.matchMedia("(max-width: 768px)").matches) {
+
+    var items = grid.getItems();
+
+    var shuffled = items.slice().sort(function() {
+      return Math.random() - 0.5;
+    });
+
+    grid.sort(shuffled);
+
+    // ==== 二度と勝手に並び変えさせない ====
+    grid._settings.layoutOnResize = false;
+    grid._settings.layoutOnImageLoad = false;
+  }
+
+});
+</script>
+<script>
 window.addEventListener('load', function () {
 
   // 画面幅で分岐（スマホ判定）
@@ -553,6 +589,10 @@ window.addEventListener('load', function () {
 
 });
 </script>
+	
+
+		
+
 
 </body>
 </html>
