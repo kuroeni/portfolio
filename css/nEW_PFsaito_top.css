@@ -266,6 +266,7 @@ main img{
 	 transform: rotate(-10deg) translateY(-10px) scale(1.05);
 	
 }
+
 .works-title {
     width: 250px;
     height: auto;
@@ -307,7 +308,13 @@ main img{
     transform: translateX(-50%); /* 画像の半分分スライドさせる */
   }
 }
-
+.learn_more{
+	width: 37%;
+	margin-left: 20%;
+}
+.learn_more:hover{
+	 transform: rotate(-10deg) translateY(-10px) scale(1.05);
+}
 .about-belt {
     width: 100%;
     text-align: center;
@@ -366,12 +373,12 @@ main img{
 .about-name {
   font-size: 30px;
   margin: 0;
-  margin-left: -30%; /* これで右端に寄せる */
+  margin-left: -33%; /* これで右端に寄せる */
   text-align: right;
 }
 /*=============================名刺ここから==============================*/
 .card {
-    margin-left: 50%; /* h3とカードの間のスペースを広げて右端へ */
+    margin-left: 40%; /* h3とカードの間のスペースを広げて右端へ */
     width: 100px;
     height: 250px;
     perspective: 1000px;
