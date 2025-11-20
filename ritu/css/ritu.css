@@ -34,7 +34,7 @@ body{
 	/*cursor: url("../img/HD-wallpaper-n-d-middle-logo-green-day2.png"),auto;*/
 	font-family: 'Crimson Text', serif;
 	font-family: 'Ubuntu', sans-serif;
-	cursor: url("../img/cursor.png")auto;
+	cursor: url("../img/cursor.svg")auto;
 }
 html,body{
 	height:100%;
@@ -87,11 +87,11 @@ li a{
 	text-decoration: none;
 }
 h1{
-	cursor: url("../img/cursor.png")auto;
+	cursor: url("../img/cursor.svg")auto;
 	width:100px;
 }
 h1 img{
-	cursor: url("../img/cursor.png")auto;
+	cursor: url("../img/cursor.svg")auto;
 	margin-left: 10%;
 	width: 80%;
 	height: 100%;
@@ -104,7 +104,6 @@ h1 img{
 .topimg{
 	position: fixed;
 	z-index: 10;
-	cursor: url("../img/sunglass.png")auto;
 }
 
 #wrapper{
@@ -268,9 +267,14 @@ footer {
     text-align: center;
     color:#474747;
     margin-bottom: 5%;
+	 margin-top: 20%;
 }
-footer{
- margin-top: 20%;
+
+footer .footer-sign img {
+    width: 200px;       /* お好みのサイズ */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 上下の余白 */
 }
 #snsFoot {
  z-index: 1;
@@ -298,13 +302,14 @@ footer{
     height: auto;
     opacity: .9;
 }
+/* ページスクロール */
 #page-top {
   position: fixed;
   right: 0;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  margin-right: -3%;
+  margin-right: -1%;
   gap: 0px;
   cursor: pointer;
   opacity: 0;
