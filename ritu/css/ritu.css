@@ -4,7 +4,25 @@
 *{
     margin: 0;
     padding: 0;
+	font-family: system-ui, sans-serif;
 }
+/* 通常のカーソルを非表示 */
+body, a, button, input, textarea {
+  cursor: none !important;
+	
+}
+
+/* カスタムカーソル */
+#custom-cursor {
+  position: fixed;      /* ページスクロールで追従 */
+  width: 32px;
+  height: 32px;
+  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
+  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
+  z-index: 9999;        /* 最前面に表示 */
+}
+
+
 html{
   overflow-x: hidden;
 }
@@ -16,6 +34,7 @@ body{
 	/*cursor: url("../img/HD-wallpaper-n-d-middle-logo-green-day2.png"),auto;*/
 	font-family: 'Crimson Text', serif;
 	font-family: 'Ubuntu', sans-serif;
+	cursor: url("../img/cursor.png")auto;
 }
 html,body{
 	height:100%;
@@ -40,7 +59,7 @@ header{
     text-align: center;
     text-decoration: none;
     color: #333;
-	background-color: #EFE42C;;
+	background-color: #EFE42C;
     outline: none;/*入力中に箱が入力中ということを表す*/
     transition: all .2s;/*ホバーした時の動き*/
 }
@@ -49,6 +68,11 @@ header{
 	background:#333;
     color:#fff;
 }
+.push.active {
+  background: #333;
+  color:  #EFE42C;
+}
+
 nav ul{
 	margin-right: 0%;
 	display: flex;
@@ -63,11 +87,11 @@ li a{
 	text-decoration: none;
 }
 h1{
-	cursor: url("../img/sunglass.png")auto;
+	cursor: url("../img/cursor.png")auto;
 	width:100px;
 }
 h1 img{
-	cursor: url("../img/sunglass.png")auto;
+	cursor: url("../img/cursor.png")auto;
 	margin-left: 10%;
 	width: 80%;
 	height: 100%;
