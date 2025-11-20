@@ -25,6 +25,7 @@
 	<link rel="icon" href="https://kuroeni.github.io/portfolio/catch/favicon.ico" type="image/x-icon"><!--ファビコン-->
 </head>
 <body>
+	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
 
 <main>
 	<header>
@@ -107,18 +108,25 @@
 		
 </div>
 	<footer>
-&copy;ENISHI KURODA
-	<ul id="snsFoot" class="under">
-		<li>
-			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="../about/img/facebook-new.png" alt=""></a>
-		</li>
-		<li>
-			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
-				<img src="../about/img/image2-1-350x350.png" alt="Instagram">
-			</a>
-		</li>
-	</ul>
-	</footer>
+    <ul id="snsFoot" class="under">
+        <li>
+            <a href="https://www.facebook.com/p/...">
+                <img src="img/facebook-new.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+                <img src="img/image2-1-350x350.png" alt="Instagram">
+            </a>
+        </li>
+    </ul>
+
+    <div class="footer-sign">
+        <img src="img/fotter_sign.png" alt="サイン">
+    </div>
+
+    <!--&copy; ENISHI KURODA-->
+</footer>
 
 		<!-- ページトップ -->
 <a href="#" id="page-top" aria-label="ページトップへ">
@@ -161,6 +169,39 @@ pageTop.addEventListener('click', function(e) {
   }
 });
 		
+</script>
+	<script>
+	// カーソル追従
+		const cursor = document.getElementById("custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
+</script>
+	
+	<script>//該当ボタンを黒くする条件
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPath = window.location.pathname;
+
+  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
+
+  menuLinks.forEach(link => {
+    const linkPath = new URL(link.href).pathname;
+
+    //該当する個別ページのボタン＝worksボタンを黒くする条件
+    if (linkPath.endsWith('works.html') && (
+          currentPath.includes('/works/') || 
+          currentPath.endsWith('/stamp/stamp.html') // 該当する個別ページをここで変更する
+        )) {
+      link.classList.add('active');
+    } else if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
 </script>
 </main>
 </body>
