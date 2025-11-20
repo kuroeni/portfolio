@@ -545,7 +545,24 @@ $(document).ready(function(){
 
 });
 </script>
+<script>// 該当ページにいる時該当ボタンは黒色に
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPath = window.location.pathname;
 
+  // PCメニューとスマホメニュー両方を取得
+  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
+
+  menuLinks.forEach(link => {
+    // 絶対パス・相対パスどちらでも対応
+    const linkPath = new URL(link.href).pathname;
+    if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script>
 	
 
 		
