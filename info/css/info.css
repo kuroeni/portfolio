@@ -96,7 +96,7 @@ h1 img{
   width: 50%;
   height: 100vh;
   /*装飾のためのCSS*/
-  background:url("../img/インフォグラフィックの自習.jpg") center no-repeat;
+  background:url("../img/info_zisyu.jpg")center no-repeat;
   background-size:30% ;
 	
 }
@@ -163,9 +163,13 @@ small{/*small...一回り小さいサイズで表示*/
 .img2{
 	width: 50%;
 	height: 50%;
-	
 	margin-left: 10%;
-	
+}
+.img3{
+	width: 50%;
+	height: 50%;
+	margin-top: 50%;
+	margin-left: -50%;
 }
 .img{
 	margin-bottom: 20%;
