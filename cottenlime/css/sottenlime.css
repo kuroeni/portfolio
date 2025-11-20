@@ -5,6 +5,20 @@
     margin: 0;
     padding: 0;
 }
+/* 通常のカーソルを非表示 */
+body, a, button, input, textarea{
+  cursor: none !important;
+}
+
+/* カスタムカーソル */
+#custom-cursor {
+  position: fixed;      /* ページスクロールで追従 */
+  width: 32px;
+  height: 32px;
+  pointer-events: none; /* カーソルがクリック操作を邪魔しない */
+  transform: translate(-20%, -20%); /* 画像の中心をマウス位置に合わせる */
+  z-index: 999999;        /* 最前面に表示 */
+}
 html{
   overflow-x: hidden;
 }
@@ -16,7 +30,9 @@ body{
 	/*cursor: url("../img/HD-wallpaper-n-d-middle-logo-green-day2.png"),auto;*/
 	font-family: 'Crimson Text', serif;
 	font-family: 'Ubuntu', sans-serif;
+	cursor: url("../img/cursor.svg"), auto;
 }
+
 html,body{
 	height:100%;
 }
@@ -40,7 +56,7 @@ header{
     text-align: center;
     text-decoration: none;
     color: #333;
-	background-color: #EFE42C;;
+	background-color: #EFE42C;
     outline: none;/*入力中に箱が入力中ということを表す*/
     transition: all .2s;/*ホバーした時の動き*/
 }
@@ -48,6 +64,10 @@ header{
 .push:hover{
 	background:#333;
     color:#fff;
+}
+.push.active {
+  background: #333;
+  color:  #EFE42C;
 }
 nav ul{
 	margin-right: 0%;
@@ -63,11 +83,9 @@ li a{
 	text-decoration: none;
 }
 h1{
-	cursor: url("../../ritu/img/sunglass.png") auto;
 	width:100px;
 }
 h1 img{
-	cursor: url("../../ritu/img/sunglass.png") auto;
 	margin-left: 10%;
 	width: 80%;
 	height: 100%;
@@ -80,7 +98,6 @@ h1 img{
 .topimg{
 	position: fixed;
 	z-index: 10;
-	cursor: url("../../ritu/img/sunglass.png") auto;
 }
 
 #wrapper{
@@ -98,6 +115,7 @@ h1 img{
   /*装飾のためのCSS*/
   background:url("../img/DSC_0060.JPG")center;
   background-size:cover;
+	
 }
 #right_area{
   background: url()no-repeat;
@@ -243,9 +261,14 @@ footer {
     text-align: center;
     color:#474747;
     margin-bottom: 5%;
+	 margin-top: 20%;
 }
-footer{
- margin-top: 20%;
+
+footer .footer-sign img {
+    width: 200px;       /* お好みのサイズ */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 上下の余白 */
 }
 #snsFoot {
  z-index: 1;
@@ -273,13 +296,14 @@ footer{
     height: auto;
     opacity: .9;
 }
+/* ページスクロール */
 #page-top {
   position: fixed;
   right: 0;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  margin-right: -3%;
+  margin-right: -1%;
   gap: 0px;
   cursor: pointer;
   opacity: 0;
