@@ -18,14 +18,14 @@
 	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
 	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
 <title>ENISHI | Portfolio</title>
-<link rel="stylesheet" href= "../tuyu/css/tuyu.css" >
+<link rel="stylesheet" href= "css/zam.css" >
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
 	<link rel="icon" href="https://kuroeni.github.io/portfolio/catch/favicon.ico" type="image/x-icon"><!--ファビコン-->
 </head>
 <body>
-	<img id="custom-cursor" src="../zam/img/cursor.svg" alt="cursor">
+	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
 	
 	<div id="modal-container">
  		 <div class="modal-center">
@@ -72,10 +72,11 @@
 	 <section class="blockwork1">
 		        <h2>生誕祭グッズ</h2>
 				<div class="textwork1">
-					<p>メイドさんの生誕祭グッズのイラスト依頼</p>
+					<p>生誕祭グッズイラスト制作</p>
 				</div>
 				<div class="textwork2">
-				  <p>コンセプトカフェのメイドさんの生誕祭のイラストの依頼をいただきました。文化祭で制作したスタイルブックを見かけて頂きスタイルブック風に普段の私を書いて欲しいというリクエストをいただき書かせていただました。</p>
+				  <p>コンセプトカフェのメイドさんの生誕祭のイラストの依頼をいただきました。メイドさんの普段の様子を描いたイラストで
+					ファンの方に楽しんでもらえるようにネイルやアクセサリーや服装にこだわりました。</p>
 		</div>
 			  <div class="textwork3">
 					
@@ -87,15 +88,15 @@
 					<p>全体</p>
 			  </div>
 		 <div class="img">
-		      <img src="img/gudds.png" alt="" class="img2">
+		       <img src="img/zam.jpg" alt="" class="img1">
 		    </div>
 		 
 		 
 		 <div class="textwork5">
-					<p>グッズ</p>
+					<p>ラフ</p>
 			  </div>
 		 <div class="img">
-			  <img src="img/gudds.png" alt="" class="img2">
+			  <img src="img/zam_ragh.PNG" alt="" class="img2">
 		    </div>
 		
 		 	
@@ -123,18 +124,18 @@
     <ul id="snsFoot" class="under">
         <li>
             <a href="https://www.facebook.com/p/...">
-                <img src="../zam/img/facebook-new.png" alt="">
+                <img src="img/facebook-new.png" alt="">
             </a>
         </li>
         <li>
             <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
-                <img src="../zam/img/image2-1-350x350.png" alt="Instagram">
+                <img src="img/image2-1-350x350.png" alt="Instagram">
             </a>
         </li>
     </ul>
 
     <div class="footer-sign">
-        <img src="../zam/img/fotter_sign.png" alt="サイン">
+        <img src="img/fotter_sign.png" alt="サイン">
     </div>
 
     <!--&copy; ENISHI KURODA-->
@@ -189,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //該当する個別ページのボタン＝worksボタンを黒くする条件
     if (linkPath.endsWith('works.html') && (
           currentPath.includes('/works/') || 
-          currentPath.endsWith('/tuyu/tuyu.html') // 該当する個別ページをここで変更する
+          currentPath.endsWith('/zam/zam.html') // 該当する個別ページをここで変更する
         )) {
       link.classList.add('active');
     } else if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
