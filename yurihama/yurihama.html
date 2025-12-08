@@ -18,14 +18,23 @@
 	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
 	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
 <title>ENISHI | Portfolio</title>
-<link rel="stylesheet" href= "css/tottori.css" >
+<link rel="stylesheet" href= "../yurihama/css/yurihama.css" >
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
 	<link rel="icon" href="https://kuroeni.github.io/portfolio/catch/favicon.ico" type="image/x-icon"><!--ファビコン-->
 </head>
 <body>
-
+		<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
+	
+	
+	<div id="modal-container">
+ 		 <div class="modal-center">
+    		<img src="../info/ " alt="">
+  		</div>
+	</div>
+	
+	
 <main>
 	<header>
 	<div class="top">
@@ -63,26 +72,36 @@
 	<div id="left_area"><!--左の画像エリア--></div>	
 	<div id="right_area"><!--右のエリア-->
 	 <section class="blockwork1">
-		        <h2>紙技展Webページ</h2>
+		        <h2>三つ折りリーフレット</h2>
 				<div class="textwork1">
-					<p>展示会の雰囲気を平面化したWebページの制作</p>
+					<p>湯梨浜町の空気感を<br>伝えるリーフレット</p>
 				</div>
 				<div class="textwork2">
-				  <p>紙技展で配られるDMカードのイラストで歓迎し作品の一部を紹介しています。画像をスライドショーにしたり大小サイズの違う画像で大差を付けたり、マージンや文字のサイズ等を試行錯誤しながら制作しました。</p>
+				  <p>二日間の鳥取研修で見たことや感じたことなどを自分でまとめ実際に市場に配布する想定で三つ折りのリーフレットを制作しました。新婚や家族旅行の方々をターゲットにしたので優しい色合いとゆるいイラストで湯梨浜の空気感を伝えるリーフレットを作成しました。</p>
 		</div>
 			  <div class="textwork3">
 					
-				  <p>授業課題　　　WEB実習</p>
-				   <p>制作期間　　　2022/12/14~2023/1/18</p>
+				  <p>授業課題　　　鳥取研修</p>
+				   <p>制作期間　　　2週間程度</p>
 				    
 			  </div>
 		 <div class="textwork4">
-					<p>ラフスケッチ</p>
+					<p>全体</p>
 				    
 			  </div>
 		 <div class="img">
-		       <img src="img/tottori_ragh_1.png" class="img1">
-			 <img src="img/tottori_fegh_2.png" class="img2">
+		       <img src="../yurihama/img/tottori_1.jpg" alt="" class="img1">
+			 <img src="../yurihama/img/tottori_2.jpg" alt="" class="img2">
+		    </div>
+		 
+		 
+		  <div class="textwork5">
+					<p>ラフ案</p>
+				    
+			  </div>
+		 <div class="img">
+		       <img src="../yurihama/img/tottori_ragh_1.jpg" alt="" class="img1">
+			 <img src="../yurihama/img/tottori_fegh_2.jpg" class="img2">
 		    </div>
 		
 		 	
@@ -92,7 +111,7 @@
 </div>
 		 
 		 	<div class="pagenation pagenation-permalink">
-  <a href="../kamiwazaweb/kamiwaza_web.html" class="pager-prev">
+  <a href="../works/works.html" class="pager-prev">
     <span class="arrow-left"></span>
   </a>
   
@@ -107,18 +126,26 @@
 		
 </div>
 	<footer>
-&copy;ENISHI KURODA
-	<ul id="snsFoot" class="under">
-		<li>
-			<a href="https://www.facebook.com/p/%E9%BB%92%E7%94%B0%E7%B8%81-100079299274284/"><img src="../about/img/facebook-new.png" alt=""></a>
-		</li>
-		<li>
-			<a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
-				<img src="../about/img/image2-1-350x350.png" alt="Instagram">
-			</a>
-		</li>
-	</ul>
-	</footer>
+    <ul id="snsFoot" class="under">
+        <li>
+            <a href="https://www.facebook.com/p/...">
+                <img src="img/facebook-new.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
+                <img src="img/image2-1-350x350.png" alt="Instagram">
+            </a>
+        </li>
+    </ul>
+
+    <div class="footer-sign">
+        <img src="../info/img/fotter_sign.png" alt="サイン">
+    </div>
+
+    <!--&copy; ENISHI KURODA-->
+</footer>
+
 
 		<!-- ページトップ -->
 <a href="#" id="page-top" aria-label="ページトップへ">
@@ -147,7 +174,67 @@ pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
+	
 </script>
+	<script>
+	// カーソル追従
+		const cursor = document.getElementById("custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});	
+</script>
+	
+	<script>//該当ボタンを黒くする条件
+document.addEventListener("DOMContentLoaded", function() {
+  const currentPath = window.location.pathname;
+
+  const menuLinks = document.querySelectorAll('.pc-menu .push, .menu-panel .push');
+
+  menuLinks.forEach(link => {
+    const linkPath = new URL(link.href).pathname;
+
+    //該当する個別ページのボタン＝worksボタンを黒くする条件
+    if (linkPath.endsWith('works.html') && (
+          currentPath.includes('/works/') || 
+          currentPath.endsWith('/magazine/magazine.html') // 該当する個別ページをここで変更する
+        )) {
+      link.classList.add('active');
+    } else if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+		
+		
+	
+		 // モーダルのコード
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("modal-container");
+  const modalImg = modal.querySelector("img");
+
+  // blockwork1 内の画像すべてを対象にする
+  const images = document.querySelectorAll(".blockwork1 img");
+
+  images.forEach(function(img) {
+    img.classList.add("popup"); // CSSでcursor表示したい場合用
+    img.addEventListener("click", function() {
+      modalImg.src = this.src;
+      modal.style.display = "block";
+    });
+  });
+
+  // モーダルクリックで閉じる
+  modal.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+});
+</script>
+	
 </main>
 </body>
 </html>
