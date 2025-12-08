@@ -112,7 +112,7 @@ h1 img{
   width: 50%;
   height: 100vh;
   /*装飾のためのCSS*/
-  background:url("../img/cokkie.jpg") center no-repeat;
+  background:url("../img/1pf.png") center no-repeat;
   background-size:90%;
 	
 }
@@ -205,24 +205,18 @@ small{/*small...一回り小さいサイズで表示*/
 	margin-bottom: 20%;
 	display: flex;
 }
-.img1,.img2 {
-	width: 50%;
+.img1 {
+	width: 70%;
 	height: 50%;
-	margin-right: 5%;
+	
 }
 
 
 h3{
 	margin-bottom: 5%;
 }
-.textwork4 h2{
-	justify-content: flex-start;
-	text-align: left;
-}
-.textwork4 p{
-	justify-content: flex-start;
-	text-align: left;
-	font-size: 11px;
+.textwork{
+	
 }
 .tags{
 	display: flex;
@@ -589,4 +583,3 @@ a, .post-content-anchor:hover, .nav li a:hover, .pagenation a:hover, .entry-foot
     display: none !important;
   }
 }
-
