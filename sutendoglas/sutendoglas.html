@@ -18,7 +18,7 @@
 	<meta name="twitter:description" content="ポートフォリオサイト | デザイン、アートの制作活動記録">
 	<meta name="twitter:image" content="https://kuroeni.github.io/portfolio/catch/catchcbillie_P.png">
 <title>ENISHI | Portfolio</title>
-<link rel="stylesheet" href= "css/sutendoglas.css" >
+<link rel="stylesheet" href= "css/kamiwaza.css" >
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
@@ -26,6 +26,11 @@
 </head>
 <body>
 	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
+	<div id="modal-container">
+ 		 <div class="modal-center">
+    		<img src=" " alt="">
+  		</div>
+	</div>
 
 <main>
 	<header>
@@ -64,31 +69,43 @@
 	<div id="left_area"><!--左の画像エリア--></div>	
 	<div id="right_area"><!--右のエリア-->
 	 <section class="blockwork1">
-		        <h2>「海藻の水面」</h2>
-				
+		        <h2>「変動」</h2>
+				<div class="textwork1">
+					<p>予測不可能に変動し続ける未来の動きを立体化</p>
+				</div>
 				<div class="textwork2">
-				  <p>ガラスを通して広がる光の特性を活かし海面の水面をモチーフにしたステンドグラスを制作しました。</p>
+				  <p>「のぞく」がテーマの紙技展という展示会で私は「2023年をのぞく」という小テーマで紙の立体作品を制作しました。直径170cmの作品を入ってすぐの場所に配置し目玉作品になりました。</p>
 		</div>
 			  <div class="textwork3">
-					<p>授業課題　　　ステンドグラス実習</p>
+					
+				  <p>授業課題　　　紙立体と紙構造</p>
+				   <p>制作期間　　　2022/12/10~2023/1/12</p>
 				    
 			  </div>
-		 	<div class="img1">
-		      <!--<img src="../cottenlime/img/IMG_2497.JPG"/>-->
+		 <div class="textwork4">
+					<p>試作</p>
+				    
+			  </div>
+		 <div class="img">
+		      <img src="img/mock_1_.png" class="img1">
+			  <img src="img/mock_2.png" class="img2">
 		    </div>
+		
+		 	
 		   
-		 <div class="tags">
+		 <h3>TAGGED</h3>
+<div class="tags">
 	<a href="../works/works.html?tag=product">#product</a>
 </div>
 		 
 		 	<div class="pagenation pagenation-permalink">
-  <a href="../sara/sara.html" class="pager-prev">
+  <a href="../sutendoglas/sutendoglas.html" class="pager-prev">
     <span class="arrow-left"></span>
   </a>
   
     change page
   
-  <a href="../kamiwaza/kamiwaza.html" class="pager-next">
+  <a href="../stamp/stamp.html" class="pager-next">
     <span class="arrow-right"></span>
   </a>
 </div>
@@ -110,7 +127,7 @@
         </li>
 		<li>
             <a href="https://kuroeni.github.io/fanartbock/" target="_blank">
-                <img src="img/b゜rain-8.png" alt="fanartsaito">
+                <img src="../sutendoglas/img/b゜rain-8.png" alt="fanartsaito">
             </a>
         </li>
     </ul>
@@ -149,9 +166,7 @@ pageTop.addEventListener('click', function(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: 'smooth' });
 });
-</script>
-	<script>
-	// カーソル追従
+		// カーソル追従
 		const cursor = document.getElementById("custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -159,7 +174,6 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.top = e.clientY + "px";
 });	
 </script>
-	
 	<script>//該当ボタンを黒くする条件
 document.addEventListener("DOMContentLoaded", function() {
   const currentPath = window.location.pathname;
@@ -172,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //該当する個別ページのボタン＝worksボタンを黒くする条件
     if (linkPath.endsWith('works.html') && (
           currentPath.includes('/works/') || 
-          currentPath.endsWith('/sutendoglas/sutendoglas.html') // 該当する個別ページをここで変更する
+          currentPath.endsWith('/kamiwaza/kamiwaza.html') // 該当する個別ページをここで変更する
         )) {
       link.classList.add('active');
     } else if (linkPath === currentPath || linkPath.endsWith(currentPath.split('/').pop())) {
@@ -180,6 +194,28 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       link.classList.remove('active');
     }
+  });
+});
+		 // モーダルのコード
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("modal-container");
+  const modalImg = modal.querySelector("img");
+
+  // blockwork1 内の画像すべてを対象にする
+  const images = document.querySelectorAll(".blockwork1 img");
+
+  images.forEach(function(img) {
+    img.classList.add("popup"); // CSSでcursor表示したい場合用
+    img.addEventListener("click", function() {
+      modalImg.src = this.src;
+      modal.style.display = "block";
+    });
+  });
+
+  // モーダルクリックで閉じる
+  modal.addEventListener("click", function() {
+    modal.style.display = "none";
   });
 });
 </script>
