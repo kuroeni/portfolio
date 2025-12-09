@@ -26,6 +26,12 @@
 </head>
 <body>
 	<img id="custom-cursor" src="img/cursor.svg" alt="cursor">
+	
+	<div id="modal-container">
+ 		 <div class="modal-center">
+    		<img src=" " alt="">
+  		</div>
+	</div>
 
 <main>
 	<header>
@@ -117,6 +123,11 @@
         <li>
             <a href="https://www.instagram.com/enishi_kuroda/" target="_blank">
                 <img src="img/image2-1-350x350.png" alt="Instagram">
+            </a>
+        </li>
+		<li>
+            <a href="https://kuroeni.github.io/fanartbock/" target="_blank">
+                <img src="img/b゜rain-8.png" alt="fanartsaito">
             </a>
         </li>
     </ul>
@@ -215,6 +226,28 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       link.classList.remove('active');
     }
+  });
+});
+		 // モーダルのコード
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("modal-container");
+  const modalImg = modal.querySelector("img");
+
+  // blockwork1 内の画像すべてを対象にする
+  const images = document.querySelectorAll(".blockwork1 img");
+
+  images.forEach(function(img) {
+    img.classList.add("popup"); // CSSでcursor表示したい場合用
+    img.addEventListener("click", function() {
+      modalImg.src = this.src;
+      modal.style.display = "block";
+    });
+  });
+
+  // モーダルクリックで閉じる
+  modal.addEventListener("click", function() {
+    modal.style.display = "none";
   });
 });
 </script>
