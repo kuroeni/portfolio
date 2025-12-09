@@ -299,6 +299,46 @@ main img{
   border-radius: 7px;
 }
 
+footer {
+    text-align: center;
+    color:#474747;
+    margin-bottom: 5%;
+	 margin-top: 20%;
+}
+
+footer .footer-sign img {
+    width: 200px;       /* お好みのサイズ */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* 上下の余白 */
+}
+#snsFoot {
+ z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    
+}
+#snsFoot li {
+ list-style: none;
+    line-height: 1;
+    padding: 0 8px;
+}
+#snsFoot li a {
+    display: block;
+    cursor: pointer;
+}
+#snsFoot li img {
+    width: 21px;
+    height: auto;
+    opacity: .9;
+}
+
 /* 横スライドアニメーション */
 @keyframes slide {
   0% {
@@ -514,46 +554,7 @@ main img{
 	margin-bottom: 50px;
 }
 
-footer {
-    text-align: center;
-    color:#474747;
-    margin-bottom: 5%;
-}
-footer{
- margin-top: 20%;
-}
-footer .footer-sign img {
-    width: 300px;       /* お好みのサイズ */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px; /* 上下の余白 */
-}
-#snsFoot {
- z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto 0;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-    
-}
-#snsFoot li {
- list-style: none;
-    line-height: 1;
-    padding: 0 8px;
-}
-#snsFoot li a {
-    display: block;
-    cursor: pointer;
-}
-#snsFoot li img {
-    width: 21px;
-    height: auto;
-    opacity: .9;
-}
+
 
 /* PCでは隠す */
 .hamburger-overlay,
@@ -825,34 +826,7 @@ body, a, button, input, textarea {
     display: none;
   }
   
-footer .footer-sign img {
-    width: 200px;      
-    height: auto;
-    display: block;
-    margin: 0 auto 10px; /* 上下の余白 */
-}	
-	
-#snsFoot {
-	margin-top: 10%;
-    position: static; /* または relative */
-    bottom: auto;
-    left: auto;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; 
-}
-#snsFoot li {
-    padding: 0 10px;
-  }
 
-#snsFoot li a { 
-	align-items: center;
-}
-#snsFoot li img {
-    width: 40px;
-	
 }
  
 	@media screen and (min-width: 601px) {
