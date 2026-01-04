@@ -173,7 +173,7 @@ small{
 	letter-spacing: .1em;
 }
 
-.textwork4 a {
+.textwork4 a{
 	display: inline-block;
 	min-width: 140px;
 	padding: 10px 20px;
@@ -187,6 +187,44 @@ small{
 .textwork4 a:hover {
 	background-color: #333;
 	color: #fff;
+}
+.card,.card a{
+  width: 288px;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+	text-decoration: none;
+ 
+}
+.card__imgframe{
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%;
+  background-image: url("../../works/img/b゜rain-8.png");
+  background-color:#ABABAB;
+  box-sizing: border-box;
+}
+.card__textbox{
+  width: 100%;
+  height: auto;
+  padding: 20px 18px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.card__textbox > * + *{
+  margin-top: 10px;
+	text-decoration-line: none;
+	color:#000000;
+}
+.card__titletext{
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  line-height: 125%;
+}
+.card__overviewtext{
+  font-size: 12px;
+  line-height: 150%;
 }
 .aicon{
 	margin-top: 20px;
@@ -309,12 +347,11 @@ footer {
     text-align: center;
     color:#474747;
     margin-bottom: 5%;
+	 margin-top: 20%;
 }
-footer{
- margin-top: 20%;
-}
+
 footer .footer-sign img {
-    width: 300px;       /* お好みのサイズ */
+    width: 200px;       /* お好みのサイズ */
     height: auto;
     display: block;
     margin: 0 auto 10px; /* 上下の余白 */
